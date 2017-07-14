@@ -1,10 +1,26 @@
 /* ======================================================================
+  BASE STYLES
+====================================================================== */
+@import 'normalize'; // Normalizes styles for consistency across browsers
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+}
+
+
+
+/* ======================================================================
   TYPOGRAPHY
 ====================================================================== */
 $font-def: 'Lora', sans-serif;
 $font-acc: 'Playfair Display', serif;
 $font-inf: 'Raleway', sans-serif;
-
 
 
 
