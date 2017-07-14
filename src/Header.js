@@ -6,6 +6,13 @@ class Header extends Component {
     return (
       <div className="Header">
         <h1 className="site-logo"><Link to='/'>Arpit Sheth</Link></h1>
+        <nav className="site-nav">
+          <ul>
+            <li><Link to="/">Blog</Link></li>
+            <li><Link to="/">LinkedIn</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </nav>
       </div>
     );
   }
