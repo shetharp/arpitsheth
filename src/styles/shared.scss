@@ -1,17 +1,4 @@
-/* ======================================================================
-  BASE STYLES
-====================================================================== */
 @import 'normalize'; // Normalizes styles for consistency across browsers
-
-*, *:before, *:after {
-  box-sizing: border-box; }
-
-html {
-  font-size: 62.5%; }
-
-body {
-  font-size: 1.6rem;
-}
 
 
 
@@ -62,3 +49,78 @@ $clr-dark-0: #6F6F6F;
 $clr-dark-1: #333333;
 $clr-dark-2: #1E1E1E;
 $clr-dark-3: #111111;
+
+
+
+/* ======================================================================
+  SCALE (FACTOR 1.25)
+====================================================================== */
+$scale-base:  2.0rem;
+
+$scale-sm:    1.6rem;
+$scale-xs:    1.2rem;
+$scale-min:   1.0rem;
+
+$scale-1: 2.5rem;
+$scale-2: 3.0rem;
+$scale-3: 4.0rem;
+$scale-4: 5.0rem;
+$scale-5: 6.0rem;
+$scale-6: 7.5rem;
+$scale-7: 9.5rem;
+$scale-8: 12.0rem;
+$scale-9: 15.0rem;
+$scale-10: 18.5rem;
+$scale-11: 23.3rem;
+$scale-12: 29.0rem;
+$scale-13: 36.3rem;
+$scale-14: 45.5rem;
+$scale-15: 57.0rem;
+
+
+
+/* ======================================================================
+  RESPONSIVE BREAKPOINTS
+====================================================================== */
+
+$bp-xxs-less: 300px;
+$bp-xxs:      400px;
+$bp-xxs-more: 450px;
+
+$bp-xs-less:  500px;
+$bp-xs:       600px;
+$bp-xs-more:  650px;
+
+$bp-sm:       700px;
+$bp-sm:       800px;
+$bp-sm-more:  850px;
+
+$bp-med-less: 900px;
+$bp-med:      1000px;
+$bp-med-more: 1050px;
+
+$bp-lg-less:  1100px;
+$bp-lg:       1200px;
+$bp-lg-more:  1250px;
+
+$bp-xl-less:  1300px;
+$bp-xl:       1400px;
+$bp-xl-more:  1450px;
+
+
+
+/* ======================================================================
+  BASE STYLES
+====================================================================== */
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: $scale-base;
+  line-height: 1.25;
+}

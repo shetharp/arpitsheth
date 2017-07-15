@@ -8,9 +8,9 @@ class Header extends Component {
         <h1 className="site-logo"><Link to='/'>Arpit Sheth</Link></h1>
         <nav className="site-nav">
           <ul>
-            <li><Link to="/">Blog</Link></li>
-            <li><Link to="/">LinkedIn</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li className="site-nav__item"><Link to="/">Blog</Link></li>
+            <li className="site-nav__item hidden-xxs"><Link to="/">LinkedIn</Link></li>
+            <li className="site-nav__item"><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
       </div>

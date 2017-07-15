@@ -1,0 +1,34 @@
+@import 'shared.scss'; // Imports shared variables and styles
+
+/* ======================================================================
+  SLIDES
+====================================================================== */
+.slide {
+  height: 100vh;
+  border: 10rem solid #ffffff;
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+}
+
+.slide__content {
+  background: rgba(0,0,0,0.4);
+  height: 100%;
+  margin: 0;
+  padding: 20rem 20rem 10rem 20rem;
+}
+
+.slide__title {
+  font-family: $font-inf;
+  font-weight: 400;
+  font-size: $scale-5;
+  margin: 0;
+}
+
+.slide--intro {
+  background: no-repeat center/cover url('../img/slides/intro.jpg');
+  border: none;
+}
+
+.slide--cornell-tech {
+  background: no-repeat center/cover url('../img/slides/cornell-tech.jpg');
+}
