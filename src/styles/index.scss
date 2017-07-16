@@ -1,0 +1,77 @@
+@import 'shared.scss'; // Imports shared variables and styles
+
+body {
+  font-family: $font-def;
+  background: $clr-yell-0;
+}
+
+
+/* ======================================================================
+  HEADER
+====================================================================== */
+.Header {
+  background: #ffffff;
+  width: 100%;
+  height: 5rem;
+  position: fixed;
+  top: 0;
+}
+
+.site-logo {
+  float: left;
+  background: no-repeat center url('../img/as_logo.svg');
+  background-size: auto 2.5rem;
+  height: 5rem;
+  width: 12.5rem;
+  margin: 0 0 0 1.25rem;
+  overflow: hidden;
+  text-indent: -9999%;
+
+  a {
+    display: block;
+    height: 100%;
+  }
+}
+
+.site-nav {
+  float: right;
+  font-family: $font-inf;
+  font-weight: 600;
+  font-size: $scale-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  height: 2.5rem;
+  margin: 1.5rem 1.25rem 0 0;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.site-nav__item {
+  display: block;
+  float: left;
+  padding: 0;
+  margin: 0;
+  margin-left: 1.25rem;
+  height: 2rem;
+  line-height: 2rem;
+
+  a {
+    display: block;
+    height: 100%;
+    color: $clr-dark-2;
+    text-decoration: none;
+    border-bottom: 0.2rem solid transparent;
+    transition: border 200ms ease-out;
+
+    &:hover {
+      border-bottom: 0.2rem solid $clr-dark-2;
+    }
+  }
+}
+
+@import "slides.scss";
+@import 'responsive.scss'; // Imports shared variables and styles
