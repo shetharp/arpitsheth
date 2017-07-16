@@ -19,11 +19,13 @@ class StickyMenu extends Component {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
     ]).isRequired,
-    offset: PropTypes.number
+    offset: PropTypes.number,
+    cloneClass: PropTypes.string,
   }
 
   static defaultProps = {
-    offset: 100
+    offset: 100,
+    cloneClass: "StickyClone",
   }
 
   componentDidMount(){
@@ -49,9 +51,9 @@ class StickyMenu extends Component {
   }
 
   render() {
-    const Child = React.Children.only(this.props.children)
+    const Child = React.Children.only(this.props.children);
     console.log(Child);
-    const propsToPass = { className: "StickyMenu__" + Child.props.className + " " + Child.props.className }
+    const propsToPass = { className: "StickyMenu__" + this.props.cloneClass + " " + this.props.cloneClass }
     return (
       <div>
         {this.props.children}

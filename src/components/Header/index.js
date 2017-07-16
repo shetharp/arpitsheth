@@ -7,7 +7,7 @@ import logo from 'img/as_logo.svg';
 class Header extends Component {
   render() {
     return (
-      <StickyMenu offset={300}>
+      <StickyMenu offset={300} cloneClass="Header">
         <div className="Header">
           <h1 className="site-logo"><Link to='/'><img src={logo} className="site-logo__img" alt="Arpit Sheth"></img></Link></h1>
           <nav className="site-nav">
