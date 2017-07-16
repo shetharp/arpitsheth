@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import Sticky from 'components/Sticky/'
+import StickyMenu from 'components/StickyMenu/'
 import './Header.css';
 import logo from 'img/as_logo.svg';
 
 class Header extends Component {
   render() {
     return (
-      <Sticky>
+      <StickyMenu offset={300}>
         <div className="Header">
           <h1 className="site-logo"><Link to='/'><img src={logo} className="site-logo__img" alt="Arpit Sheth"></img></Link></h1>
           <nav className="site-nav">
@@ -18,7 +18,7 @@ class Header extends Component {
             </ul>
           </nav>
         </div>
-      </Sticky>
+      </StickyMenu>
     );
   }
 }

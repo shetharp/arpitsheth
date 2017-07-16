@@ -1,0 +1,20 @@
+.StickyMenu {
+  width: 100%;
+  position: relative;
+}
+
+.StickyMenu_pinned {
+  position: fixed;
+  animation-name: slidedown;
+  animation-duration: 1s;
+}
+
+@keyframes slidedown {
+  from {
+    transform: translate(0, -100%);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
