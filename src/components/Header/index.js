@@ -7,14 +7,14 @@ import logo from 'img/as_logo.svg';
 class Header extends Component {
   render() {
     return (
-      <StickyMenu offset={300} cloneClass="Header">
-        <div className="Header">
-          <h1 className="site-logo"><Link to='/'><img src={logo} className="site-logo__img" alt="Arpit Sheth"></img></Link></h1>
-          <nav className="site-nav">
+      <StickyMenu offset={100} cloneClass="Header">
+        <div className="Header Header_transparent">
+          <h1 className="Header-logo"><Link to='/'><img src={logo} className="Header-logo__img" alt="Arpit Sheth"></img></Link></h1>
+          <nav className="Header-nav">
             <ul>
-              <li className="site-nav__item"><Link to="/">Blog</Link></li>
-              <li className="site-nav__item site-nav__item_optional"><Link to="/">LinkedIn</Link></li>
-              <li className="site-nav__item"><Link to="/contact">Contact</Link></li>
+              <li className="Header-nav__item"><Link to="/">Blog</Link></li>
+              <li className="Header-nav__item Header-nav__item_optional"><Link to="/">LinkedIn</Link></li>
+              <li className="Header-nav__item"><Link to="/contact">Contact</Link></li>
             </ul>
           </nav>
         </div>
