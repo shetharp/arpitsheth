@@ -1,0 +1,21 @@
+@import 'normalize'; // Normalizes styles for consistency across browsers
+@import 'shared.scss'; // Imports shared variables and styles
+@import "slides.scss";
+
+/* ======================================================================
+  BASE STYLES
+====================================================================== */
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: $scale-base;
+  line-height: 1.25;
+  font-family: $font-def;
+  background: $clr-yell-0;
+}

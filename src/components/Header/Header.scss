@@ -1,0 +1,82 @@
+@import 'styles/shared.scss'; // Imports shared variables and styles
+
+/* ======================================================================
+  HEADER
+====================================================================== */
+.Header {
+  background: #ffffff;
+  width: 100%;
+  height: 5rem;
+  top: 0;
+}
+
+.site-logo {
+  float: left;
+  color: $clr-dark-2;
+  font-family: $font-def;
+  font-size: $scale-base;
+  line-height: 5rem;
+  height: 5rem;
+  margin: 0 0 0 1.25rem;
+  // overflow: hidden;
+
+  a {
+    display: block;
+    height: 100%;
+    color: $clr-dark-2;
+    text-decoration: none;
+  }
+}
+
+.site-logo__img{
+  height: 2.5rem;
+  width: auto;
+  vertical-align: middle;
+}
+
+.site-nav {
+  float: right;
+  font-family: $font-inf;
+  font-weight: 600;
+  font-size: $scale-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  height: 2.5rem;
+  margin: 1.5rem 1.25rem 0 0;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.site-nav__item {
+  float: left;
+  padding: 0;
+  margin: 0;
+  margin-left: 1.25rem;
+  height: 2rem;
+  line-height: 2rem;
+
+  a {
+    display: block;
+    height: 100%;
+    color: $clr-dark-2;
+    text-decoration: none;
+    border-bottom: 0.2rem solid transparent;
+    transition: border 200ms ease-out;
+
+    &:hover {
+      border-bottom: 0.2rem solid $clr-dark-2;
+    }
+  }
+}
+
+.site-nav__item_optional {
+  display: none;
+
+  @include mq-xxs-more {
+    display: list-item;
+  };
+}
