@@ -50,7 +50,8 @@ class StickyMenu extends Component {
 
   render() {
     const Child = React.Children.only(this.props.children)
-    const propsToPass = {}
+    console.log(Child);
+    const propsToPass = { className: "StickyMenu__" + Child.props.className + " " + Child.props.className }
     return (
       <div>
         {this.props.children}

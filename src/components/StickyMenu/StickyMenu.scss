@@ -2,6 +2,7 @@
   width: 100%;
   position: fixed;
   top: -100%;
+  z-index: 1;
   transition: top 1s ease-in-out;
 }
 
