@@ -15,7 +15,7 @@
   background: rgba(0,0,0,0.5);
   height: 100%;
   margin: 0;
-  padding: 25vh 2.75rem 1rem 2.75rem;
+  padding: 25vh 2.25rem 1rem 2.25rem;
 }
 
 .Slide__title {
@@ -24,6 +24,14 @@
   font-size: $scale-1;
   text-shadow: 0px 1px 1px rgba(0,0,0,0.75);
   margin: 0;
+
+  em {
+    font-weight: 600;
+    font-style: normal;
+  }
+  strong {
+    font-family: $font-acc;
+  }
 }
 
 .Slide_intro {
