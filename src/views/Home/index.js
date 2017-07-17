@@ -13,14 +13,14 @@ class Home extends Component {
           </div>
         </section>
 
-        <Slide slideID="cornell-tech">
+        <Slide slideID="cornell-tech" slideButton="Contact Me" slideLink="contact">
           Currently, I'm getting my MEng in <em>computer science</em> at <strong>Cornell Tech</strong>.
         </Slide>
 
         <Slide slideID="cornell-mars-rover">
           I build authentic <strong>brands</strong> that <em>bolster organizations</em>.
         </Slide>
-        
+
       </div>
     );
   }
