@@ -3,7 +3,7 @@
 /* ======================================================================
   SLIDES
 ====================================================================== */
-.slide {
+.Slide {
   height: 100vh;
   border: 1.25rem solid #ffffff;
   text-align: center;
@@ -11,14 +11,14 @@
   position: relative;
 }
 
-.slide__content {
+.Slide__content {
   background: rgba(0,0,0,0.5);
   height: 100%;
   margin: 0;
   padding: 25vh 2.75rem 1rem 2.75rem;
 }
 
-.slide__title {
+.Slide__title {
   font-family: $font-inf;
   font-weight: 400;
   font-size: $scale-1;
@@ -26,15 +26,15 @@
   margin: 0;
 }
 
-.slide--intro {
+.Slide_intro {
   background: no-repeat center/cover url('./img/intro.jpg');
   border: none;
 }
 
-.slide--cornell-tech {
+.Slide_cornell-tech {
   background: no-repeat center/cover url('./img/cornell-tech.jpg');
 }
 
-.slide--cornell-mars-rover {
+.Slide_cornell-mars-rover {
   background: no-repeat center/cover url('./img/cornell-mars-rover.jpg');
 }

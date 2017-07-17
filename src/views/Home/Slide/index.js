@@ -10,16 +10,16 @@ class Slide extends Component {
     };
   }
 
-  static proptTypes = {
+  static propTypes = {
     slideID: PropTypes.string.isRequired,
-    slideClass: PropTypes.string.isRequired,
+    slideClass: PropTypes.string,
   }
 
   render() {
     return (
-      <section className={"Slide Slide--" + this.props.slideClass} id={this.props.slideID}>
+      <section className={"Slide Slide_" + this.props.slideID + " " + this.props.slideClass} id={this.props.slideID}>
         <div className="Slide__content">
-          <h1 className="Slide__title">I build authentic <strong>brands</strong> that <em>bolster organizations</em>.</h1>
+          <h1 className="Slide__title">{this.props.children}</h1>
         </div>
       </section>
     );
