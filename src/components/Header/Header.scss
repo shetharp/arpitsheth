@@ -7,10 +7,16 @@
   background: #ffffff;
   width: 100%;
   height: 5rem;
+  z-index: 1;
+  position: absolute;
   top: 0;
+
+  @at-root &_transparent {
+    background: transparent;
+  }
 }
 
-.site-logo {
+.Header-logo {
   float: left;
   color: $clr-dark-2;
   font-family: $font-def;
@@ -18,27 +24,34 @@
   line-height: 5rem;
   height: 5rem;
   margin: 0 0 0 1.25rem;
-  // overflow: hidden;
+
+  @at-root .Header_transparent & {
+    color: #ffffff;
+  }
 
   a {
     display: block;
     height: 100%;
-    color: $clr-dark-2;
+    color: inherit;
     text-decoration: none;
   }
 }
 
-.site-logo__img{
+.Header-logo__img {
   height: 2.5rem;
   width: auto;
   vertical-align: middle;
+
+  @at-root .Header_transparent & {
+    filter: invert(100%);
+  }
 }
 
-.site-nav {
+.Header-nav {
   float: right;
   font-family: $font-inf;
-  font-weight: 600;
   font-size: $scale-xs;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   height: 2.5rem;
@@ -51,18 +64,23 @@
   }
 }
 
-.site-nav__item {
+.Header-nav__item {
   float: left;
   padding: 0;
   margin: 0;
   margin-left: 1.25rem;
   height: 2rem;
   line-height: 2rem;
+  color: $clr-dark-2;
+
+  @at-root .Header_transparent & {
+    color: #ffffff;
+  }
 
   a {
     display: block;
     height: 100%;
-    color: $clr-dark-2;
+    color: inherit;
     text-decoration: none;
     border-bottom: 0.2rem solid transparent;
     transition: border 200ms ease-out;
@@ -73,10 +91,14 @@
   }
 }
 
-.site-nav__item_optional {
+.Header-nav__item_optional {
   display: none;
 
   @include mq-xxs-more {
     display: list-item;
   };
 }
+
+/* ----------------------------------------------------------------------
+*  HEADER - StickyMenu
+---------------------------------------------------------------------- */

@@ -11,7 +11,6 @@ class StickyMenu extends Component {
     };
     // Example how to bind object in React ES6
     this.handleScroll = this.handleScroll.bind(this);
-    console.log(props);
   }
 
   static propTypes = {
@@ -19,11 +18,13 @@ class StickyMenu extends Component {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
     ]).isRequired,
-    offset: PropTypes.number
+    offset: PropTypes.number,
+    cloneClass: PropTypes.string,
   }
 
   static defaultProps = {
-    offset: 100
+    offset: 50,
+    cloneClass: "StickyClone",
   }
 
   componentDidMount(){
@@ -36,12 +37,10 @@ class StickyMenu extends Component {
 
   handleScroll() {
     if (window.scrollY > this.props.offset) {
-      console.log("should lock");
       this.setState({
         isPinned: true
       });
     } else if (window.scrollY < this.props.offset) {
-      console.log("not locked" );
       this.setState({
         isPinned: false
       });
@@ -49,8 +48,8 @@ class StickyMenu extends Component {
   }
 
   render() {
-    const Child = React.Children.only(this.props.children)
-    const propsToPass = {}
+    const Child = React.Children.only(this.props.children);
+    const propsToPass = { className: "StickyMenu__" + this.props.cloneClass + " " + this.props.cloneClass }
     return (
       <div>
         {this.props.children}

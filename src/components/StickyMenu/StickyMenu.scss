@@ -2,7 +2,8 @@
   width: 100%;
   position: fixed;
   top: -100%;
-  transition: top 1s ease-in-out;
+  z-index: 1;
+  transition: top 750ms ease-in-out;
 }
 
 .StickyMenu_pinned {
