@@ -1,4 +1,4 @@
-@import 'shared.scss'; // Imports shared variables and styles
+@import 'styles/shared.scss'; // Imports shared variables and styles
 
 /* ======================================================================
   SLIDES
@@ -27,14 +27,14 @@
 }
 
 .slide--intro {
-  background: no-repeat center/cover url('../img/slides/intro.jpg');
+  background: no-repeat center/cover url('./img/intro.jpg');
   border: none;
 }
 
 .slide--cornell-tech {
-  background: no-repeat center/cover url('../img/slides/cornell-tech.jpg');
+  background: no-repeat center/cover url('./img/cornell-tech.jpg');
 }
 
 .slide--cornell-mars-rover {
-  background: no-repeat center/cover url('../img/slides/cornell-mars-rover.jpg');
+  background: no-repeat center/cover url('./img/cornell-mars-rover.jpg');
 }
