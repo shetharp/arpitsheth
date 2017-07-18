@@ -80,8 +80,7 @@
   vertical-align: middle;
 
   @at-root .Header_transparent & {
-    filter: brightness(0%) invert(100%);
-
+    filter: brightness(0%) invert(100%) drop-shadow(0px 1px 1px rgba(0,0,0,0.5));
   }
 
   @include mq-sm {
@@ -138,10 +137,6 @@
   color: $clr-dark-2;
   // outline: 1px solid red;
 
-  @at-root .Header_transparent & {
-    color: #ffffff;
-  }
-
   a {
     display: block;
     height: 100%;
@@ -152,6 +147,15 @@
 
     &:hover {
       border-bottom: 0.2rem solid $clr-dark-2;
+    }
+  }
+
+  @at-root .Header_transparent & {
+    color: #ffffff;
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+
+    a:hover {
+      border-color: #ffffff;
     }
   }
 
