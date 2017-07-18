@@ -7,18 +7,15 @@ class Slide extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isPinned: false
     };
   }
 
   render() {
     let displayButton = null;
-    console.log(this.props.slideLinkExternal)
     if (this.props.slideButton && !this.props.slideLinkExternal) {
       displayButton = <Link to={this.props.slideLink} className="Slide__button">{this.props.slideButton}</Link>;
     }
     else if (this.props.slideButton && this.props.slideLinkExternal) {
-      console.log("External Link!")
       displayButton = <a href={this.props.slideLink} className="Slide__button">{this.props.slideButton}</a>;
     }
 

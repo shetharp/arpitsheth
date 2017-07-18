@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Slide from './Slide/'
+import Slide from 'components/Slide/'
+import './Home.css';
 
 
 class Home extends Component {
