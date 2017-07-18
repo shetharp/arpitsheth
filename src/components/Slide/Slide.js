@@ -29,7 +29,7 @@ class Slide extends Component {
 
     return (
       <section className={"Slide Slide_" + this.props.id + " " + this.props.className} id={this.props.id}>
-        <div className="Slide__content">
+        <div className={"Slide__content" + ((this.props.wide)? " Slide__content_wide" : "")} >
           {this.props.children}
           {displayButton}
         </div>
@@ -41,6 +41,7 @@ class Slide extends Component {
 Slide.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
+  wide: PropTypes.bool,
   button: PropTypes.string,
   link: PropTypes.string,
   linkExternal: PropTypes.bool,
@@ -48,6 +49,7 @@ Slide.propTypes = {
 
 Slide.defaultProps = {
   className: "",
+  wide: false,
   link: "#",
   linkExternal: false,
 }

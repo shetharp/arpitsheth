@@ -15,7 +15,7 @@ class Home extends Component {
           <SlideBody><em className="Slide__body_font-inf">Tech</em> pro with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>.</SlideBody>
         </Slide>
 
-        <Slide id="cornell-tech" button="Contact Me" link="contact">
+        <Slide id="cornell-tech" wide={true} button="Contact Me" link="contact">
           <SlideTitle>
             Currently, I'm getting my MEng in <em>computer science</em> at <strong>Cornell Tech</strong>.
           </SlideTitle>

@@ -28,26 +28,38 @@
   @include mq-xxs {
     padding: 3.75rem;
     padding-top: 25vh;
-  };
+  }
   @include mq-xs {
-    padding: 12.5%;
-    padding-top: 25vh;
-  };
-  @include mq-sm {
     padding: 15%;
     padding-top: 25vh;
+    @at-root &_wide {
+      padding: 12.5%;
+      padding-top: 25vh;
+    }
   }
-  @include mq-lg-more {
-    // padding: 17.5%;
-    // padding-top: 25vh;
+  @include mq-med {
+    padding: 15%;
+    padding-top: 25vh;
+    @at-root &_wide {
+      padding: 7.5%;
+      padding-top: 25vh;
+    }
   }
-  @include mq-xl-less {
-    // padding: 17.5%;
-    // padding-top: 25vh;
+  @include mq-lg-less {
+    padding: 20%;
+    padding-top: 25vh;
+    @at-root &_wide {
+      padding: 12.5%;
+      padding-top: 25vh;
+    }
   }
-  @include mq-xl {
-    // padding: 22.5%;
-    // padding-top: 25vh;
+  @include mq-lg {
+    padding: 22.5%;
+    padding-top: 25vh;
+    @at-root &_wide {
+      padding: 12.5%;
+      padding-top: 25vh;
+    }
   }
 }
 
