@@ -7,12 +7,30 @@
   background: #ffffff;
   width: 100%;
   height: 5rem;
+  padding: 0 1.25rem;
   z-index: 1;
   position: absolute;
   top: 0;
 
   @at-root &_transparent {
     background: transparent;
+  }
+
+  @include mq-sm-less {
+    padding: 0 2.5rem;
+  }
+  @include mq-sm {
+    height: 6.667rem;
+  }
+  @include mq-med {
+    height: 7.5rem;
+  }
+  @include mq-lg {
+    height: 8.5rem;
+    padding: 0 5rem;
+  }
+  @include mq-lg-more {
+    height: 10rem;
   }
 }
 
@@ -23,7 +41,7 @@
   font-size: $scale-base;
   line-height: 5rem;
   height: 5rem;
-  margin: 0 0 0 1.25rem;
+  margin: 0;
 
   @at-root .Header_transparent & {
     color: #ffffff;
@@ -35,6 +53,25 @@
     color: inherit;
     text-decoration: none;
   }
+
+  @include mq-sm {
+    line-height: 6.667rem;
+    height: 6.667rem;
+  }
+  @include mq-med {
+    font-size: $scale-1;
+    line-height: 7.5rem;
+    height: 7.5rem;
+  }
+  @include mq-lg {
+    line-height: 8.5rem;
+    height: 8.5rem;
+  }
+  @include mq-lg-more {
+    font-size: $scale-2;
+    line-height: 10rem;
+    height: 10rem;
+  }
 }
 
 .Header-logo__img {
@@ -45,6 +82,19 @@
   @at-root .Header_transparent & {
     filter: invert(100%);
   }
+
+  @include mq-sm {
+    height: 2.75rem;
+  }
+  @include mq-med {
+    height: 3.333rem;
+  }
+  @include mq-lg {
+    height: 4rem;
+  }
+  @include mq-lg-more {
+    height: 5rem;
+  }
 }
 
 .Header-nav {
@@ -54,13 +104,26 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  height: 2.5rem;
-  margin: 1.5rem 1.25rem 0 0;
+  margin: 1.5rem 0 0 0;
 
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+
+  @include mq-sm {
+    margin-top: 2.5rem;
+  }
+  @include mq-med {
+    margin-top: 3rem;
+  }
+  @include mq-lg {
+    font-size: $scale-sm;
+    margin-top: 3.5rem;
+  }
+  @include mq-lg-more {
+    margin-top: 4rem;
   }
 }
 
@@ -72,6 +135,7 @@
   height: 2rem;
   line-height: 2rem;
   color: $clr-dark-2;
+  // outline: 1px solid red;
 
   @at-root .Header_transparent & {
     color: #ffffff;
@@ -88,6 +152,20 @@
     &:hover {
       border-bottom: 0.2rem solid $clr-dark-2;
     }
+  }
+
+  @include mq-xs-less {
+    margin-left: 1.75rem;
+  }
+  @include mq-xs {
+    margin-left: 2rem;
+  }
+  @include mq-sm {
+    margin-left: 2.5rem;
+  }
+  @include mq-lg {
+    height: 2.5rem;
+    margin-left: 3.333rem;
   }
 }
 

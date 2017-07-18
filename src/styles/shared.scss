@@ -89,21 +89,21 @@ $bp-xs-less:  500px;
 $bp-xs:       600px;
 $bp-xs-more:  650px;
 
-$bp-sm:       700px;
+$bp-sm-less:  700px;
 $bp-sm:       800px;
 $bp-sm-more:  850px;
 
 $bp-med-less: 900px;
 $bp-med:      1000px;
-$bp-med-more: 1050px;
+$bp-med-more: 1100px;
 
-$bp-lg-less:  1100px;
-$bp-lg:       1200px;
-$bp-lg-more:  1250px;
+$bp-lg-less:  1200px;
+$bp-lg:       1400px;
+$bp-lg-more:  1500px;
 
-$bp-xl-less:  1300px;
-$bp-xl:       1400px;
-$bp-xl-more:  1450px;
+$bp-xl-less:  1600px;
+$bp-xl:       1800px;
+$bp-xl-more:  2000px;
 
 
 /* ----------------------------------------------------------------------
@@ -131,6 +131,10 @@ $bp-xl-more:  1450px;
 @mixin mq-xs-less { @media (min-width: $bp-xs-less){ @content }}
 @mixin mq-xs { @media (min-width: $bp-xs){ @content }}
 @mixin mq-xs-more { @media (min-width: $bp-xs-more){ @content }}
+
+@mixin mq-sm-less { @media (min-width: $bp-sm-less){ @content }}
+@mixin mq-sm { @media (min-width: $bp-sm){ @content }}
+@mixin mq-sm-more { @media (min-width: $bp-sm-more){ @content }}
 
 @mixin mq-med-less { @media (min-width: $bp-med-less){ @content }}
 @mixin mq-med { @media (min-width: $bp-med){ @content }}

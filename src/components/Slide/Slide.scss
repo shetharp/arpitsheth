@@ -9,13 +9,46 @@
   text-align: center;
   color: #ffffff;
   position: relative;
+
+  @include mq-sm-less {
+    border-width: 2.5rem;
+  }
+  @include mq-lg {
+    border-width: 5rem;
+  }
 }
 
 .Slide__content {
   background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 25%,rgba(0,0,0,0.6) 50%,rgba(0,0,0,0.4) 100%);
   height: 100%;
   margin: 0;
-  padding: 25vh 2.25rem 1rem 2.25rem;
+  padding: 2.25rem;
+  padding-top: 25vh;
+
+  @include mq-xxs {
+    padding: 3.75rem;
+    padding-top: 25vh;
+  };
+  @include mq-xs {
+    padding: 12.5%;
+    padding-top: 25vh;
+  };
+  @include mq-sm {
+    padding: 15%;
+    padding-top: 25vh;
+  }
+  @include mq-lg-more {
+    // padding: 17.5%;
+    // padding-top: 25vh;
+  }
+  @include mq-xl-less {
+    // padding: 17.5%;
+    // padding-top: 25vh;
+  }
+  @include mq-xl {
+    // padding: 22.5%;
+    // padding-top: 25vh;
+  }
 }
 
 .Slide__title {
@@ -32,6 +65,23 @@
   strong {
     font-family: $font-acc;
   }
+
+  @include mq-xs-less {
+    font-size: $scale-2;
+  };
+  @include mq-sm {
+    font-size: $scale-3;
+  }
+  @include mq-med {
+    font-size: $scale-4;
+  }
+  @include mq-lg-more {
+    font-size: $scale-5;
+  }
+  @include mq-xl {
+    font-size: $scale-6;
+  }
+
 }
 
 .Slide__body {
@@ -43,17 +93,13 @@
     font-weight: 600;
     font-style: normal;
   }
+
+  @include mq-med {
+    font-size: $scale-base;
+  }
 }
 
 .Slide__button {
-  display: block;
-  padding: 1rem;
-  margin: auto;
-  width: 25rem;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 2.5rem;
   background: #ffffff;
   color: $clr-dark-2;
   font-family: $font-inf;
@@ -63,4 +109,28 @@
   text-decoration: none;
   letter-spacing: 0.2rem;
 
+  display: block;
+  padding: 1rem;
+  margin: auto;
+  width: 25rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.5rem;
+
+  @include mq-xs-less {
+    width: 30rem;
+  };
+  @include mq-sm {
+    width: 40rem;
+    padding: 1.25rem;
+  };
+  @include mq-lg {
+    font-size: $scale-sm;
+    line-height: 5rem;
+    width: 50rem;
+    height: 5rem;
+    padding: 0;
+    bottom: 5rem;
+  };
 }
