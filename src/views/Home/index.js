@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Slide from 'components/Slide/'
+import Slide, {SlideTitle, SlideBody} from 'components/Slide/'
 import './Home.css';
 
 
@@ -14,11 +14,13 @@ class Home extends Component {
           </div>
         </section>
 
-        <Slide slideID="cornell-tech" slideButton="Contact Me" slideLink="contact">
-          Currently, I'm getting my MEng in <em>computer science</em> at <strong>Cornell Tech</strong>.
+        <Slide id="cornell-tech" button="Contact Me" link="contact">
+          <SlideTitle>
+            Currently, I'm getting my MEng in <em>computer science</em> at <strong>Cornell Tech</strong>.
+          </SlideTitle>
         </Slide>
 
-        <Slide slideID="cornell-mars-rover">
+        <Slide id="cornell-mars-rover">
           I build authentic <strong>brands</strong> that <em>bolster organizations</em>.
         </Slide>
 
