@@ -12,7 +12,7 @@ class Home extends Component {
           <SlideTitle>
             <strong>Hey, I'm Arpit.</strong>
           </SlideTitle>
-          <SlideBody>Tech pro with creative tendencies and a knack for business.</SlideBody>
+          <SlideBody><em className="Slide__body_font-inf">Tech</em> pro with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>.</SlideBody>
         </Slide>
 
         <Slide id="cornell-tech" button="Contact Me" link="contact">

@@ -34,6 +34,17 @@
   }
 }
 
+.Slide__body {
+  font-size: $scale-sm;
+  margin-top: 1em;
+
+  @at-root &_font-inf {
+    font-family: $font-inf;
+    font-weight: 600;
+    font-style: normal;
+  }
+}
+
 .Slide__button {
   display: block;
   padding: 1rem;
