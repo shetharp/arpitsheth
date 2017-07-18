@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 
-class SlideTitle extends Component {
+class SlideBody extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,4 +14,4 @@ class SlideTitle extends Component {
     );
   }
 }
-export default SlideTitle;
+export default SlideBody;

@@ -8,22 +8,29 @@ class Home extends Component {
     return (
       <div className="Home">
 
-        <section className="Slide Slide_intro">
-          <div className="Slide__content">
-            <h1 className="Slide__title">Hey, I'm Arpit.</h1>
-          </div>
-        </section>
+        <Slide id="intro">
+          <SlideTitle>
+            <strong>Hey, I'm Arpit.</strong>
+          </SlideTitle>
+          <SlideBody>Tech pro with creative tendencies and a knack for business.</SlideBody>
+        </Slide>
 
         <Slide id="cornell-tech" button="Contact Me" link="contact">
           <SlideTitle>
             Currently, I'm getting my MEng in <em>computer science</em> at <strong>Cornell Tech</strong>.
           </SlideTitle>
+          <SlideBody>
+            <strong>Cornell Tech MEng &rsquo;18</strong><br />
+              Cornell University &rsquo;17
+          </SlideBody>
         </Slide>
 
-        <Slide id="cornell-mars-rover">
-          I build authentic <strong>brands</strong> that <em>bolster organizations</em>.
+        <Slide id="cornell-mars-rover" button="View Case Study" link="/">
+          <SlideTitle>
+            I build authentic <strong>brands</strong> that <em>bolster organizations</em>.
+          </SlideTitle>
+          <SlideBody><strong>Featured:</strong> Cornell Mars Rover</SlideBody>
         </Slide>
-
       </div>
     );
   }
