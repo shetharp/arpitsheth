@@ -80,7 +80,8 @@
   vertical-align: middle;
 
   @at-root .Header_transparent & {
-    filter: invert(100%);
+    filter: brightness(0%) invert(100%);
+
   }
 
   @include mq-sm {
