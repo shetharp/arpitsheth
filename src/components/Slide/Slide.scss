@@ -13,6 +13,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  // filter: blur(20px);
 
   @include mq-sm-less {
     border-width: 2.5rem;
@@ -23,14 +24,25 @@
 }
 
 .Slide__tempImg {
-  opacity: 0.1;
-  display: none;
-}
-
-.Slide__background {
   outline: 10px solid $clr-yell;
   width: 100%;
-  height: 50%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(20px);
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.Slide__tempImg_hide {
+  opacity: 0;
+}
+
+.Slide__hiddenImg {
+  opacity: 0;
   display: none;
 }
 
@@ -40,6 +52,8 @@
   margin: 0;
   padding: 2.25rem;
   padding-top: 25vh;
+  position: relative;
+  z-index: 1;
 
   @include mq-xxs {
     padding: 3.75rem;

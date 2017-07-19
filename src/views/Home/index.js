@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import Slide, {SlideImg, SlideTitle, SlideBody} from 'components/Slide/'
 import './Home.css';
 import ImgIntro from './img/arpit-sheth.jpg';
-import ImgIntro_xxs from './img/arpit-sheth-xxs.jpg';
+import ImgIntro_lg from './img/arpit-sheth-lg.jpg';
+import ImgIntro_sm from './img/arpit-sheth-sm.jpg';
+import ImgIntro_xs from './img/arpit-sheth-xs.jpg';
+import ImgIntro_temp from './img/arpit-sheth-temp.jpg';
 // import ImgCornellTech from './img/cornell-tech.jpg';
 // import ImgCMR from './img/cornell-mars-rover.jpg';
 
@@ -12,11 +15,15 @@ class Home extends Component {
     return (
       <div className="Home">
 
-        <Slide id="intro" bg={{def: ImgIntro, xxs: ImgIntro_xxs}}>
+        <Slide id="intro" bg={{def: ImgIntro, lg: ImgIntro_lg, sm: ImgIntro_sm, xs: ImgIntro_xs, temp: ImgIntro_temp}}>
           <SlideTitle>
             <strong>Hey, I’m Arpit.</strong>
           </SlideTitle>
-          <SlideBody><em className="Slide__body_font-inf">Tech</em> pro with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>.</SlideBody>
+          <SlideBody>
+            <h2>
+              <em className="Slide__body_font-inf">Tech</em> pro with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>.
+            </h2>
+          </SlideBody>
         </Slide>
 
         <Slide id="cornell-tech" wide={true} button="Contact Me" link="contact">
