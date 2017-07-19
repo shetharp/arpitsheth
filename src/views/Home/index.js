@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import Slide, {SlideTitle, SlideBody} from 'components/Slide/'
+import Slide, {SlideImg, SlideTitle, SlideBody} from 'components/Slide/'
 import './Home.css';
-
+import ImgIntro from './img/arpit-sheth.jpg';
+import ImgIntro_xxs from './img/arpit-sheth-xxs.jpg';
+// import ImgCornellTech from './img/cornell-tech.jpg';
+// import ImgCMR from './img/cornell-mars-rover.jpg';
 
 class Home extends Component {
   render() {
+    // console.log(ImgIntro);
     return (
       <div className="Home">
 
-        <Slide id="intro">
+        <Slide id="intro" bg={{def: ImgIntro, xxs: ImgIntro_xxs}}>
           <SlideTitle>
             <strong>Hey, I’m Arpit.</strong>
           </SlideTitle>

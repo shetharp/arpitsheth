@@ -8,7 +8,11 @@
   border: 1.25rem solid #ffffff;
   text-align: center;
   color: #ffffff;
+  overflow: hidden;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   @include mq-sm-less {
     border-width: 2.5rem;
@@ -16,6 +20,18 @@
   @include mq-lg {
     border-width: 5rem;
   }
+}
+
+.Slide__tempImg {
+  opacity: 0.1;
+  display: none;
+}
+
+.Slide__background {
+  outline: 10px solid $clr-yell;
+  width: 100%;
+  height: 50%;
+  display: none;
 }
 
 .Slide__content {

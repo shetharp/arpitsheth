@@ -1,6 +1,7 @@
 import Slide from "./Slide";
+import SlideImg from "./SlideImg";
 import SlideTitle from "./SlideTitle";
 import SlideBody from "./SlideBody";
 
 export default Slide;
-export {SlideTitle, SlideBody};
+export {SlideImg, SlideTitle, SlideBody};

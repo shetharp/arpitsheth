@@ -7,16 +7,39 @@ class Slide extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      bgImg: <img src="" alt="" />,
+      bgSrc: ""
     };
   }
 
-  render() {
-    let displayTitle = null;
-    let displayButton = null;
+  handleImageLoaded() {
+    this.setState({bgSrc: this.theImg.currentSrc});
+    console.log(this.theImg.currentSrc);
+    console.log(this.state)
+  }
+  handleImageErrored() {
+    console.log("Failed to load slide image.")
+  }
 
-    if (this.props.title) {
-      displayTitle = this.props.title;
-      console.log(displayTitle);
+  render() {
+    // console.log("The bgSrc is: ");
+    // console.log(this.state.bgSrc);
+    let displayButton = null;
+    let displayTempImg = null;
+
+    if (this.props.bg) {
+      let bgSet =
+        (this.props.bg)["def"] + " 3000w," +
+        (this.props.bg)["xxs"] + " 500w";
+
+      displayTempImg = <img
+        ref={(imgElem) => {this.theImg = imgElem;}}
+        src={bgSet["def"]}
+        srcSet={bgSet}
+        onLoad={this.handleImageLoaded.bind(this)}
+        onError={this.handleImageErrored.bind(this)}
+        alt={this.props.id}
+        className="Slide__tempImg"/>
     }
 
     if (this.props.button && !this.props.linkExternal) {
@@ -26,11 +49,15 @@ class Slide extends Component {
       displayButton = <a href={this.props.link} className="Slide__button">{this.props.button}</a>;
     }
 
-
     return (
-      <section className={"Slide Slide_" + this.props.id + " " + this.props.className} id={this.props.id}>
+      <section
+        id={this.props.id}
+        className={"Slide Slide_" + this.props.id + " " + this.props.className}
+        style={{backgroundImage: "url(" + this.state.bgSrc + ")"}}
+      >
         <div className={"Slide__content" + ((this.props.wide)? " Slide__content_wide" : "")} >
           {this.props.children}
+          {displayTempImg}
           {displayButton}
         </div>
       </section>
@@ -42,6 +69,10 @@ Slide.propTypes = {
   id: PropTypes.string.isRequired,
   className: PropTypes.string,
   wide: PropTypes.bool,
+  bg: PropTypes.shape({
+    def: PropTypes.string.isRequired,
+    xxs: PropTypes.string.isRequired
+  }),
   button: PropTypes.string,
   link: PropTypes.string,
   linkExternal: PropTypes.bool,
