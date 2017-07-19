@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
+import cx from 'classnames'
 import './Slide.css';
 
 /**
@@ -102,7 +103,7 @@ class Slide extends Component {
         (this.props.bg)["temp"] + " 150w";
 
       displayTempImg = <div
-        className={"Slide__tempImg" + ((this.state.bgTemp)? "" : " Slide__tempImg_hide")}
+        className={cx('Slide__tempImg', {'Slide__tempImg_hide': !this.state.bgTemp})}
         style={{backgroundImage: "url(" + this.props.bg.temp + ")"}}>
       </div>
 
@@ -136,17 +137,17 @@ class Slide extends Component {
       >
         {displayTempImg}
         <div
-          className={
-            "Slide__content" +
-            ((this.props.wide)? " Slide__content_wide" : "") +
-            ((this.state.bgTemp)? " Slide__content_bgLoaded" : "")
-          }
+          className={cx(
+            'Slide__content', {
+            'Slide__content_wide': this.props.wide,
+            'Slide__content_bgLoaded': this.props.bgTemp }
+          )}
         >
           {/* The parent component calling Slide can have its children
             * (title and body content) inserted here
             */}
           {this.props.children}
-          
+
           {displayHiddenImg}
           {displayButton}
         </div>
