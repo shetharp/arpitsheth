@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom'
-import cx from 'classnames'
+import { Link } from 'react-router-dom';
+import cx from 'classnames';
+import SlideTitle from './SlideTitle';
 import './Slide.css';
 
 /**
@@ -95,12 +96,11 @@ class Slide extends Component {
     if (this.props.bg) {
       // the value of img srcset
       // Image widths should match these width descriptors (1500px -> 1500w)
-      let bgSet =
-        (this.props.bg)["def"] + " 1500w," +
-        (this.props.bg)["lg"] + " 3000w," +
-        (this.props.bg)["sm"] + " 900w," +
-        (this.props.bg)["xs"] + " 600w" +
-        (this.props.bg)["temp"] + " 150w";
+      let bgSet = (this.props.bg)["def"] + " 1500w,";
+      bgSet += ((this.props.bg)["lg"])? ((this.props.bg)["lg"] + " 3000w,") : "";
+      bgSet += ((this.props.bg)["sm"])? ((this.props.bg)["sm"] + " 900w,") : "";
+      bgSet += ((this.props.bg)["xs"])? ((this.props.bg)["xs"] + " 600w,") : "";
+      bgSet += ((this.props.bg)["temp"])? ((this.props.bg)["temp"] + " 150w,") : "";
 
       displayTempImg = <div
         className={cx('Slide__tempImg', {'Slide__tempImg_hide': !this.state.bgTemp})}
