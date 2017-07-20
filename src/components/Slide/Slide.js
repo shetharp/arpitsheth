@@ -98,7 +98,7 @@ class Slide extends Component {
       // Image widths should match these width descriptors (1500px -> 1500w)
       let bgSet = (this.props.bg)["def"] + " 1500w,";
       bgSet += ((this.props.bg)["lg"])? ((this.props.bg)["lg"] + " 3000w,") : "";
-      bgSet += ((this.props.bg)["sm"])? ((this.props.bg)["sm"] + " 900w,") : "";
+      bgSet += ((this.props.bg)["sm"])? ((this.props.bg)["sm"] + " 1000w,") : "";
       bgSet += ((this.props.bg)["xs"])? ((this.props.bg)["xs"] + " 600w,") : "";
       bgSet += ((this.props.bg)["temp"])? ((this.props.bg)["temp"] + " 150w,") : "";
 
