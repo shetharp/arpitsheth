@@ -180,9 +180,10 @@ class Home extends Component {
             <strong>Hey, I’m Arpit.</strong>
           </SlideTitle>
           <SlideBody>
-            <h2>
+            <h2 className="Slide__subtitle">
               <em className="Slide__body_font-inf">Tech</em> pro with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>.
             </h2>
+            <i className="Slide_scroll"></i>
           </SlideBody>
         </Slide>
 

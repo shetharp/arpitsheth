@@ -1,54 +1,88 @@
+@import 'styles/shared.scss'; // Imports shared variables and styles
 
 /* ----------------------------------------------------------------------
 *  SLIDES - Intro
 ---------------------------------------------------------------------- */
 
 .Slide_intro {
-  // background: no-repeat center/cover url('./img/arpit-sheth.jpg');
   border: none;
+  background-position: center top;
+  
+  .Slide__content {
+    padding-top: 50vh;
+  }
+  
+  .Slide__title {
+    font-size: $scale-2;
+  }
+  
+  .Slide__subtitle {
+    font-size: $scale-base;
+  }
+
+  @include mq-xxs {
+    .Slide__title { font-size: $scale-3; }
+  };
+  @include mq-xs-less {
+    .Slide__title { font-size: $scale-4; }
+    .Slide__subtitle { font-size: $scale-1; }
+  };
+  @include mq-sm {
+    .Slide__title { font-size: $scale-5; }
+    .Slide__subtitle { font-size: $scale-2; }
+  }
+  @include mq-med {
+    .Slide__title { font-size: $scale-6; }
+    .Slide__subtitle { font-size: $scale-3; }
+  }
+  @include mq-lg-more {
+    .Slide__title { font-size: $scale-7; }
+    .Slide__subtitle { font-size: $scale-4; }
+  }  
 }
 
-/* ----------------------------------------------------------------------
-*  SLIDES - Body Slides
----------------------------------------------------------------------- */
+.Slide_scroll::before {
+  content: '\203A';
+  font-weight: bold;
+  font-style: normal;
+  font-size: 6rem;
+  line-height: 3.5rem;
+  text-align: center;
+  transform: rotate(90deg);
+  animation: 2s ease-in-out infinite FloatDown;
+  
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  right: calc(50vw - 2.5rem);
+  bottom: 2.5rem;
+  z-index: 1;
+  
+  @include mq-xs-less {
+    font-size: 8rem;
+  };
+  @include mq-med {
+    font-size: 10rem;
+    width: 8rem;
+    height: 8rem;
+    line-height: 6rem;
+    right: calc(50vw - 4rem);
+  }
+  @include mq-lg-more {
+    font-size: 12rem;
+  }
+}
 
-//
-// .Slide_cornell-tech {
-//   background: no-repeat center/cover url('./img/cornell-tech.jpg');
-// }
-//
-// .Slide_cornell-mars-rover {
-//   background: no-repeat center/cover url('./img/cornell-mars-rover.jpg');
-// }
-//
-// .Slide_public-speaking {
-//   background: no-repeat center/cover url('./img/public-speaking.jpg');
-// }
-//
-// .Slide_entrepreneurship {
-//   background: no-repeat center/cover url('./img/3-day-startup.jpg');
-// }
-//
-// .Slide_data-design {
-//   background: no-repeat center/cover url('./img/cornell-ems-dashboard.png');
-// }
-//
-// .Slide_cloud-computing {
-//   background: no-repeat center/cover url('./img/nj-gset.png');
-// }
-//
-// .Slide_artificial-creativity {
-//   background: no-repeat center/cover url('./img/artificial-creativity.jpg');
-// }
-//
-// .Slide_art {
-//   background: no-repeat center/cover url('./img/a-space-journey.jpg');
-// }
-//
-// .Slide_photos {
-//   background: no-repeat center/cover url('./img/arpit-sheth-photography.jpg');
-// }
-//
-// .Slide_more {
-//   background: no-repeat center/cover url('./img/arpit-sheth-more.jpg');
-// }
+@keyframes FloatDown {
+  20% {
+    transform: translateY(0%) rotate(90deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-20%) rotate(90deg);
+    opacity: 0.8
+  }
+}
