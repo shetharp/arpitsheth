@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Scroll from 'react-scroll'
 import Slide, {SlideImg, SlideTitle, SlideBody} from 'components/Slide/'
 import './Home.css';
 
@@ -183,7 +184,7 @@ class Home extends Component {
             <h2 className="Slide__subtitle">
               <em className="Slide__body_font-inf">Tech</em> pro with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>.
             </h2>
-            <i className="Slide_scroll"></i>
+            <Scroll.Link to="cornell-tech" smooth={true} className="Slide_scroll"></Scroll.Link>
           </SlideBody>
         </Slide>
 

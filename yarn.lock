@@ -4968,7 +4968,7 @@ promise@7.1.1, promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -5177,6 +5177,13 @@ react-scripts@1.0.10:
     whatwg-fetch "2.0.3"
   optionalDependencies:
     fsevents "1.1.2"
+
+react-scroll@^1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.5.5.tgz#52410d856e19a4259b98d0632df3a47df59036ba"
+  dependencies:
+    object-assign "^4.1.1"
+    prop-types "^15.5.8"
 
 react@^15.6.1:
   version "15.6.1"

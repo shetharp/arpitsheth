@@ -43,6 +43,8 @@
 
 .Slide_scroll::before {
   content: '\203A';
+  cursor: pointer;
+  color: #ffffff;
   font-weight: bold;
   font-style: normal;
   font-size: 6rem;
