@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Header from "components/Header/";
+
 import Scroll from 'react-scroll'
 import Slide, {SlideImg, SlideTitle, SlideBody} from 'components/Slide/'
 import './Home.css';
@@ -172,157 +174,159 @@ class Home extends Component {
 
     return (
       <div className="Home">
-
-        <Slide
-          id="intro"
-          bg={bgIntro}
-        >
-          <SlideTitle>
-            <strong>Hey, I’m Arpit.</strong>
-          </SlideTitle>
-          <SlideBody>
-            <h2 className="Slide__subtitle">
-              <em className="Slide__body_font-inf">Tech</em> pro with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>.
-            </h2>
-            <Scroll.Link to="cornell-tech" smooth={true} className="Slide_scroll"></Scroll.Link>
-          </SlideBody>
-        </Slide>
-
-
-        <Slide
-          id="cornell-tech"
-          bg={bgCornellTech}
-          wide={true}
-          button={{text: "Contact Me", link: "contact", external: false}}
-        >
-          <SlideTitle>
-            Currently, I’m getting my MEng in <em>computer science</em> at <strong>Cornell Tech</strong>.
-          </SlideTitle>
-          <SlideBody>
-            <strong>Cornell Tech MEng &rsquo;18</strong><br />
-              Cornell University &rsquo;17
-          </SlideBody>
-        </Slide>
+        <Header transparent={true} />
+        
+        <main>
+          <Slide
+            id="intro"
+            bg={bgIntro}
+          >
+            <SlideTitle>
+              <strong>Hey, I’m Arpit.</strong>
+            </SlideTitle>
+            <SlideBody>
+              <h2 className="Slide__subtitle">
+                <em className="Slide__body_font-inf">Tech</em> pro with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>.
+              </h2>
+              <Scroll.Link to="cornell-tech" smooth={true} className="Slide_scroll"></Scroll.Link>
+            </SlideBody>
+          </Slide>
 
 
-        <Slide
-          id="cornell-mars-rover"
-          bg={bgCMR}
-          wide={false}
-          button={{text: "View Case Study", link: "/", external: false}}
-        >
-          <SlideTitle>
-            I build authentic <strong>brands</strong> that <em>bolster organizations</em>.
-          </SlideTitle>
-          <SlideBody><strong>Featured:</strong> Cornell Mars Rover</SlideBody>
-        </Slide>
+          <Slide
+            id="cornell-tech"
+            bg={bgCornellTech}
+            wide={true}
+            button={{text: "Contact Me", link: "contact", external: false}}
+          >
+            <SlideTitle>
+              Currently, I’m getting my MEng in <em>computer science</em> at <strong>Cornell Tech</strong>.
+            </SlideTitle>
+            <SlideBody>
+              <strong>Cornell Tech MEng &rsquo;18</strong><br />
+                Cornell University &rsquo;17
+            </SlideBody>
+          </Slide>
 
 
-        <Slide
-          id="public-speaking"
-          bg={bgPublicSpeaking}
-          wide={true}
-          button={{text: "Learn More", link: "/", external: false}}
-        >
-          <SlideTitle>
-            I <strong>speak</strong> to inspire interest in <em>STEM, design, and leadership</em>.
-          </SlideTitle>
-          <SlideBody><strong>Featured:</strong> USA Science & Engineering Festival</SlideBody>
-        </Slide>
+          <Slide
+            id="cornell-mars-rover"
+            bg={bgCMR}
+            wide={false}
+            button={{text: "View Case Study", link: "/", external: false}}
+          >
+            <SlideTitle>
+              I build authentic <strong>brands</strong> that <em>bolster organizations</em>.
+            </SlideTitle>
+            <SlideBody><strong>Featured:</strong> Cornell Mars Rover</SlideBody>
+          </Slide>
 
 
-        <Slide
-          id="entrepreneurship"
-          bg={bg3DayStartup}
-          wide={false}
-          button={{text: "Learn More", link: "/", external: false}}
-        >
-          <SlideTitle>
-            I <strong>mentor</strong> students with <em>entrepreneurial ambitions</em>.
-          </SlideTitle>
-          <SlideBody><strong>Featured:</strong> 3 Day Startup at Cornell</SlideBody>
-        </Slide>
+          <Slide
+            id="public-speaking"
+            bg={bgPublicSpeaking}
+            wide={true}
+            button={{text: "Learn More", link: "/", external: false}}
+          >
+            <SlideTitle>
+              I <strong>speak</strong> to inspire interest in <em>STEM, design, and leadership</em>.
+            </SlideTitle>
+            <SlideBody><strong>Featured:</strong> USA Science & Engineering Festival</SlideBody>
+          </Slide>
 
 
-        <Slide
-          id="data-design"
-          bg={bgEMSDashboard}
-          wide={true}
-          button={{text: "View Case Study", link: "/", external: false}}
-        >
-          <SlideTitle>
-            I combine <strong>data & design</strong> to make <em>information accessible</em>.
-          </SlideTitle>
-          <SlideBody><strong>Featured:</strong> Cornell University Emergency Medical Service</SlideBody>
-        </Slide>
+          <Slide
+            id="entrepreneurship"
+            bg={bg3DayStartup}
+            wide={false}
+            button={{text: "Learn More", link: "/", external: false}}
+          >
+            <SlideTitle>
+              I <strong>mentor</strong> students with <em>entrepreneurial ambitions</em>.
+            </SlideTitle>
+            <SlideBody><strong>Featured:</strong> 3 Day Startup at Cornell</SlideBody>
+          </Slide>
 
 
-        <Slide
-          id="cloud-computing"
-          bg={bgCloudComputing}
-          wide={true}
-          button={{text: "Learn More", link: "/", external: false}}
-        >
-          <SlideTitle>
-            I’ve researched how to <em>detect cancer</em> with <strong>cloud computing</strong>.
-          </SlideTitle>
-          <SlideBody><strong>Featured:</strong> NJ Governor’s School of Engineering and Technology</SlideBody>
-        </Slide>
+          <Slide
+            id="data-design"
+            bg={bgEMSDashboard}
+            wide={true}
+            button={{text: "View Case Study", link: "/", external: false}}
+          >
+            <SlideTitle>
+              I combine <strong>data & design</strong> to make <em>information accessible</em>.
+            </SlideTitle>
+            <SlideBody><strong>Featured:</strong> Cornell University Emergency Medical Service</SlideBody>
+          </Slide>
 
 
-        <Slide
-          id="artificial-creativity"
-          bg={bgArtificialCreativity}
-          wide={true}
-          button={{text: "View Project", link: "/", external: false}}
-        >
-          <SlideTitle>
-            I beleive <strong>artificial creativity</strong> will empower the future of <em>expression and innovation</em>.
-          </SlideTitle>
-          <SlideBody><strong>Featured:</strong> Origami Fill</SlideBody>
-        </Slide>
+          <Slide
+            id="cloud-computing"
+            bg={bgCloudComputing}
+            wide={true}
+            button={{text: "Learn More", link: "/", external: false}}
+          >
+            <SlideTitle>
+              I’ve researched how to <em>detect cancer</em> with <strong>cloud computing</strong>.
+            </SlideTitle>
+            <SlideBody><strong>Featured:</strong> NJ Governor’s School of Engineering and Technology</SlideBody>
+          </Slide>
 
 
-        <Slide
-          id="art"
-          bg={bgArt}
-          wide={false}
-          button={{text: "View Project", link: "/", external: false}}
-        >
-          <SlideTitle>
-            Sometimes, I burn the <em>midnight oil</em> working on <strong>art</strong>.
-          </SlideTitle>
-          <SlideBody><strong>Featured:</strong> A Space Journey</SlideBody>
-        </Slide>
+          <Slide
+            id="artificial-creativity"
+            bg={bgArtificialCreativity}
+            wide={true}
+            button={{text: "View Project", link: "/", external: false}}
+          >
+            <SlideTitle>
+              I beleive <strong>artificial creativity</strong> will empower the future of <em>expression and innovation</em>.
+            </SlideTitle>
+            <SlideBody><strong>Featured:</strong> Origami Fill</SlideBody>
+          </Slide>
 
 
-        <Slide
-          id="photos"
-          bg={bgPhotography}
-          wide={false}
-          button={{text: "View Photos", link: "//instagram.com/shetharp", external: true}}
-        >
-          <SlideTitle>
-            I <em>explore the world</em> around me through <strong>photography</strong>.
-          </SlideTitle>
-          <SlideBody><strong>Featured:</strong> Instagram Profile</SlideBody>
-        </Slide>
+          <Slide
+            id="art"
+            bg={bgArt}
+            wide={false}
+            button={{text: "View Project", link: "/", external: false}}
+          >
+            <SlideTitle>
+              Sometimes, I burn the <em>midnight oil</em> working on <strong>art</strong>.
+            </SlideTitle>
+            <SlideBody><strong>Featured:</strong> A Space Journey</SlideBody>
+          </Slide>
 
 
-        <Slide
-          id="more"
-          bg={bgMore}
-          wide={true}
-          button={{text: "Go To Blog", link: "/", external: false}}
-        >
-          <SlideTitle>
-            There’s more <strong>awesome</strong> to <em>discover</em>!
-          </SlideTitle>
-          <SlideBody>
-            <strong>Blog</strong> • <strong>Instagram</strong> • <strong>Contact</strong>
-          </SlideBody>
-        </Slide>
+          <Slide
+            id="photos"
+            bg={bgPhotography}
+            wide={false}
+            button={{text: "View Photos", link: "//instagram.com/shetharp", external: true}}
+          >
+            <SlideTitle>
+              I <em>explore the world</em> around me through <strong>photography</strong>.
+            </SlideTitle>
+            <SlideBody><strong>Featured:</strong> Instagram Profile</SlideBody>
+          </Slide>
 
+
+          <Slide
+            id="more"
+            bg={bgMore}
+            wide={true}
+            button={{text: "Go To Blog", link: "/", external: false}}
+          >
+            <SlideTitle>
+              There’s more <strong>awesome</strong> to <em>discover</em>!
+            </SlideTitle>
+            <SlideBody>
+              <strong>Blog</strong> • <strong>Instagram</strong> • <strong>Contact</strong>
+            </SlideBody>
+          </Slide>
+        </main>
       </div>
     );
   }

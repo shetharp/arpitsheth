@@ -10,6 +10,7 @@
   
   .Slide__content {
     padding-top: 50vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.0) 15%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.4) 75%,rgba(0,0,0,0.2) 100%);
   }
   
   .Slide__title {
@@ -18,6 +19,7 @@
   
   .Slide__subtitle {
     font-size: $scale-base;
+    font-weight: normal;
   }
 
   @include mq-xxs {
@@ -32,6 +34,7 @@
     .Slide__subtitle { font-size: $scale-2; }
   }
   @include mq-med {
+    .Slide__content { background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.0) 10%,rgba(0,0,0,0.0) 35%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.35) 75%,rgba(0,0,0,0.0) 100%); }
     .Slide__title { font-size: $scale-6; }
     .Slide__subtitle { font-size: $scale-3; }
   }
