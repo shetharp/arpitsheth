@@ -8,12 +8,12 @@
   width: 100%;
   height: 5rem;
   padding: 0 1.25rem;
-  z-index: 2;
-  position: absolute;
-  top: 0;
 
   @at-root &_transparent {
     background: transparent;
+    z-index: 2;
+    position: absolute;
+    top: 0;
   }
 
   @include mq-sm-less {
