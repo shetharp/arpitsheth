@@ -1,5 +1,9 @@
 @import 'styles/shared.scss'; // Imports shared variables and styles
 
+/* ======================================================================
+*  HOME
+====================================================================== */
+
 /* ----------------------------------------------------------------------
 *  SLIDES - Intro
 ---------------------------------------------------------------------- */
@@ -15,11 +19,6 @@
   
   .Slide__title {
     font-size: $scale-2;
-  }
-  
-  .Slide__subtitle {
-    font-size: $scale-base;
-    font-weight: normal;
   }
 
   @include mq-xxs {
@@ -40,6 +39,8 @@
   }
   @include mq-lg-more {
     .Slide__title { font-size: $scale-7; }
+  }  
+  @include mq-xl {
     .Slide__subtitle { font-size: $scale-4; }
   }  
 }
