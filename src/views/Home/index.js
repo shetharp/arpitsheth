@@ -186,7 +186,7 @@ class Home extends Component {
             </SlideTitle>
             <SlideBody>
               <h2 className="Slide__subtitle">
-                <em className="Slide__body_font-inf">Tech</em> pro with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>.
+                <em className="Slide__body_font-inf">Tech</em> visionary with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>.
               </h2>
               <Scroll.Link to="cornell-tech" smooth={true} className="Slide_scroll"></Scroll.Link>
             </SlideBody>
