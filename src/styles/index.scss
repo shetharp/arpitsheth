@@ -10,17 +10,36 @@
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
   font-size: $scale-base;
   line-height: 1.25;
   font-family: $font-def;
+  min-height: 100%;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-acc;
   color: $clr-dark-2;
+}
+
+/* Adds white space for footer */
+.wrapper {
+  padding-bottom: 10rem;
+}
+
+.container {
+  width: 100%;
+  max-width: $bp-sm;
+  padding: 0 2.5rem;
+  margin: auto;
+}
+
+.container--wide {
+  max-width: $bp-med;
 }
 
 /* Formatting for article body content */
@@ -61,14 +80,16 @@ h1, h2, h3, h4, h5, h6 {
     margin: auto;
   }
   
-  @include mq-xxs {
+  @include mq-xs {
     font-size: 1em;
-  };
-}
-
-.container {
-  width: 100%;
-  max-width: $bp-lg-less;
-  padding: 0 2.5rem;
-  margin: auto;
+  }
+  @include mq-sm {
+    font-size: 1.2em;
+    h1 { font-size: 2.25em; }
+    h2 { font-size: 1.85em; }
+    h3 { font-size: 1.5em; }
+    h4 { font-size: 1.2em; }
+    h5 { font-size: 0.9em; }
+    h6 { font-size: 0.8em; }
+  }
 }
