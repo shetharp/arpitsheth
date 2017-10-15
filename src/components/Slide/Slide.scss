@@ -129,6 +129,12 @@
   font-size: $scale-sm;
   margin-top: 1em;
 
+  a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0.25em;
+  }
+
   @at-root &_font-inf {
     font-family: $font-inf;
     font-weight: 600;

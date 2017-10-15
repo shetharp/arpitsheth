@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Header from "components/Header/";
 
 import Scroll from 'react-scroll'
@@ -213,7 +214,6 @@ class Home extends Component {
             id="cornell-mars-rover"
             bg={bgCMR}
             wide={false}
-            button={{text: "View Case Study", link: "/", external: false}}
           >
             <SlideTitle>
               I build authentic <strong>brands</strong> that <em>bolster organizations</em>.
@@ -226,7 +226,6 @@ class Home extends Component {
             id="public-speaking"
             bg={bgPublicSpeaking}
             wide={true}
-            button={{text: "Learn More", link: "/", external: false}}
           >
             <SlideTitle>
               I <strong>speak</strong> to inspire interest in <em>STEM, design, and leadership</em>.
@@ -239,7 +238,6 @@ class Home extends Component {
             id="entrepreneurship"
             bg={bg3DayStartup}
             wide={false}
-            button={{text: "Learn More", link: "/", external: false}}
           >
             <SlideTitle>
               I <strong>mentor</strong> students with <em>entrepreneurial ambitions</em>.
@@ -252,7 +250,6 @@ class Home extends Component {
             id="data-design"
             bg={bgEMSDashboard}
             wide={true}
-            button={{text: "View Case Study", link: "/", external: false}}
           >
             <SlideTitle>
               I combine <strong>data & design</strong> to make <em>information accessible</em>.
@@ -265,7 +262,6 @@ class Home extends Component {
             id="cloud-computing"
             bg={bgCloudComputing}
             wide={true}
-            button={{text: "Learn More", link: "/", external: false}}
           >
             <SlideTitle>
               I’ve researched how to <em>detect cancer</em> with <strong>cloud computing</strong>.
@@ -278,7 +274,6 @@ class Home extends Component {
             id="artificial-creativity"
             bg={bgArtificialCreativity}
             wide={true}
-            button={{text: "View Project", link: "/", external: false}}
           >
             <SlideTitle>
               I beleive <strong>artificial creativity</strong> will empower the future of <em>expression and innovation</em>.
@@ -291,7 +286,6 @@ class Home extends Component {
             id="art"
             bg={bgArt}
             wide={false}
-            button={{text: "View Project", link: "/", external: false}}
           >
             <SlideTitle>
               Sometimes, I burn the <em>midnight oil</em> working on <strong>art</strong>.
@@ -317,13 +311,15 @@ class Home extends Component {
             id="more"
             bg={bgMore}
             wide={true}
-            button={{text: "Go To Blog", link: "/", external: false}}
           >
             <SlideTitle>
               There’s more <strong>awesome</strong> to <em>discover</em>!
             </SlideTitle>
             <SlideBody>
-              <strong>Blog</strong> • <strong>Instagram</strong> • <strong>Contact</strong>
+              {/*<strong><Link to="/">Blog</Link></strong> • */}
+              <strong><a href="https://instagram.com/shetharp">Instagram</a></strong> •&nbsp;
+              <strong><a href="https://linkedin.com/in/shetharp">LinkedIn</a></strong> •&nbsp;
+              <strong><Link to="/contact">Contact</Link></strong>
             </SlideBody>
           </Slide>
         </main>
