@@ -1,0 +1,24 @@
+@import 'styles/shared.scss'; // Imports shared variables and styles
+
+/* ======================================================================
+  Footer
+====================================================================== */
+.Footer {
+  background: $clr-super-lite;
+  padding: 2.5rem 1.25rem;
+  
+  color: $clr-lite-2;
+  font-size: $scale-sm;
+  font-family: $font-inf;
+
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  
+  @include mq-sm-less {
+    padding: 2.5rem;
+  }
+  @include mq-lg {
+    padding: 2.5rem 5rem;
+  }
+}

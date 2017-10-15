@@ -1,0 +1,183 @@
+@import 'styles/shared.scss'; // Imports shared variables and styles
+
+/* ======================================================================
+  SLIDES
+====================================================================== */
+.Slide {
+  height: 100vh;
+  border: 1.25rem solid #ffffff;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  // filter: blur(20px);
+
+  @include mq-sm-less {
+    border-width: 2.5rem;
+  }
+  @include mq-lg {
+    border-width: 5rem;
+  }
+}
+
+.Slide__tempImg {
+  outline: 10px solid $clr-yell;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(20px);
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.Slide__tempImg_hide {
+  opacity: 0;
+}
+
+.Slide__hiddenImg {
+  opacity: 0;
+  display: none;
+}
+
+.Slide__content {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 25%,rgba(0,0,0,0.6) 50%,rgba(0,0,0,0.4) 100%);
+  height: 100%;
+  margin: 0;
+  padding: 25vh 2.25rem 2.25rem 2.25rem;
+  position: relative;
+  z-index: 1;
+
+  @include mq-xxs {
+    padding: 25vh 3.75rem 3.75rem 3.75rem;
+  }
+  @include mq-xs {
+    padding: 25vh 15% 5rem 15%;
+    @at-root &_wide {
+      padding: 25vh 12.5% 5rem 12.5%;
+    }
+  }
+  @include mq-med {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.5) 30%,rgba(0,0,0,0.5) 50%,rgba(0,0,0,0.2) 100%);
+    padding: 25vh 15% 5rem 15%;
+    @at-root &_wide {
+      padding: 25vh 7.5% 5rem 7.5%;
+    }
+  }
+  @include mq-lg-less {
+    padding: 25vh 20% 5rem 20%;
+    @at-root &_wide {
+      padding: 25vh 12.5% 5rem 12.5%;
+    }
+  }
+  @include mq-lg {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.5) 30%,rgba(0,0,0,0.5) 50%,rgba(0,0,0,0.2) 100%);
+    padding: 25vh 22.5% 5rem 22.5%;
+    @at-root &_wide {
+      padding: 25vh 12.5% 5rem 12.5%;
+    }
+  }
+}
+
+.Slide__title {
+  font-family: $font-inf;
+  font-weight: 400;
+  font-size: $scale-1;
+  color: inherit;
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.75);
+  margin: 0;
+
+  em {
+    font-weight: 600;
+    font-style: normal;
+  }
+  strong {
+    font-family: $font-acc;
+  }
+
+  @include mq-xs-less {
+    font-size: $scale-2;
+  };
+  @include mq-sm {
+    font-size: $scale-3;
+  }
+  @include mq-med {
+    font-size: $scale-4;
+  }
+  @include mq-lg-more {
+    font-size: $scale-5;
+  }
+  @include mq-xl {
+    font-size: $scale-6;
+  }
+}
+
+.Slide__subtitle {
+  font-family: $font-def;
+  font-size: $scale-base;
+  font-weight: normal;
+  color: inherit;
+}
+
+.Slide__body {
+  font-size: $scale-sm;
+  margin-top: 1em;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0.25em;
+  }
+
+  @at-root &_font-inf {
+    font-family: $font-inf;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @include mq-med {
+    font-size: $scale-base;
+  }
+}
+
+.Slide__button {
+  background: #ffffff;
+  color: $clr-dark-2;
+  font-family: $font-inf;
+  font-size: $scale-xs;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+
+  display: block;
+  padding: 1rem;
+  margin: auto;
+  width: 25rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.5rem;
+
+  @include mq-xs-less {
+    width: 30rem;
+  };
+  @include mq-sm {
+    width: 40rem;
+    padding: 1.25rem;
+  };
+  @include mq-lg {
+    font-size: $scale-sm;
+    line-height: 5rem;
+    width: 50rem;
+    height: 5rem;
+    padding: 0;
+    bottom: 5rem;
+  };
+}

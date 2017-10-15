@@ -1,0 +1,94 @@
+@import 'styles/shared.scss'; // Imports shared variables and styles
+
+/* ======================================================================
+*  HOME
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+*  SLIDES - Intro
+---------------------------------------------------------------------- */
+
+.Slide_intro {
+  border: none;
+  background-position: center top;
+  
+  .Slide__content {
+    padding-top: 50vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.0) 15%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.4) 75%,rgba(0,0,0,0.2) 100%);
+  }
+  
+  .Slide__title {
+    font-size: $scale-2;
+  }
+
+  @include mq-xxs {
+    .Slide__title { font-size: $scale-3; }
+  };
+  @include mq-xs-less {
+    .Slide__title { font-size: $scale-4; }
+    .Slide__subtitle { font-size: $scale-1; }
+  };
+  @include mq-sm {
+    .Slide__title { font-size: $scale-5; }
+    .Slide__subtitle { font-size: $scale-2; }
+  }
+  @include mq-med {
+    .Slide__content { background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.0) 10%,rgba(0,0,0,0.0) 35%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.35) 75%,rgba(0,0,0,0.0) 100%); }
+    .Slide__title { font-size: $scale-6; }
+    .Slide__subtitle { font-size: $scale-3; }
+  }
+  @include mq-lg-more {
+    .Slide__title { font-size: $scale-7; }
+  }  
+  @include mq-xl {
+    .Slide__subtitle { font-size: $scale-4; }
+  }  
+}
+
+.Slide_scroll::before {
+  content: '\203A';
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 6rem;
+  line-height: 3.5rem;
+  text-align: center;
+  transform: rotate(90deg);
+  animation: 2s ease-in-out infinite FloatDown;
+  
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  right: calc(50vw - 2.5rem);
+  bottom: 2.5rem;
+  z-index: 1;
+  
+  @include mq-xs-less {
+    font-size: 8rem;
+  };
+  @include mq-med {
+    font-size: 10rem;
+    width: 8rem;
+    height: 8rem;
+    line-height: 6rem;
+    right: calc(50vw - 4rem);
+  }
+  @include mq-lg-more {
+    font-size: 12rem;
+  }
+}
+
+@keyframes FloatDown {
+  20% {
+    transform: translateY(0%) rotate(90deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-20%) rotate(90deg);
+    opacity: 0.8
+  }
+}

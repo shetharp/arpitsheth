@@ -10,11 +10,86 @@
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
   font-size: $scale-base;
   line-height: 1.25;
   font-family: $font-def;
-  background: $clr-yell-0;
+  min-height: 100%;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-acc;
+  color: $clr-dark-2;
+}
+
+/* Adds white space for footer */
+.wrapper {
+  padding-bottom: 10rem;
+}
+
+.container {
+  width: 100%;
+  max-width: $bp-sm;
+  padding: 0 2.5rem;
+  margin: auto;
+}
+
+.container--wide {
+  max-width: $bp-med;
+}
+
+/* Formatting for article body content */
+.content {
+  color: $clr-dark-1;
+  font-size: 0.9em;
+  line-height: 1.5;
+  
+  a { 
+    color: $clr-blue;
+    transition: color 150ms ease;
+    &:hover, &:focus, &:active {
+      color: $clr-blue-1;
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6 { line-height: 1.25; margin: 2.5rem 0; }
+  h1 { font-size: 2.00em; }
+  h2 { font-size: 1.666em; }
+  h3 { font-size: 1.333em; }
+  h4 { font-size: 1.1em; letter-spacing: 0.05em; }
+  h5 { font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.05em; }
+  h6 { font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.05em; }
+  
+  p {
+    margin: 1.25em auto;
+  }
+  
+  p.lead {
+    color: $clr-dark;
+    font-size: 1.15em;
+    font-style: italic;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+  
+  @include mq-xs {
+    font-size: 1em;
+  }
+  @include mq-sm {
+    font-size: 1.2em;
+    h1 { font-size: 2.25em; }
+    h2 { font-size: 1.85em; }
+    h3 { font-size: 1.5em; }
+    h4 { font-size: 1.2em; }
+    h5 { font-size: 0.9em; }
+    h6 { font-size: 0.8em; }
+  }
 }
