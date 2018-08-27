@@ -178,6 +178,10 @@ class Home extends Component {
         <Header transparent={true} />
         
         <main>
+
+          {/* ==================================================
+            *   Intro
+            * ================================================== */}
           <Slide
             id="intro"
             bg={bgIntro}
@@ -187,21 +191,60 @@ class Home extends Component {
             </SlideTitle>
             <SlideBody>
               <h2 className="Slide__subtitle">
-                <em className="Slide__body_font-inf">Tech</em> visionary with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>.
+                {/* <em className="Slide__body_font-inf">Tech</em> visionary with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>. */}
+                Tech entrepreneur intertwining creativity and community.
               </h2>
               <Scroll.Link to="cornell-tech" smooth={true} className="Slide_scroll"></Scroll.Link>
             </SlideBody>
           </Slide>
 
-
+          {/* ==================================================
+            *   Crater
+            * ================================================== */}
           <Slide
-            id="cornell-tech"
+            id="crater"
+            // bg={}
+            // wide={true}
+            button={{text: "Go to Crater", link: "https://crater.land", external: true}}
+          >
+            <SlideTitle>
+              Currently, I'm <em>co-founder and CEO</em> at <strong>Crater</strong>.
+            </SlideTitle>
+            <SlideBody>
+              {/* <strong>We're building a new type of local TV</strong> &ndash; made for mobile, powered by AI, and led by movers-and-shakers from your community. */}
+              Crater is a revolution in local TV led by a new generation of creators.
+            </SlideBody>
+          </Slide>
+
+          {/* ==================================================
+            *   Matter
+            * ================================================== */}
+          <Slide
+            id="matter"
+            // bg={}
+            wide={true}
+            button={{text: "Go to Matter", link: "https://matter.io", external: true}}
+          >
+            <SlideTitle>
+              I worked with the founders at <strong>Matter</strong> to build the future of <em>design and manufacturing</em>.
+            </SlideTitle>
+            <SlideBody>
+              Early stage startup backed by Techstars, KEC Ventures, and acquired by Junction in 2016<br/>
+              <strong>Cornell Kessler Fellow '16</strong>
+            </SlideBody>
+          </Slide>
+
+          {/* ==================================================
+            *   Education
+            * ================================================== */}
+          <Slide
+            id="education"
             bg={bgCornellTech}
             wide={true}
             button={{text: "Contact Me", link: "contact", external: false}}
           >
             <SlideTitle>
-              Currently, I’m getting my MEng in <em>computer science</em> at <strong>Cornell Tech</strong>.
+              I’m a proud 2x <strong>Cornell</strong> alum with an <em>MEng in computer science</em>.
             </SlideTitle>
             <SlideBody>
               <strong>Cornell Tech MEng &rsquo;18</strong><br />
@@ -209,19 +252,23 @@ class Home extends Component {
             </SlideBody>
           </Slide>
 
-
+          {/* ==================================================
+            *   Creative Problem Solvers
+            * ================================================== */}
           <Slide
             id="cornell-mars-rover"
             bg={bgCMR}
-            wide={false}
+            wide={true}
           >
             <SlideTitle>
-              I build authentic <strong>brands</strong> that <em>bolster organizations</em>.
+              I bring <strong>creative problem solvers</strong> together to take on <em>big ideas</em>.
             </SlideTitle>
             <SlideBody><strong>Featured:</strong> Cornell Mars Rover</SlideBody>
           </Slide>
 
-
+          {/* ==================================================
+            *   Education
+            * ================================================== */}
           <Slide
             id="public-speaking"
             bg={bgPublicSpeaking}
@@ -230,12 +277,14 @@ class Home extends Component {
             <SlideTitle>
               I <strong>speak</strong> to inspire interest in <em>STEM, design, and leadership</em>.
             </SlideTitle>
-            <SlideBody><strong>Featured:</strong> USA Science & Engineering Festival</SlideBody>
+            <SlideBody><strong>Featured:</strong> USA Science &amp; Engineering Festival</SlideBody>
           </Slide>
 
-
+          {/* ==================================================
+            *   Education
+            * ================================================== */}
           <Slide
-            id="entrepreneurship"
+            id="mentor"
             bg={bg3DayStartup}
             wide={false}
           >
@@ -245,38 +294,30 @@ class Home extends Component {
             <SlideBody><strong>Featured:</strong> 3 Day Startup at Cornell</SlideBody>
           </Slide>
 
-
+          {/* ==================================================
+            *   Community
+            * ================================================== */}
           <Slide
-            id="data-design"
-            bg={bgEMSDashboard}
+            id="community"
+            // bg={}
             wide={true}
           >
             <SlideTitle>
-              I combine <strong>data & design</strong> to make <em>information accessible</em>.
+              I build <strong>communities</strong> with a culture of <em>diversity and personal growth</em>.
             </SlideTitle>
-            <SlideBody><strong>Featured:</strong> Cornell University Emergency Medical Service</SlideBody>
+            {/* <SlideBody><strong>Featured:</strong> Cornell Theta Tau</SlideBody> */}
           </Slide>
 
-
+          {/* ==================================================
+            *   Creative AI
+            * ================================================== */}
           <Slide
-            id="cloud-computing"
-            bg={bgCloudComputing}
-            wide={true}
-          >
-            <SlideTitle>
-              I’ve researched how to <em>detect cancer</em> with <strong>cloud computing</strong>.
-            </SlideTitle>
-            <SlideBody><strong>Featured:</strong> NJ Governor’s School of Engineering and Technology</SlideBody>
-          </Slide>
-
-
-          <Slide
-            id="artificial-creativity"
+            id="creative-ai"
             bg={bgArtificialCreativity}
             wide={true}
           >
             <SlideTitle>
-              I beleive <strong>artificial creativity</strong> will empower the future of <em>expression and innovation</em>.
+              I believe <strong>creative AI</strong> will unlock the future of <em>expression and innovation</em>.
             </SlideTitle>
             <SlideBody><strong>Featured:</strong> Origami Fill</SlideBody>
           </Slide>
@@ -301,7 +342,7 @@ class Home extends Component {
             button={{text: "View Photos", link: "//instagram.com/shetharp", external: true}}
           >
             <SlideTitle>
-              I <em>explore the world</em> around me through <strong>photography</strong>.
+              I <em>explore the world</em> around me with <strong>photography</strong>.
             </SlideTitle>
             <SlideBody><strong>Featured:</strong> Instagram Profile</SlideBody>
           </Slide>

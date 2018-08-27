@@ -28,6 +28,7 @@ class Header extends Component {
           <nav className="Header-nav">
             <ul>
               {/*<li className="Header-nav__item"><Link to="/">Blog</Link></li>*/}
+              <li className="Header-nav__item Header-nav__item_optional"><a href="https://instagram.com/shetharp">Instagram</a></li>
               <li className="Header-nav__item Header-nav__item_optional"><a href="https://linkedin.com/in/shetharp">LinkedIn</a></li>
               <li className="Header-nav__item"><Link to="/contact">Contact</Link></li>
             </ul>
