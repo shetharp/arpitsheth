@@ -123,10 +123,16 @@ class Slide extends Component {
 
     // If button text is defined
     if (button && !button.external) {
-      displayButton = <Link to={button.link} className="Slide__button">{button.text}</Link>;
+      displayButton = 
+        <div className="Slide__CTA">
+          <Link to={button.link} className="Slide__button">{button.text}</Link>
+        </div>
     }
     else if (button && button.external) {
-      displayButton = <a href={button.link} className="Slide__button">{button.text}</a>;
+      displayButton = 
+        <div className="Slide__CTA">
+          <a href={button.link} className="Slide__button">{button.text}</a>
+        </div>
     }
 
     return (
