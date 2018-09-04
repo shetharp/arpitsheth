@@ -7,7 +7,24 @@
   background: #ffffff;
   width: 100%;
   height: 5rem;
-  padding: 0 1.25rem;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  color: inherit;
+  letter-spacing: 0.2ch;
+  text-transform: uppercase;
+  font-family: $font-inf;
+  font-weight: 600;
+  font-size: $scale-xs;
+
+  @include mq-sm {
+    font-size: $scale-sm;
+  }
+  @include mq-md {
+    padding: 0 2.5rem;
+  }
 
   @at-root &_transparent {
     background: transparent;
@@ -16,31 +33,24 @@
     top: 0;
   }
 
-  @include mq-sm-less {
-    padding: 0 2.5rem;
-  }
+
   @include mq-sm {
-    height: 6.667rem;
-  }
-  @include mq-med {
     height: 7.5rem;
   }
-  @include mq-lg {
-    height: 8.5rem;
-    padding: 0 5rem;
-  }
-  @include mq-lg-more {
+  @include mq-md {
     height: 10rem;
   }
 }
 
+
+/* ----------------------------------------------------------------------
+  HEADER / logo
+---------------------------------------------------------------------- */
 .Header-logo {
-  float: left;
+  // float: left;
   color: $clr-dark-2;
   font-family: $font-def;
   font-size: $scale-base;
-  line-height: 5rem;
-  height: 5rem;
   margin: 0;
 
   @at-root .Header_transparent & {
@@ -48,105 +58,92 @@
   }
 
   a {
-    display: block;
-    height: 100%;
     color: inherit;
     text-decoration: none;
-  }
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
 
-  @include mq-sm {
-    line-height: 6.667rem;
-    height: 6.667rem;
-  }
-  @include mq-med {
-    font-size: $scale-1;
-    line-height: 7.5rem;
-    height: 7.5rem;
-  }
-  @include mq-lg {
-    line-height: 8.5rem;
-    height: 8.5rem;
-  }
-  @include mq-lg-more {
-    font-size: $scale-2;
-    line-height: 10rem;
-    height: 10rem;
+    @include mq-sm {
+      padding: 0 2.5rem;
+    }
   }
 }
 
 .Header-logo__img {
-  height: 2.5rem;
+  height: 2.75rem;
   width: auto;
-  vertical-align: middle;
 
   @at-root .Header_transparent & {
     filter: brightness(0%) invert(100%) drop-shadow(0px 1px 1px rgba(0,0,0,0.5));
   }
 
   @include mq-sm {
-    height: 2.75rem;
+    height: 3.5rem;
   }
-  @include mq-med {
-    height: 3.333rem;
-  }
-  @include mq-lg {
-    height: 4rem;
-  }
-  @include mq-lg-more {
-    height: 5rem;
+  @include mq-md {
+    height: 4.25rem;
   }
 }
 
-.Header-nav {
-  float: right;
-  font-family: $font-inf;
-  font-size: $scale-xs;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  margin: 1.5rem 0 0 0;
 
-  ul {
+/* ----------------------------------------------------------------------
+  HEADER / nav
+---------------------------------------------------------------------- */
+.Header-nav {
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  margin: 0;
+
+  @include mq-sm {
+    font-size: 0.875em;
+  }
+  @include mq-md {
+    font-size: 1em;
+  }
+
+
+  .Header-nav__menu {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-
-  @include mq-sm {
-    margin-top: 2.5rem;
-  }
-  @include mq-med {
-    margin-top: 3rem;
-  }
-  @include mq-lg {
-    font-size: $scale-sm;
-    margin-top: 3.5rem;
-  }
-  @include mq-lg-more {
-    margin-top: 4rem;
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    text-align: center;
   }
 }
 
 .Header-nav__item {
-  float: left;
+  color: $clr-dark-2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 0;
   margin: 0;
-  margin-left: 1.25rem;
-  height: 2rem;
-  line-height: 2rem;
-  color: $clr-dark-2;
-  // outline: 1px solid red;
 
   a {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100%;
-    color: inherit;
+    width: 100%;
+    padding: 0 1.25rem;
+    text-align: right;
     text-decoration: none;
-    border-bottom: 0.2rem solid transparent;
+    color: inherit;
+    opacity: 0.9;
     transition: border 200ms ease-out;
 
     &:hover {
-      border-bottom: 0.2rem solid $clr-dark-2;
+      opacity: 1;
+    }
+
+    @include mq-sm {
+      padding: 0 2.5rem;
     }
   }
 
@@ -157,20 +154,6 @@
     a:hover {
       border-color: #ffffff;
     }
-  }
-
-  @include mq-xs-less {
-    margin-left: 1.75rem;
-  }
-  @include mq-xs {
-    margin-left: 2rem;
-  }
-  @include mq-sm {
-    margin-left: 2.5rem;
-  }
-  @include mq-lg {
-    height: 2.5rem;
-    margin-left: 3.333rem;
   }
 }
 

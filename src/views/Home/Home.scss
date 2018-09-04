@@ -5,12 +5,26 @@
 ====================================================================== */
 
 /* ----------------------------------------------------------------------
-*  SLIDES - Intro
+*  Intro
 ---------------------------------------------------------------------- */
 
 .Slide_intro {
   border: none;
   background-position: center top;
+  background-image: url("./img/arpit-sheth-intro@xs.jpg");
+
+  @include mq-xs {
+    // background-image: url("./img/arpit-sheth-intro@sm.jpg");
+  }
+  @include mq-sm {
+    // background-image: url("./img/arpit-sheth-intro@md.jpg");
+  }
+  @include mq-md {
+    // background-image: url("./img/arpit-sheth-intro@lg.jpg");
+  }
+  @include mq-lg {
+    // background-image: url("./img/arpit-sheth-intro@xl.jpg");
+  }
   
   .Slide__content {
     padding-top: 50vh;
@@ -21,34 +35,39 @@
     font-size: $scale-2;
   }
 
-  @include mq-xxs {
-    .Slide__title { font-size: $scale-3; }
-  };
-  @include mq-xs-less {
-    .Slide__title { font-size: $scale-4; }
-    .Slide__subtitle { font-size: $scale-1; }
-  };
-  @include mq-sm {
-    .Slide__title { font-size: $scale-5; }
-    .Slide__subtitle { font-size: $scale-2; }
-  }
-  @include mq-med {
-    .Slide__content { background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.0) 10%,rgba(0,0,0,0.0) 35%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.35) 75%,rgba(0,0,0,0.0) 100%); }
-    .Slide__title { font-size: $scale-6; }
-    .Slide__subtitle { font-size: $scale-3; }
-  }
-  @include mq-lg-more {
-    .Slide__title { font-size: $scale-7; }
-  }  
-  @include mq-xl {
-    .Slide__subtitle { font-size: $scale-4; }
-  }  
+  // @include mq-xxs {
+  //   .Slide__title { font-size: $scale-3; }
+  // };
+  // @include mq-xs-less {
+  //   .Slide__title { font-size: $scale-4; }
+  //   .Slide__subtitle { font-size: $scale-1; }
+  // };
+  // @include mq-sm {
+  //   .Slide__title { font-size: $scale-5; }
+  //   .Slide__subtitle { font-size: $scale-2; }
+  // }
+  // @include mq-md {
+  //   .Slide__content { background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.0) 10%,rgba(0,0,0,0.0) 35%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.35) 75%,rgba(0,0,0,0.0) 100%); }
+  //   .Slide__title { font-size: $scale-6; }
+  //   .Slide__subtitle { font-size: $scale-3; }
+  // }
+  // @include mq-lg-more {
+  //   .Slide__title { font-size: $scale-7; }
+  // }  
+  // @include mq-xl {
+  //   .Slide__subtitle { font-size: $scale-4; }
+  // }  
 }
 
+
+/* ----------------------------------------------------------------------
+  Intro / Scroll
+---------------------------------------------------------------------- */
 .Slide_scroll::before {
   content: '\203A';
   cursor: pointer;
   color: #ffffff;
+  font-family: $font-inf;
   font-weight: bold;
   font-style: normal;
   font-size: 6rem;
@@ -70,7 +89,7 @@
   @include mq-xs-less {
     font-size: 8rem;
   };
-  @include mq-med {
+  @include mq-md {
     font-size: 10rem;
     width: 8rem;
     height: 8rem;
@@ -91,4 +110,34 @@
     transform: translateY(-20%) rotate(90deg);
     opacity: 0.8
   }
+}
+
+
+
+
+/* ----------------------------------------------------------------------
+*  Crater
+---------------------------------------------------------------------- */
+.Slide_crater {
+
+}
+
+
+
+
+/* ----------------------------------------------------------------------
+*  Matter
+---------------------------------------------------------------------- */
+.Slide_matter {
+  
+}
+
+
+
+
+/* ----------------------------------------------------------------------
+*  Education
+---------------------------------------------------------------------- */
+.Slide_education {
+  
 }

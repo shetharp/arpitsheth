@@ -24,18 +24,18 @@ class Slide extends Component {
     /** Make the content wider to fit more*/
     wide: PropTypes.bool,
     /** Set of background images for the slide */
-    bg: PropTypes.shape({
-      /** 1500px wide (Default image to display if srcset is unsupported) */
-      def: PropTypes.string.isRequired,
-      /** 3000px wide */
-      lg: PropTypes.string,
-      /** 900px wide */
-      sm: PropTypes.string,
-      /** 600px wide */
-      xs: PropTypes.string,
-      /** 150px wide */
-      temp: PropTypes.string
-    }),
+    // bg: PropTypes.shape({
+    //   /** 1500px wide (Default image to display if srcset is unsupported) */
+    //   def: PropTypes.string.isRequired,
+    //   /** 3000px wide */
+    //   lg: PropTypes.string,
+    //   /** 900px wide */
+    //   sm: PropTypes.string,
+    //   /** 600px wide */
+    //   xs: PropTypes.string,
+    //   /** 150px wide */
+    //   temp: PropTypes.string
+    // }),
     /** Call to action button */
     button: PropTypes.shape({
       text: PropTypes.string.isRequired,
@@ -63,9 +63,9 @@ class Slide extends Component {
      */
     this.state = {
       /** Display the temporary bg image */
-      bgTemp: true,
+      // bgTemp: true,
       /** The currentSrc from srcset */
-      bgSrc: ""
+      // bgSrc: ""
     };
   }
 
@@ -73,53 +73,53 @@ class Slide extends Component {
    * hide the temp bg image and set the Slide's background image to the
    * desired currentSrc
    */
-  handleHiddenImgLoaded() {
-    this.setState({bgTemp: false, bgSrc: this.desiredImg.currentSrc});
-  }
+  // handleHiddenImgLoaded() {
+  //   this.setState({bgTemp: false, bgSrc: this.desiredImg.currentSrc});
+  // }
 
   /** When the hidden image fails to load, output an error */
-  handleHiddenImgErrored() {
-    console.log("Failed to load slide image.")
-  }
+  // handleHiddenImgErrored() {
+  //   console.log("Failed to load slide image.")
+  // }
 
 
   render() {
     // Low-quality temp image to be displayed while the placeholder image loads
-    let displayTempImg = null;
+    // let displayTempImg = null;
     // Hidden image being loaded with srcset to determine currentSrc
-    let displayHiddenImg = null;
+    // let displayHiddenImg = null;
 
     let button = this.props.button;
     let displayButton = null;
 
     // If the bg prop exists, set up the temp image and hidden desired image
-    if (this.props.bg) {
+    // if (this.props.bg) {
       // the value of img srcset
       // Image widths should match these width descriptors (1500px -> 1500w)
-      let bgSet = (this.props.bg)["def"] + " 1500w,";
-      bgSet += ((this.props.bg)["lg"])? ((this.props.bg)["lg"] + " 3000w,") : "";
-      bgSet += ((this.props.bg)["sm"])? ((this.props.bg)["sm"] + " 1000w,") : "";
-      bgSet += ((this.props.bg)["xs"])? ((this.props.bg)["xs"] + " 600w,") : "";
-      bgSet += ((this.props.bg)["temp"])? ((this.props.bg)["temp"] + " 150w,") : "";
+      // let bgSet = (this.props.bg)["def"] + " 1500w,";
+      // bgSet += ((this.props.bg)["lg"])? ((this.props.bg)["lg"] + " 3000w,") : "";
+      // bgSet += ((this.props.bg)["sm"])? ((this.props.bg)["sm"] + " 1000w,") : "";
+      // bgSet += ((this.props.bg)["xs"])? ((this.props.bg)["xs"] + " 600w,") : "";
+      // bgSet += ((this.props.bg)["temp"])? ((this.props.bg)["temp"] + " 150w,") : "";
 
-      displayTempImg = <div
-        className={cx('Slide__tempImg', {'Slide__tempImg_hide': !this.state.bgTemp})}
-        style={{backgroundImage: "url(" + this.props.bg.temp + ")"}}>
-      </div>
+      // displayTempImg = <div
+      //   className={cx('Slide__tempImg', {'Slide__tempImg_hide': !this.state.bgTemp})}
+      //   style={{backgroundImage: "url(" + this.props.bg.temp + ")"}}>
+      // </div>
 
       {/* The ref attribute allows React to reference this element later
         * After the element renders, the callback function saves this image
         * element as a placeholderImg attribute in the Slide component
         */}
-      displayHiddenImg = <img
-        ref={(imgElem) => {this.desiredImg = imgElem;}}
-        src={bgSet["def"]}
-        srcSet={bgSet}
-        onLoad={this.handleHiddenImgLoaded.bind(this)}
-        onError={this.handleHiddenImgErrored.bind(this)}
-        alt={this.props.id}
-        className="Slide__hiddenImg"/>
-    }
+      // displayHiddenImg = <img
+      //   ref={(imgElem) => {this.desiredImg = imgElem;}}
+      //   src={bgSet["def"]}
+      //   srcSet={bgSet}
+      //   onLoad={this.handleHiddenImgLoaded.bind(this)}
+      //   onError={this.handleHiddenImgErrored.bind(this)}
+      //   alt={this.props.id}
+      //   className="Slide__hiddenImg"/>
+    // }
 
     // If button text is defined
     if (button && !button.external) {
@@ -133,9 +133,9 @@ class Slide extends Component {
       <section
         id={this.props.id}
         className={"Slide Slide_" + this.props.id + " " + this.props.className}
-        style={{backgroundImage: "url(" + this.state.bgSrc + ")"}}
+        // style={{backgroundImage: "url(" + this.state.bgSrc + ")"}}
       >
-        {displayTempImg}
+        {/* {displayTempImg} */}
         <div
           className={cx(
             'Slide__content', {
@@ -148,7 +148,7 @@ class Slide extends Component {
             */}
           {this.props.children}
 
-          {displayHiddenImg}
+          {/* {displayHiddenImg} */}
           {displayButton}
         </div>
       </section>

@@ -81,6 +81,8 @@ $scale-15: 57.0rem;
 /* ======================================================================
 *  RESPONSIVE BREAKPOINTS
 ====================================================================== */
+$bp-container: 1000px;
+$bp-container-wide: 1200px;
 
 $bp-xxs-less: 300px;
 $bp-xxs:      400px;
@@ -88,23 +90,23 @@ $bp-xxs-more: 450px;
 
 $bp-xs-less:  500px;
 $bp-xs:       600px;
-$bp-xs-more:  650px;
+$bp-xs-more:  700px;
 
-$bp-sm-less:  700px;
-$bp-sm:       800px;
-$bp-sm-more:  850px;
+$bp-sm-less:  800px;
+$bp-sm:       900px;
+$bp-sm-more:  1000px;
 
-$bp-med-less: 900px;
-$bp-med:      1000px;
-$bp-med-more: 1100px;
+$bp-md-less: 1100px;
+$bp-md:      1200px;
+$bp-md-more: 1300px;
 
-$bp-lg-less:  1200px;
-$bp-lg:       1400px;
-$bp-lg-more:  1500px;
+$bp-lg-less:  1400px;
+$bp-lg:       1500px;
+$bp-lg-more:  1600px;
 
-$bp-xl-less:  1600px;
+$bp-xl-less:  1700px;
 $bp-xl:       1800px;
-$bp-xl-more:  2000px;
+$bp-xl-more: 2000px;
 
 
 /* ----------------------------------------------------------------------
@@ -125,26 +127,26 @@ $bp-xl-more:  2000px;
 }
 ---------------------------------------------------------------------- */
 
-@mixin mq-xxs-less { @media (min-width: $bp-xxs-less){ @content }}
-@mixin mq-xxs { @media (min-width: $bp-xxs){ @content }}
-@mixin mq-xxs-more { @media (min-width: $bp-xxs-more){ @content }}
+@mixin mq-xxs-less  { @media (min-width: $bp-xxs-less)  { @content }};
+@mixin mq-xxs       { @media (min-width: $bp-xxs)       { @content }};
+@mixin mq-xxs-more  { @media (min-width: $bp-xxs-more)  { @content }};
 
-@mixin mq-xs-less { @media (min-width: $bp-xs-less){ @content }}
-@mixin mq-xs { @media (min-width: $bp-xs){ @content }}
-@mixin mq-xs-more { @media (min-width: $bp-xs-more){ @content }}
+@mixin mq-xs-less   { @media (min-width: $bp-xs-less)   { @content }};
+@mixin mq-xs        { @media (min-width: $bp-xs)        { @content }};
+@mixin mq-xs-more   { @media (min-width: $bp-xs-more)   { @content }};
 
-@mixin mq-sm-less { @media (min-width: $bp-sm-less){ @content }}
-@mixin mq-sm { @media (min-width: $bp-sm){ @content }}
-@mixin mq-sm-more { @media (min-width: $bp-sm-more){ @content }}
+@mixin mq-sm-less   { @media (min-width: $bp-sm-less)   { @content }};
+@mixin mq-sm        { @media (min-width: $bp-sm)        { @content }};
+@mixin mq-sm-more   { @media (min-width: $bp-sm-more)   { @content }};
 
-@mixin mq-med-less { @media (min-width: $bp-med-less){ @content }}
-@mixin mq-med { @media (min-width: $bp-med){ @content }}
-@mixin mq-med-more { @media (min-width: $bp-med-more){ @content }}
+@mixin mq-md-less   { @media (min-width: $bp-md-less)   { @content }};
+@mixin mq-md        { @media (min-width: $bp-md)        { @content }};
+@mixin mq-md-more   { @media (min-width: $bp-md-more)   { @content }};
 
-@mixin mq-lg-less { @media (min-width: $bp-lg-less){ @content }}
-@mixin mq-lg { @media (min-width: $bp-lg){ @content }}
-@mixin mq-lg-more { @media (min-width: $bp-lg-more){ @content }}
+@mixin mq-lg-less   { @media (min-width: $bp-lg-less)   { @content }};
+@mixin mq-lg        { @media (min-width: $bp-lg)        { @content }};
+@mixin mq-lg-more   { @media (min-width: $bp-lg-more)   { @content }};
 
-@mixin mq-xl-less { @media (min-width: $bp-xl-less){ @content }}
-@mixin mq-xl { @media (min-width: $bp-xl){ @content }}
-@mixin mq-xl-more { @media (min-width: $bp-xl-more){ @content }}
+@mixin mq-xl-less   { @media (min-width: $bp-xl-less)   { @content }};
+@mixin mq-xl        { @media (min-width: $bp-xl)        { @content }};
+@mixin mq-xl-more   { @media (min-width: $bp-xl-more)   { @content }};

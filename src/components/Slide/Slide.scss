@@ -6,85 +6,94 @@
 .Slide {
   height: 100vh;
   border: 1.25rem solid #ffffff;
-  text-align: center;
   color: #ffffff;
+  text-align: center;
   overflow: hidden;
   position: relative;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  // filter: blur(20px);
 
-  @include mq-sm-less {
+  @include mq-sm {
     border-width: 2.5rem;
   }
-  @include mq-lg {
+  @include mq-md {
     border-width: 5rem;
   }
 }
 
-.Slide__tempImg {
-  outline: 10px solid $clr-yell;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 0;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  filter: blur(20px);
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
 
-.Slide__tempImg_hide {
-  opacity: 0;
-}
+/* ----------------------------------------------------------------------
+  SLIDES / Content
+---------------------------------------------------------------------- */
+$grd-screen-strong: linear-gradient(to bottom,
+  rgba(0,0,0,0.4) 0%,
+  rgba(0,0,0,0.6) 25%,
+  rgba(0,0,0,0.6) 50%,
+  rgba(0,0,0,0.4) 100%);
 
-.Slide__hiddenImg {
-  opacity: 0;
-  display: none;
-}
+$grd-screen-medium: linear-gradient(to bottom, 
+  rgba(0,0,0,0.2) 0%,
+  rgba(0,0,0,0.5) 30%,
+  rgba(0,0,0,0.5) 50%,
+  rgba(0,0,0,0.2) 100%);
+
+ $grd-screen-light: linear-gradient(to bottom, 
+    rgba(0,0,0,0.0) 0%,
+    rgba(0,0,0,0.5) 30%,
+    rgba(0,0,0,0.5) 50%,
+    rgba(0,0,0,0.2) 100%);
 
 .Slide__content {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 25%,rgba(0,0,0,0.6) 50%,rgba(0,0,0,0.4) 100%);
+  background: $grd-screen-strong;
   height: 100%;
   margin: 0;
   padding: 25vh 2.25rem 2.25rem 2.25rem;
   position: relative;
   z-index: 1;
 
-  @include mq-xxs {
-    padding: 25vh 3.75rem 3.75rem 3.75rem;
-  }
-  @include mq-xs {
-    padding: 25vh 15% 5rem 15%;
-    @at-root &_wide {
-      padding: 25vh 12.5% 5rem 12.5%;
-    }
-  }
-  @include mq-med {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.5) 30%,rgba(0,0,0,0.5) 50%,rgba(0,0,0,0.2) 100%);
-    padding: 25vh 15% 5rem 15%;
-    @at-root &_wide {
-      padding: 25vh 7.5% 5rem 7.5%;
-    }
-  }
-  @include mq-lg-less {
-    padding: 25vh 20% 5rem 20%;
-    @at-root &_wide {
-      padding: 25vh 12.5% 5rem 12.5%;
-    }
-  }
-  @include mq-lg {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%,rgba(0,0,0,0.5) 30%,rgba(0,0,0,0.5) 50%,rgba(0,0,0,0.2) 100%);
-    padding: 25vh 22.5% 5rem 22.5%;
-    @at-root &_wide {
-      padding: 25vh 12.5% 5rem 12.5%;
-    }
+  // @include mq-xxs {
+  //   padding: 25vh 3.75rem 3.75rem 3.75rem;
+  // }
+  // @include mq-xs {
+  //   padding: 25vh 15% 5rem 15%;
+  // }
+  // @include mq-md {
+  //   background: $grd-screen-medium;
+  //   padding: 25vh 15% 5rem 15%;
+  // }
+  // @include mq-lg-less {
+  //   padding: 25vh 20% 5rem 20%;
+  // }
+  // @include mq-lg {
+  //   background: $grd-screen-light;
+  //   padding: 25vh 22.5% 5rem 22.5%;
+  // }
+
+
+  /* ----------------------------------------------------------------------
+    SLIDES / Content / Wide
+  ---------------------------------------------------------------------- */
+  &_wide {
+    // @include mq-xs {
+    //   padding: 25vh 12.5% 5rem 12.5%;
+    // }
+    // @include mq-sm {
+    //   padding: 25vh 7.5% 5rem 7.5%;
+    // }
+    // @include mq-md {
+    //   padding: 25vh 12.5% 5rem 12.5%;
+    // }
+    // @include mq-lg {
+    //   padding: 25vh 12.5% 5rem 12.5%;
+    // }
   }
 }
 
+
+/* ----------------------------------------------------------------------
+  SLIDES / Title
+---------------------------------------------------------------------- */
 .Slide__title {
   font-family: $font-inf;
   font-weight: 400;
@@ -101,23 +110,27 @@
     font-family: $font-acc;
   }
 
-  @include mq-xs-less {
-    font-size: $scale-2;
-  };
-  @include mq-sm {
-    font-size: $scale-3;
-  }
-  @include mq-med {
-    font-size: $scale-4;
-  }
-  @include mq-lg-more {
-    font-size: $scale-5;
-  }
-  @include mq-xl {
-    font-size: $scale-6;
-  }
+  // @include mq-xs-less {
+  //   font-size: $scale-2;
+  // };
+  // @include mq-sm {
+  //   font-size: $scale-3;
+  // }
+  // @include mq-md {
+  //   font-size: $scale-4;
+  // }
+  // @include mq-lg-more {
+  //   font-size: $scale-5;
+  // }
+  // @include mq-xl {
+  //   font-size: $scale-6;
+  // }
 }
 
+
+/* ----------------------------------------------------------------------
+  SLIDES / Subtitle
+---------------------------------------------------------------------- */
 .Slide__subtitle {
   font-family: $font-def;
   font-size: $scale-base;
@@ -125,6 +138,10 @@
   color: inherit;
 }
 
+
+/* ----------------------------------------------------------------------
+  SLIDES / Body
+---------------------------------------------------------------------- */
 .Slide__body {
   font-size: $scale-sm;
   margin-top: 1em;
@@ -141,11 +158,15 @@
     font-style: normal;
   }
 
-  @include mq-med {
-    font-size: $scale-base;
-  }
+  // @include mq-md {
+  //   font-size: $scale-base;
+  // }
 }
 
+
+/* ----------------------------------------------------------------------
+  SLIDES / Button
+---------------------------------------------------------------------- */
 .Slide__button {
   background: #ffffff;
   color: $clr-dark-2;
@@ -165,19 +186,19 @@
   right: 0;
   bottom: 2.5rem;
 
-  @include mq-xs-less {
-    width: 30rem;
-  };
-  @include mq-sm {
-    width: 40rem;
-    padding: 1.25rem;
-  };
-  @include mq-lg {
-    font-size: $scale-sm;
-    line-height: 5rem;
-    width: 50rem;
-    height: 5rem;
-    padding: 0;
-    bottom: 5rem;
-  };
+  // @include mq-xs-less {
+  //   width: 30rem;
+  // };
+  // @include mq-sm {
+  //   width: 40rem;
+  //   padding: 1.25rem;
+  // };
+  // @include mq-lg {
+  //   font-size: $scale-sm;
+  //   line-height: 5rem;
+  //   width: 50rem;
+  //   height: 5rem;
+  //   padding: 0;
+  //   bottom: 5rem;
+  // };
 }

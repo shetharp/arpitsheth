@@ -24,9 +24,13 @@ class Header extends Component {
     return (
       <StickyMenu offset={50} cloneClass="Header">
         <div className={cx('Header', {'Header_transparent': this.props.transparent})}>
-          <h1 className="Header-logo"><Link to='/'><img src={logo} className="Header-logo__img" alt="Arpit Sheth"></img></Link></h1>
+          <h1 className="Header-logo">
+            <Link to='/'>
+              <img src={logo} className="Header-logo__img" alt="Arpit Sheth"/>
+            </Link>
+          </h1>
           <nav className="Header-nav">
-            <ul>
+            <ul className="Header-nav__menu">
               {/*<li className="Header-nav__item"><Link to="/">Blog</Link></li>*/}
               <li className="Header-nav__item Header-nav__item_optional"><a href="https://instagram.com/shetharp">Instagram</a></li>
               <li className="Header-nav__item Header-nav__item_optional"><a href="https://linkedin.com/in/shetharp">LinkedIn</a></li>
