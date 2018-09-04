@@ -28,87 +28,105 @@
   
   .Slide__content {
     padding-top: 50vh;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.0) 15%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.4) 75%,rgba(0,0,0,0.2) 100%);
+    background: linear-gradient(to bottom, 
+      rgba(0,0,0,0.4) 0%,
+      rgba(0,0,0,0.0) 15%,
+      rgba(0,0,0,0.4) 50%,
+      rgba(0,0,0,0.4) 75%,
+      rgba(0,0,0,0.2) 100%);
+    
+    @include mq-md {
+      background: linear-gradient(to bottom, 
+      rgba(0,0,0,0.25) 0%,
+      rgba(0,0,0,0.0) 10%,
+      rgba(0,0,0,0.0) 35%,
+      rgba(0,0,0,0.25) 50%,
+      rgba(0,0,0,0.35) 75%,
+      rgba(0,0,0,0.0) 100%);
+    }
   }
   
   .Slide__title {
-    font-size: $scale-2;
+    font-size: 10vw;
+    @include mq-xs {
+      font-size: 7.5vw;
+    }
+    @include mq-sm {
+      font-size: 6.667vw;
+    }
+    @include mq-lg {
+      font-size: 5.555vw;
+    }
   }
 
-  // @include mq-xxs {
-  //   .Slide__title { font-size: $scale-3; }
-  // };
-  // @include mq-xs-less {
-  //   .Slide__title { font-size: $scale-4; }
-  //   .Slide__subtitle { font-size: $scale-1; }
-  // };
-  // @include mq-sm {
-  //   .Slide__title { font-size: $scale-5; }
-  //   .Slide__subtitle { font-size: $scale-2; }
-  // }
-  // @include mq-md {
-  //   .Slide__content { background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.0) 10%,rgba(0,0,0,0.0) 35%,rgba(0,0,0,0.25) 50%,rgba(0,0,0,0.35) 75%,rgba(0,0,0,0.0) 100%); }
-  //   .Slide__title { font-size: $scale-6; }
-  //   .Slide__subtitle { font-size: $scale-3; }
-  // }
-  // @include mq-lg-more {
-  //   .Slide__title { font-size: $scale-7; }
-  // }  
-  // @include mq-xl {
-  //   .Slide__subtitle { font-size: $scale-4; }
-  // }  
+  .Slide__subtitle {
+    max-width: 37.5rem;
+    margin: auto;
+
+    @include mq-sm {
+      max-width: none;
+      width: 40rem;
+    }
+    @include mq-md {
+      font-size: 2.5vw;
+      width: 66.667%;
+    }
+    @include mq-lg {
+      font-size: 2vw;
+      width: 60%;
+    }
+  }
 }
 
 
 /* ----------------------------------------------------------------------
   Intro / Scroll
 ---------------------------------------------------------------------- */
-.Slide_scroll::before {
-  content: '\203A';
-  cursor: pointer;
-  color: #ffffff;
-  font-family: $font-inf;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 6rem;
-  line-height: 3.5rem;
-  text-align: center;
-  transform: rotate(90deg);
-  animation: 2s ease-in-out infinite FloatDown;
-  
-  display: block;
-  width: 5rem;
-  height: 5rem;
-  margin: auto;
-  overflow: hidden;
+.Slide__scroll {
+  // outline: 2px solid gold;
+  width: 100vw;
+  height: 7.5rem;
+  padding: none;
   position: absolute;
-  right: calc(50vw - 2.5rem);
-  bottom: 2.5rem;
-  z-index: 1;
-  
-  @include mq-xs-less {
-    font-size: 8rem;
-  };
-  @include mq-md {
-    font-size: 10rem;
-    width: 8rem;
-    height: 8rem;
-    line-height: 6rem;
-    right: calc(50vw - 4rem);
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+
+  @include mq-sm {
+    height: 8.5rem;
   }
-  @include mq-lg-more {
-    font-size: 12rem;
+  @include mq-md {
+    height: 10rem;
+  }
+
+  img {
+    width: 3.5rem;
+    height: 3.5rem;
+    animation: FloatDown 2s infinite alternate;
+
+    @include mq-sm {
+      width: 5rem;
+      height: 5rem;
+    }
+    @include mq-md {
+      width: 6rem;
+      height: 6rem;
+    }
   }
 }
 
 @keyframes FloatDown {
-  20% {
-    transform: translateY(0%) rotate(90deg);
-    opacity: 1;
+  0% {
+    opacity: 0.8;
+    transform: translateY(0%)
   }
   80% {
-    transform: translateY(-20%) rotate(90deg);
-    opacity: 0.8
+    opacity: 1;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(50%);
   }
 }
 

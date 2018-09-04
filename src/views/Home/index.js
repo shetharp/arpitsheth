@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from "components/Header/";
-
 import Scroll from 'react-scroll'
 import Slide, {SlideImg, SlideTitle, SlideBody} from 'components/Slide/'
+import ChevronDown from './img/chevron-down.svg'
 import './Home.css';
 
 
@@ -30,7 +30,9 @@ class Home extends Component {
                 {/* <em className="Slide__body_font-inf">Tech</em> visionary with <em className="Slide__body_font-inf">creative</em> tendencies and a knack for <em className="Slide__body_font-inf">business</em>. */}
                 Tech entrepreneur intertwining creativity and community.
               </h2>
-              <Scroll.Link to="cornell-tech" smooth={true} className="Slide_scroll"></Scroll.Link>
+              <Scroll.Link to="crater" smooth={true} className="Slide__scroll">
+                <img src={ChevronDown} alt="Scroll Down"/>
+              </Scroll.Link>
             </SlideBody>
           </Slide>
 
