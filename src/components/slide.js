@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 
 /**
- * Creates a Slide which is a fullscreen section (height: 100vh; width: 100vw)
+ * Creates a Slide which is a fullscreen section (height: 100vh; width: 100%)
  * with a background image, title, and body text.
  */
 function Slide(props) {
@@ -12,7 +12,7 @@ function Slide(props) {
     <section
       css={`
         display: flex;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
       `}
     >
