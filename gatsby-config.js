@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-polished',
     {
       resolve: `gatsby-plugin-typography`,
       options: { pathToConfigModule: `src/utils/typography.js` },
@@ -16,7 +17,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Space Mono'],
+          families: ['Space Mono:400,400i,700,700i'],
         },
         typekit: {
           id: 'iut6dno',

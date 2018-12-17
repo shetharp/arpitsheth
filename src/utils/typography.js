@@ -23,7 +23,12 @@ const typography = new Typography({
     'sans-serif',
   ],
   bodyWeight: 300,
-//   headerColor: 'rgba(51,51,51,1)',
+  //   headerColor: 'rgba(51,51,51,1)',
+  overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
+    a: {
+      color: "inherit"
+    }
+  })
 })
 
 // Hot reload typography in development.
