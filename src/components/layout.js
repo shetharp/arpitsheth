@@ -12,14 +12,14 @@ import { mediaq } from '../utils/theme.js'
 // font-size: 137.5% ~= 22px
 // font-size: 150%   ~= 24px
 const GlobalResponsiveTypography = createGlobalStyle`
-  html {
-    font-size: 100%;
-    ${mediaq.xs`font-size: 112.5%;`}
-    ${mediaq.sm`font-size: 125%;`}
-    ${mediaq.md`font-size: 137.5%;`}
-    ${mediaq.lg`font-size: 150%;`}
-  }
 `
+  // html {
+  //   font-size: 100%;
+  //   ${mediaq.xs`font-size: 112.5%;`}
+  //   ${mediaq.sm`font-size: 125%;`}
+  //   ${mediaq.md`font-size: 137.5%;`}
+  //   ${mediaq.lg`font-size: 150%;`}
+  // }
 
 const StyledLayout = styled.main`
   /* margin-top: 80px; */

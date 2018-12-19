@@ -20,13 +20,18 @@ const StyledSlide = styled.section`
   position: relative;
   border: ${props => (props.isBorderless ? 'none' : '16px solid white')};
   margin-bottom: ${props => (props.isBorderless ? '0' : '-16px')};
+
   ${mediaq.xs_p`min-height: ${breakp.sm_p}px;`}
   ${mediaq.sm`min-height: ${breakp.md}px;`}
   ${mediaq.sm_p`min-height: ${breakp.sm}px;`}
+
   ${mediaq.md`border-width: ${props => (props.isBorderless ? null : '24px')};`}
-  ${mediaq.md`margin-bottom: ${props => (props.isBorderless ? '0' : '-24px')};`}
   ${mediaq.lg`border-width: ${props => (props.isBorderless ? null : '32px')};`}
+  ${mediaq.xl`border-width: ${props => (props.isBorderless ? null : '40px')};`}
+
+  ${mediaq.md`margin-bottom: ${props => (props.isBorderless ? '0' : '-24px')};`}
   ${mediaq.lg`margin-bottom: ${props => (props.isBorderless ? '0' : '-32px')};`}
+  ${mediaq.xl`margin-bottom: ${props => (props.isBorderless ? '0' : '-40px')};`}
 `
 const Overlay = styled.div`
   position: absolute;
@@ -75,7 +80,8 @@ const Description = styled.div`
   line-height: 1.375;
   ${mediaq.xxs`font-size: 4vw;`}
   ${mediaq.xs`font-size: 1rem;`} /*Just reflow the text during awkward phase. */
-  ${mediaq.lg`font-size: 2.4vw;`}
+  /* ${mediaq.lg`font-size: 20px;`} */
+  ${mediaq.lg`line-height: 1.5;`}
   ${mediaq.xs`padding-right: 48px;`}
 
   a {
@@ -148,7 +154,7 @@ function Slide(props) {
     <StyledSlide {...props}>
       <Img
         fluid={props.fluid}
-        alt={props.id}
+        alt=''
         // This CSS allows the image to be full screen.
         // https://github.com/gatsbyjs/gatsby/issues/2470#issuecomment-338394370
         css={`
