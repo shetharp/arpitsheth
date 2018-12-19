@@ -25,7 +25,7 @@ const Overlay = styled.div`
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: ${props => rgba(props.overlay, 0.4)};
+  background: ${props => props.isColorful ? rgba(props.overlay, 0.6) : rgba(props.overlay, 0.4)};
   /* background: ${props => rgba(0, 0, 0, 0.5)}; */
   /* background: ${props => 
   `linear-gradient(
@@ -123,7 +123,7 @@ function Slide(props) {
           }
         `}
       />
-      <Overlay overlay={props.overlay} />
+      <Overlay overlay={props.overlay} isColorful={props.isColorful} />
       <Content>
         <Body>
           <Title>{props.title}</Title>
@@ -173,6 +173,8 @@ Slide.propTypes = {
   overlay: PropTypes.string,
   // The Highlight color used for links and <em>
   highlight: PropTypes.string,
+  // If the Overlay color should be colorful and strong
+  isColorful: PropTypes.bool,
   // The position of the image in CSS object-position format
   position: PropTypes.string,
   // A Button with text, link location, and indicator if the link is external
@@ -189,6 +191,7 @@ Slide.defaultProps = {
   position: '50% 50%',
   overlay: '#000000',
   highlight: '#000000',
+  isColorful: false,
   isBorderless: false,
 }
 

@@ -41,6 +41,7 @@ function IndexPage({ data }) {
     overlay: '#030A1A',
     highlight: '#1A66FF',
     position: '54% 0%',
+    isColorful: false,
     // button: { text: 'Learn More', link: '#', isExternal: false },
     isBorderless: true,
   })
@@ -62,6 +63,7 @@ function IndexPage({ data }) {
     fluid: data.imgCrater.childImageSharp.fluid,
     overlay: '#0E0214',
     highlight: '#102341',
+    isColorful: false,
     position: '75% 50%',
     button: {
       text: 'Learn More',
@@ -101,6 +103,7 @@ function IndexPage({ data }) {
     fluid: data.imgCornell.childImageSharp.fluid,
     overlay: '#0a1e2c',
     highlight: '#f3b632',
+    isColorful: true,
     position: '0% 50%',
     // button: { text: 'Learn More', link: '#', isExternal: true,},
     // isBorderless: false,
@@ -128,6 +131,7 @@ function IndexPage({ data }) {
     fluid: data.imgMatter.childImageSharp.fluid,
     overlay: '#202540',
     highlight: '#8095FF',
+    isColorful: false,
     position: '0% 50%',
     // button: { text: 'Learn More', link: '#', isExternal: true,},
     // isBorderless: false,
@@ -157,8 +161,9 @@ function IndexPage({ data }) {
       </>
     ),
     fluid: data.imgMentoring.childImageSharp.fluid,
-    overlay: '#004B66',
+    overlay: '#00384D',
     highlight: '#0F8299',
+    isColorful: true,
     position: '20% 50%',
     button: { text: 'Let’s Chat', link: '#', isExternal: false },
     // isBorderless: false,
@@ -179,9 +184,9 @@ function IndexPage({ data }) {
       </p>
     ),
     fluid: data.imgSpeaking.childImageSharp.fluid,
-    overlay: '#1A0004',
-    // overlay: '#000000',
+    overlay: '#00121A',
     highlight: '#b12426',
+    isColorful: false,
     position: '60% 50%',
     // button: { text: 'Learn More', link: '#', isExternal: false },
     // isBorderless: false,
@@ -202,8 +207,9 @@ function IndexPage({ data }) {
       </>
     ),
     fluid: data.imgDesign.childImageSharp.fluid,
-    overlay: '#4D1732',
+    overlay: '#000000',
     highlight: '#b12426',
+    isColorful: true,
     // position: '50% 50%',
     // button: { text: 'Learn More', link: '#', isExternal: false },
     // isBorderless: false,
@@ -221,11 +227,13 @@ function IndexPage({ data }) {
         <a href="https://drive.google.com/drive/folders/1zr4VldrOsgcPi33BazRQfmpSDjg0ZGp4?usp=sharing">
           sci-fi illustrations.
         </a>{' '}
-        But mostly, I photograph the world to savor its subtle splendor.
+        But mostly, I savor the subtle splendor of the world with photography.
       </p>
     ),
     fluid: data.imgCreative.childImageSharp.fluid,
-    // overlay: '#0000ff',
+    overlay: '#381F01',
+    highlight: '#FCB156',
+    isColorful: false,
     position: '52.5% 50%',
     button: {
       text: 'View Photos',
