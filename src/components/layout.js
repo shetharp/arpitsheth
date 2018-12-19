@@ -1,31 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { createGlobalStyle } from 'styled-components'
+import { mediaq } from '../utils/theme.js'
 
 /* ==================================================
  *  Styles
 ================================================== */
+// font-size: 100%   ~= 16px
+// font-size: 112.5% ~= 18px
+// font-size: 125%   ~= 20px
+// font-size: 137.5% ~= 22px
+// font-size: 150%   ~= 24px
 const GlobalResponsiveTypography = createGlobalStyle`
-  ${
-    '' /*
-  font-size: 100%   ~= 16px
-  font-size: 112.5% ~= 18px
-  font-size: 125%   ~= 20px
-  font-size: 137.5% ~= 22px
-  font-size: 150%   ~= 24px
-   */
-  }
   html {
     font-size: 100%;
-    @media screen and (min-width: 480px) {
-      font-size: 125%;
-    }
-    @media screen and (min-width: 640px) {
-      font-size: 137.5%;
-    }
-    @media screen and (min-width: 800px) {
-      font-size: 150%;
-    }
+    ${mediaq.xs`font-size: 112.5%;`}
+    ${mediaq.sm`font-size: 125%;`}
+    ${mediaq.md`font-size: 137.5%;`}
+    ${mediaq.lg`font-size: 150%;`}
   }
 `
 

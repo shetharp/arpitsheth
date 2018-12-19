@@ -1,7 +1,7 @@
 import Typography from 'typography'
 
 const typography = new Typography({
-  title: "Agra Marble",
+  title: "Marble Haveli",
   baseFontSize: '24px',
   baseLineHeight: 1.5,
   headerFontFamily: [

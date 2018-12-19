@@ -1,14 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { rhythm, scale } from '../utils/typography'
 import styled from 'styled-components'
 import { rgba } from 'polished'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import { rhythm, scale } from '../utils/typography'
+import { mediaq, breakp } from '../utils/theme.js'
 
 /* ==================================================
  *  Styles
 ================================================== */
+
+
 const StyledSlide = styled.section`
   display: flex;
   flex-direction: column;
@@ -17,6 +20,13 @@ const StyledSlide = styled.section`
   position: relative;
   border: ${props => (props.isBorderless ? 'none' : '16px solid white')};
   margin-bottom: ${props => (props.isBorderless ? '0' : '-16px')};
+  ${mediaq.xs_p`min-height: ${breakp.sm_p}px;`}
+  ${mediaq.sm`min-height: ${breakp.md}px;`}
+  ${mediaq.sm_p`min-height: ${breakp.sm}px;`}
+  ${mediaq.md`border-width: ${props => (props.isBorderless ? null : '24px')};`}
+  ${mediaq.md`margin-bottom: ${props => (props.isBorderless ? '0' : '-24px')};`}
+  ${mediaq.lg`border-width: ${props => (props.isBorderless ? null : '32px')};`}
+  ${mediaq.lg`margin-bottom: ${props => (props.isBorderless ? '0' : '-32px')};`}
 `
 const Overlay = styled.div`
   position: absolute;
@@ -39,25 +49,35 @@ const Content = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60%;
+  height: 66.667%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 16px;
   color: white;
-  /* border: 4px solid springgreen; */
+  padding: 0 16px;
+  ${mediaq.xs`height: ${props => (props.isExpanded ? '70%' : null)};`}
+  ${mediaq.md`padding: 0 24px`}
+  ${mediaq.lg`height: ${props => (props.isExpanded ? '70%' : '60%')};`}
+  ${mediaq.md`padding: 0 32px`}
 `
 const Body = styled.div`
-  /* outline: 4px dotted palevioletred; */
 `
 const Title = styled.h1`
-  font-size: 1.375rem;
   font-weight: normal;
-  /* outline: 1px dotted palevioletred; */
+  font-size: 1.375rem;
+  ${mediaq.xxs`font-size: 6vw;`}
+  ${mediaq.xs`font-size: 1.5rem;`} /*Just reflow the text during awkward phase. */
+  ${mediaq.lg`font-size: 3.6vw;`}
+  ${mediaq.xs`width: 75%;`}
 `
 const Description = styled.div`
   line-height: 1.375;
+  ${mediaq.xxs`font-size: 4vw;`}
+  ${mediaq.xs`font-size: 1rem;`} /*Just reflow the text during awkward phase. */
+  ${mediaq.lg`font-size: 2.4vw;`}
+  ${mediaq.xs`padding-right: 48px;`}
+
   a {
     transition: background-color 150ms ease;
   }
@@ -69,6 +89,28 @@ const Description = styled.div`
     background: ${props => rgba(props.highlight, 0.6)};
   }
 `
+const StyledButton = styled.a`
+  background: white;
+  color: #333333;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 8px 16px;
+  margin: 8px auto 16px auto;
+  font-size: 14px;
+  ${mediaq.xs`width: 66.66%;`}
+  ${mediaq.xs`margin: 8px auto 16px 0;`}
+  ${mediaq.md`margin: 8px auto 24px 0;`}
+  ${mediaq.md`margin: 8px auto 32px 0;`}
+  ${mediaq.sm`font-size: 16px;`}
+  ${mediaq.sm`width: 50%;`}
+`
 
 /* ==================================================
  *  Helpers
@@ -76,19 +118,20 @@ const Description = styled.div`
 /**
  * Creates a button with some text and a link location.
  * The props should have text, link, and isExternal
+ * Syntax: https://www.styled-components.com/docs/basics#extending-styles
  */
 function Button(props) {
   if (props.isExternal) {
     return (
-      <a href={props.link} className={props.className}>
+      <StyledButton as="a" href={props.link} className={props.className}>
         {props.text}
-      </a>
+      </StyledButton>
     )
   } else {
     return (
-      <Link to={props.link} className={props.className}>
+      <StyledButton as={Link} to={props.link} className={props.className}>
         {props.text}
-      </Link>
+      </StyledButton>
     )
   }
 }
@@ -124,7 +167,7 @@ function Slide(props) {
         `}
       />
       <Overlay overlay={props.overlay} isColorful={props.isColorful} />
-      <Content>
+      <Content isExpanded={props.isExpanded}>
         <Body>
           <Title>{props.title}</Title>
           <Description highlight={props.highlight}>{props.descr}</Description>
@@ -134,23 +177,7 @@ function Slide(props) {
         /* Pass down the button prop from Slide to Button.
          * Also pass down the className prop so that we can style the component */}
         {props.button && (
-          <Button
-            {...props.button}
-            className={props.className}
-            css="
-          background: white;
-          color: #333333;
-          text-align: center;
-          text-decoration: none;
-          text-transform: uppercase;
-          letter-spacing: 0.2ch;
-          font-size: 0.8rem;
-          display: block;
-          width: 100%;
-          padding: 8px 16px;
-          margin: 16px auto;
-          "
-          />
+          <Button {...props.button} />
         )}
       </Content>
     </StyledSlide>
@@ -175,6 +202,8 @@ Slide.propTypes = {
   highlight: PropTypes.string,
   // If the Overlay color should be colorful and strong
   isColorful: PropTypes.bool,
+  // Expands the slide content area to fit more text
+  isExpanded: PropTypes.bool,
   // The position of the image in CSS object-position format
   position: PropTypes.string,
   // A Button with text, link location, and indicator if the link is external
@@ -188,10 +217,11 @@ Slide.propTypes = {
 }
 
 Slide.defaultProps = {
-  position: '50% 50%',
   overlay: '#000000',
   highlight: '#000000',
   isColorful: false,
+  isExpanded: false,
+  position: '50% 50%',
   isBorderless: false,
 }
 
