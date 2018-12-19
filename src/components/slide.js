@@ -25,15 +25,14 @@ const Overlay = styled.div`
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: ${props => rgba(props.overlay, 0.5)};
-  /* background: linear-gradient(
-    175deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0) 20%,
-    rgba(0, 0, 0, 0.8) 50%,
-    rgba(0, 0, 0, 0.8) 80%,
-    rgba(0, 0, 0, 0) 100%
-  ); */
+  background: ${props => rgba(props.overlay, 0.4)};
+  /* background: ${props => rgba(0, 0, 0, 0.5)}; */
+  /* background: ${props => 
+  `linear-gradient(
+    172deg,
+    ${rgba(props.overlay, 0.4)} 0%,
+    ${rgba(props.overlay, 0.4)} 100%
+  )`}; */
 `
 const Content = styled.div`
   position: absolute;
@@ -63,11 +62,11 @@ const Description = styled.div`
     transition: background-color 150ms ease;
   }
   a:hover {
-    background: ${props => rgba(props.overlay, 0.4)};
+    background: ${props => rgba(props.highlight, 0.6)};
   }
   em {
     font-style: normal;
-    background: ${props => rgba(props.overlay, 0.4)};
+    background: ${props => rgba(props.highlight, 0.6)};
   }
 `
 
@@ -128,7 +127,7 @@ function Slide(props) {
       <Content>
         <Body>
           <Title>{props.title}</Title>
-          <Description overlay={props.overlay}>{props.descr}</Description>
+          <Description highlight={props.highlight}>{props.descr}</Description>
         </Body>
 
         {/* If this Slide has a button property, render a button */
@@ -172,6 +171,8 @@ Slide.propTypes = {
   fluid: PropTypes.object,
   // The Overlay color in #000fff format
   overlay: PropTypes.string,
+  // The Highlight color used for links and <em>
+  highlight: PropTypes.string,
   // The position of the image in CSS object-position format
   position: PropTypes.string,
   // A Button with text, link location, and indicator if the link is external
@@ -187,7 +188,7 @@ Slide.propTypes = {
 Slide.defaultProps = {
   position: '50% 50%',
   overlay: '#000000',
-  overlayImg: `''`,
+  highlight: '#000000',
   isBorderless: false,
 }
 

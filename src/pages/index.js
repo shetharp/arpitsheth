@@ -38,8 +38,9 @@ function IndexPage({ data }) {
       </p>
     ),
     fluid: data.imgIntro.childImageSharp.fluid,
-    // overlay: '#0000ff',
-    position: '50% 0%',
+    overlay: '#030A1A',
+    highlight: '#1A66FF',
+    position: '54% 0%',
     // button: { text: 'Learn More', link: '#', isExternal: false },
     isBorderless: true,
   })
@@ -59,7 +60,8 @@ function IndexPage({ data }) {
       </p>
     ),
     fluid: data.imgCrater.childImageSharp.fluid,
-    // overlay: '#0000ff',
+    overlay: '#0E0214',
+    highlight: '#102341',
     position: '75% 50%',
     button: {
       text: 'Learn More',
@@ -97,7 +99,8 @@ function IndexPage({ data }) {
       </>
     ),
     fluid: data.imgCornell.childImageSharp.fluid,
-    overlay: '#0000ff',
+    overlay: '#0a1e2c',
+    highlight: '#f3b632',
     position: '0% 50%',
     // button: { text: 'Learn More', link: '#', isExternal: true,},
     // isBorderless: false,
@@ -123,7 +126,8 @@ function IndexPage({ data }) {
       </p>
     ),
     fluid: data.imgMatter.childImageSharp.fluid,
-    // overlay: '#0000ff',
+    overlay: '#202540',
+    highlight: '#8095FF',
     position: '0% 50%',
     // button: { text: 'Learn More', link: '#', isExternal: true,},
     // isBorderless: false,
@@ -153,7 +157,8 @@ function IndexPage({ data }) {
       </>
     ),
     fluid: data.imgMentoring.childImageSharp.fluid,
-    // overlay: '#0000ff',
+    overlay: '#004B66',
+    highlight: '#0F8299',
     position: '20% 50%',
     button: { text: 'Let’s Chat', link: '#', isExternal: false },
     // isBorderless: false,
@@ -174,7 +179,9 @@ function IndexPage({ data }) {
       </p>
     ),
     fluid: data.imgSpeaking.childImageSharp.fluid,
-    // overlay: '#0000ff',
+    overlay: '#1A0004',
+    // overlay: '#000000',
+    highlight: '#b12426',
     position: '60% 50%',
     // button: { text: 'Learn More', link: '#', isExternal: false },
     // isBorderless: false,
@@ -195,7 +202,8 @@ function IndexPage({ data }) {
       </>
     ),
     fluid: data.imgDesign.childImageSharp.fluid,
-    // overlay: '#0000ff',
+    overlay: '#4D1732',
+    highlight: '#b12426',
     // position: '50% 50%',
     // button: { text: 'Learn More', link: '#', isExternal: false },
     // isBorderless: false,
