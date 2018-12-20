@@ -1,38 +1,35 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { rgba } from 'polished'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
-import { rhythm, scale } from '../utils/typography'
-import { mediaq, breakp } from '../utils/theme.js'
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { rgba } from "polished";
+import { Link } from "gatsby";
+import Img from "gatsby-image";
+import { mediaq, breakp } from "../utils/theme";
 
 /* ==================================================
  *  Styles
 ================================================== */
-
-
 const StyledSlide = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
   position: relative;
-  border: ${props => (props.isBorderless ? 'none' : '16px solid white')};
-  margin-bottom: ${props => (props.isBorderless ? '0' : '-16px')};
+  border: ${props => (props.isBorderless ? "none" : "16px solid white")};
+  margin-bottom: ${props => (props.isBorderless ? "0" : "-16px")};
 
-  ${mediaq.xs_p`min-height: ${breakp.sm_p}px;`}
+  ${mediaq.xs_sm`min-height: ${breakp.sm_md}px;`}
   ${mediaq.sm`min-height: ${breakp.md}px;`}
-  ${mediaq.sm_p`min-height: ${breakp.sm}px;`}
+  ${mediaq.sm_md`min-height: ${breakp.sm}px;`}
 
-  ${mediaq.md`border-width: ${props => (props.isBorderless ? null : '24px')};`}
-  ${mediaq.lg`border-width: ${props => (props.isBorderless ? null : '32px')};`}
-  ${mediaq.xl`border-width: ${props => (props.isBorderless ? null : '40px')};`}
+  ${mediaq.md`border-width: ${props => (props.isBorderless ? null : "24px")};`}
+  ${mediaq.lg`border-width: ${props => (props.isBorderless ? null : "32px")};`}
+  ${mediaq.xl`border-width: ${props => (props.isBorderless ? null : "40px")};`}
 
-  ${mediaq.md`margin-bottom: ${props => (props.isBorderless ? '0' : '-24px')};`}
-  ${mediaq.lg`margin-bottom: ${props => (props.isBorderless ? '0' : '-32px')};`}
-  ${mediaq.xl`margin-bottom: ${props => (props.isBorderless ? '0' : '-40px')};`}
-`
+  ${mediaq.md`margin-bottom: ${props => (props.isBorderless ? "0" : "-24px")};`}
+  ${mediaq.lg`margin-bottom: ${props => (props.isBorderless ? "0" : "-32px")};`}
+  ${mediaq.xl`margin-bottom: ${props => (props.isBorderless ? "0" : "-40px")};`}
+`;
 const Overlay = styled.div`
   position: absolute;
   top: 0;
@@ -40,15 +37,9 @@ const Overlay = styled.div`
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: ${props => props.isColorful ? rgba(props.overlay, 0.6) : rgba(props.overlay, 0.4)};
-  /* background: ${props => rgba(0, 0, 0, 0.5)}; */
-  /* background: ${props => 
-  `linear-gradient(
-    172deg,
-    ${rgba(props.overlay, 0.4)} 0%,
-    ${rgba(props.overlay, 0.4)} 100%
-  )`}; */
-`
+  background: ${props =>
+    props.isColorful ? rgba(props.overlay, 0.6) : rgba(props.overlay, 0.4)};
+`;
 const Content = styled.div`
   position: absolute;
   bottom: 0;
@@ -61,25 +52,24 @@ const Content = styled.div`
   justify-content: space-between;
   color: white;
   padding: 0 16px;
-  ${mediaq.xs`height: ${props => (props.isExpanded ? '70%' : null)};`}
+  ${mediaq.xs`height: ${props => (props.isExpanded ? "70%" : null)};`}
   ${mediaq.md`padding: 0 24px`}
-  ${mediaq.lg`height: ${props => (props.isExpanded ? '70%' : '60%')};`}
+  ${mediaq.lg`height: ${props => (props.isExpanded ? "70%" : "60%")};`}
   ${mediaq.md`padding: 0 32px`}
-`
-const Body = styled.div`
-`
+`;
+const Body = styled.div``;
 const Title = styled.h1`
   font-weight: normal;
-  font-size: 1.375rem;
-  ${mediaq.xxs`font-size: 6vw;`}
-  ${mediaq.xs`font-size: 1.5rem;`} /*Just reflow the text during awkward phase. */
-  ${mediaq.lg`font-size: 3.6vw;`}
+  /* font-size: 1.375rem; */
+  /* ${mediaq.xxs`font-size: 6vw;`} */
+  /* ${mediaq.xs`font-size: 1.5rem;`} Just reflow the text during awkward phase. */
+  /* ${mediaq.lg`font-size: 3.6vw;`} */
   ${mediaq.xs`width: 75%;`}
-`
+`;
 const Description = styled.div`
   line-height: 1.375;
-  ${mediaq.xxs`font-size: 4vw;`}
-  ${mediaq.xs`font-size: 1rem;`} /*Just reflow the text during awkward phase. */
+  /* ${mediaq.xxs`font-size: 4vw;`} */
+  /* ${mediaq.xs`font-size: 1rem;`} Just reflow the text during awkward phase. */
   /* ${mediaq.lg`font-size: 20px;`} */
   ${mediaq.lg`line-height: 1.5;`}
   ${mediaq.xs`padding-right: 48px;`}
@@ -91,10 +81,11 @@ const Description = styled.div`
     background: ${props => rgba(props.highlight, 0.6)};
   }
   em {
+    font-size: 1rem;
     font-style: normal;
     background: ${props => rgba(props.highlight, 0.6)};
   }
-`
+`;
 const StyledButton = styled.a`
   background: white;
   color: #333333;
@@ -116,7 +107,7 @@ const StyledButton = styled.a`
   ${mediaq.md`margin: 8px auto 32px 0;`}
   ${mediaq.sm`font-size: 16px;`}
   ${mediaq.sm`width: 50%;`}
-`
+`;
 
 /* ==================================================
  *  Helpers
@@ -132,14 +123,13 @@ function Button(props) {
       <StyledButton as="a" href={props.link} className={props.className}>
         {props.text}
       </StyledButton>
-    )
-  } else {
-    return (
-      <StyledButton as={Link} to={props.link} className={props.className}>
-        {props.text}
-      </StyledButton>
-    )
+    );
   }
+  return (
+    <StyledButton as={Link} to={props.link} className={props.className}>
+      {props.text}
+    </StyledButton>
+  );
 }
 
 /* ==================================================
@@ -154,7 +144,7 @@ function Slide(props) {
     <StyledSlide {...props}>
       <Img
         fluid={props.fluid}
-        alt=''
+        alt=""
         // This CSS allows the image to be full screen.
         // https://github.com/gatsbyjs/gatsby/issues/2470#issuecomment-338394370
         css={`
@@ -182,12 +172,10 @@ function Slide(props) {
         {/* If this Slide has a button property, render a button */
         /* Pass down the button prop from Slide to Button.
          * Also pass down the className prop so that we can style the component */}
-        {props.button && (
-          <Button {...props.button} />
-        )}
+        {props.button && <Button {...props.button} />}
       </Content>
     </StyledSlide>
-  )
+  );
 }
 
 /* ==================================================
@@ -216,23 +204,23 @@ Slide.propTypes = {
   button: PropTypes.shape({
     text: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
-    isExternal: PropTypes.bool.isRequired,
+    isExternal: PropTypes.bool.isRequired
   }),
   // Displays a slide without a border
-  isBorderless: PropTypes.bool,
-}
+  isBorderless: PropTypes.bool
+};
 
 Slide.defaultProps = {
-  overlay: '#000000',
-  highlight: '#000000',
+  overlay: "#000000",
+  highlight: "#000000",
   isColorful: false,
   isExpanded: false,
-  position: '50% 50%',
-  isBorderless: false,
-}
+  position: "50% 50%",
+  isBorderless: false
+};
 
 /* ==================================================
  *  Queries
 ================================================== */
 
-export default Slide
+export default Slide;

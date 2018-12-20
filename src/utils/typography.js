@@ -2,7 +2,7 @@ import Typography from 'typography'
 
 const typography = new Typography({
   title: "Marble Haveli",
-  baseFontSize: '24px',
+  baseFontSize: '8px',
   baseLineHeight: 1.5,
   headerFontFamily: [
     'Space Mono',

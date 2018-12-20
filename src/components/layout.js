@@ -1,29 +1,34 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled, { createGlobalStyle } from 'styled-components'
-import { mediaq } from '../utils/theme.js'
+import React from "react";
+import PropTypes from "prop-types";
+import styled, { createGlobalStyle } from "styled-components";
+import { mediaq } from "../utils/theme.js";
 
 /* ==================================================
  *  Styles
 ================================================== */
-// font-size: 100%   ~= 16px
-// font-size: 112.5% ~= 18px
-// font-size: 125%   ~= 20px
-// font-size: 137.5% ~= 22px
-// font-size: 150%   ~= 24px
+/**
+ * Typography.js should set the baseFontSize: '8px'.
+ * Thus, 1rem = 8px which is consistent with our 8px grid.
+ */
+// font-size: 1rem    ~= 8px
+// font-size: 2rem    ~= 16px
+// font-size: 2.25rem ~= 18px
+// font-size: 2.5rem  ~= 20px
+// font-size: 2.75rem ~= 22px
+// font-size: 3rem    ~= 24px
 const GlobalResponsiveTypography = createGlobalStyle`
-`
-  // html {
-  //   font-size: 100%;
-  //   ${mediaq.xs`font-size: 112.5%;`}
-  //   ${mediaq.sm`font-size: 125%;`}
-  //   ${mediaq.md`font-size: 137.5%;`}
-  //   ${mediaq.lg`font-size: 150%;`}
-  // }
+  body {
+    font-size: 2rem;
+    ${mediaq.xs`font-size: 2.25rem;`}
+    ${mediaq.sm`font-size: 2.50rem;`}
+    ${mediaq.md`font-size: 2.75rem;`}
+    ${mediaq.lg`font-size: 3.00rem;`}
+  }
+`;
 
 const StyledLayout = styled.main`
   /* margin-top: 80px; */
-`
+`;
 
 /* ==================================================
  *  Render Component
@@ -39,18 +44,18 @@ function Layout(props) {
       <GlobalResponsiveTypography />
       {props.children}
     </StyledLayout>
-  )
+  );
 }
 
 /* ==================================================
  *  Component Properties
 ================================================== */
-Layout.propTypes = {}
+Layout.propTypes = {};
 
-Layout.defaultProps = {}
+Layout.defaultProps = {};
 
 /* ==================================================
  *  Queries
 ================================================== */
 
-export default Layout
+export default Layout;
