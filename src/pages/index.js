@@ -25,6 +25,7 @@ function IndexPage({ data }) {
   /* --------------------------------------------------
    *  Slide Data / Intro
   -------------------------------------------------- */
+
   slides.push({
     id: "intro",
     title:
@@ -287,7 +288,6 @@ function IndexPage({ data }) {
         title="Home"
         keywords={["arpit", "sheth", "shetharp", "cornell", "tech"]}
       />
-
       {renderSlides}
     </Layout>
   );
