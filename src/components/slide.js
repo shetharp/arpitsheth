@@ -4,8 +4,9 @@ import styled from "styled-components";
 import { rgba } from "polished";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
-import { mediaq, breakp } from "../utils/theme";
+import theme, { mediaq, breakp } from "../utils/theme";
 
+console.log(theme.colors.primaryDark);
 /* ==================================================
  *  Styles
 ================================================== */
@@ -17,7 +18,6 @@ const StyledSlide = styled.section`
   position: relative;
   border: ${props => (props.isBorderless ? "none" : "16px solid white")};
   margin-bottom: ${props => (props.isBorderless ? "0" : "-16px")};
-
   ${mediaq.xs_sm`min-height: ${breakp.sm_md}px;`}
   ${mediaq.sm`min-height: ${breakp.md}px;`}
   ${mediaq.sm_md`min-height: ${breakp.sm}px;`}
@@ -30,6 +30,7 @@ const StyledSlide = styled.section`
   ${mediaq.lg`margin-bottom: ${props => (props.isBorderless ? "0" : "-32px")};`}
   ${mediaq.xl`margin-bottom: ${props => (props.isBorderless ? "0" : "-40px")};`}
 `;
+
 const Overlay = styled.div`
   position: absolute;
   top: 0;
@@ -40,6 +41,7 @@ const Overlay = styled.div`
   background: ${props =>
     props.isColorful ? rgba(props.overlay, 0.6) : rgba(props.overlay, 0.4)};
 `;
+
 const Content = styled.div`
   position: absolute;
   bottom: 0;
@@ -52,27 +54,28 @@ const Content = styled.div`
   justify-content: space-between;
   color: white;
   padding: 0 16px;
-  ${mediaq.xs`height: ${props => (props.isExpanded ? "70%" : null)};`}
-  ${mediaq.md`padding: 0 24px`}
-  ${mediaq.lg`height: ${props => (props.isExpanded ? "70%" : "60%")};`}
-  ${mediaq.md`padding: 0 32px`}
 `;
+// ${mediaq.xs`height: ${props => (props.isExpanded ? '70%' : null)};`}
+// ${mediaq.md`padding: 0 24px`}
+// ${mediaq.lg`height: ${props => (props.isExpanded ? '70%' : '60%')};`}
+// ${mediaq.md`padding: 0 32px`}
 const Body = styled.div``;
 const Title = styled.h1`
   font-weight: normal;
-  /* font-size: 1.375rem; */
-  /* ${mediaq.xxs`font-size: 6vw;`} */
-  /* ${mediaq.xs`font-size: 1.5rem;`} Just reflow the text during awkward phase. */
-  /* ${mediaq.lg`font-size: 3.6vw;`} */
-  ${mediaq.xs`width: 75%;`}
 `;
+// /* font-size: 1.375rem; */
+// /* ${mediaq.xxs`font-size: 6vw;`} */
+// /* ${mediaq.xs`font-size: 1.5rem;`} Just reflow the text during awkward phase. */
+// /* ${mediaq.lg`font-size: 3.6vw;`} */
+// ${mediaq.xs`width: 75%;`}
+
+// /* ${mediaq.xxs`font-size: 4vw;`} */
+//   /* ${mediaq.xs`font-size: 1rem;`} Just reflow the text during awkward phase. */
+//   /* ${mediaq.lg`font-size: 20px;`} */
+//   ${mediaq.lg`line-height: 1.5;`}
+//   ${mediaq.xs`padding-right: 48px;`}
 const Description = styled.div`
   line-height: 1.375;
-  /* ${mediaq.xxs`font-size: 4vw;`} */
-  /* ${mediaq.xs`font-size: 1rem;`} Just reflow the text during awkward phase. */
-  /* ${mediaq.lg`font-size: 20px;`} */
-  ${mediaq.lg`line-height: 1.5;`}
-  ${mediaq.xs`padding-right: 48px;`}
 
   a {
     transition: background-color 150ms ease;
@@ -81,7 +84,6 @@ const Description = styled.div`
     background: ${props => rgba(props.highlight, 0.6)};
   }
   em {
-    font-size: 1rem;
     font-style: normal;
     background: ${props => rgba(props.highlight, 0.6)};
   }
@@ -101,13 +103,13 @@ const StyledButton = styled.a`
   padding: 8px 16px;
   margin: 8px auto 16px auto;
   font-size: 14px;
-  ${mediaq.xs`width: 66.66%;`}
-  ${mediaq.xs`margin: 8px auto 16px 0;`}
-  ${mediaq.md`margin: 8px auto 24px 0;`}
-  ${mediaq.md`margin: 8px auto 32px 0;`}
-  ${mediaq.sm`font-size: 16px;`}
-  ${mediaq.sm`width: 50%;`}
 `;
+// ${mediaq.xs`width: 66.66%;`}
+// ${mediaq.xs`margin: 8px auto 16px 0;`}
+// ${mediaq.md`margin: 8px auto 24px 0;`}
+// ${mediaq.md`margin: 8px auto 32px 0;`}
+// ${mediaq.sm`font-size: 16px;`}
+// ${mediaq.sm`width: 50%;`}
 
 /* ==================================================
  *  Helpers
@@ -117,17 +119,17 @@ const StyledButton = styled.a`
  * The props should have text, link, and isExternal
  * Syntax: https://www.styled-components.com/docs/basics#extending-styles
  */
-function Button(props) {
-  if (props.isExternal) {
+function Button({ text, link, isExternal }) {
+  if (isExternal) {
     return (
-      <StyledButton as="a" href={props.link} className={props.className}>
-        {props.text}
+      <StyledButton as="a" href={link}>
+        {text}
       </StyledButton>
     );
   }
   return (
-    <StyledButton as={Link} to={props.link} className={props.className}>
-      {props.text}
+    <StyledButton as={Link} to={link}>
+      {text}
     </StyledButton>
   );
 }
@@ -181,6 +183,12 @@ function Slide(props) {
 /* ==================================================
  *  Properties
 ================================================== */
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  isExternal: PropTypes.bool.isRequired
+};
+
 Slide.propTypes = {
   // The ID used in the HTML prop for linking
   id: PropTypes.string.isRequired,
@@ -201,11 +209,7 @@ Slide.propTypes = {
   // The position of the image in CSS object-position format
   position: PropTypes.string,
   // A Button with text, link location, and indicator if the link is external
-  button: PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
-    isExternal: PropTypes.bool.isRequired
-  }),
+  button: PropTypes.shape(Button.propTypes),
   // Displays a slide without a border
   isBorderless: PropTypes.bool
 };

@@ -1,4 +1,15 @@
 {
   "parser": "babel-eslint",
-  "extends": ["plugin:react/recommended", "plugin:prettier/recommended"]
+  "extends": ["plugin:react/recommended", "prettier", "prettier/react"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100
+      }
+    ]
+  },
+  "plugins": ["prettier"]
 }

@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
-import Layout from "../components/layout";
-import Slide from "../components/slide";
-import SEO from "../components/seo";
+import Layout from "../components/Layout";
+import Slide from "../components/Slide";
+import SEO from "../components/Seo";
 
 /* ==================================================
  *  Styles
@@ -297,7 +298,9 @@ export default IndexPage;
 /* ==================================================
  *  Properties
 ================================================== */
-// ...
+IndexPage.propTypes = {
+  data: PropTypes.object
+};
 
 /* ==================================================
  *  Queries
