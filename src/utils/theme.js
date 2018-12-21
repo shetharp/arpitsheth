@@ -33,6 +33,7 @@ const sizes = {
   lg: 1000,
   xl: 1200,
   xxl: 1600,
+  huge: 1800,
 };
 
 // Iterate through the breakpoints and create a media template

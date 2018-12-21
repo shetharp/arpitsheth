@@ -68,7 +68,7 @@ function IndexPage({ data }) {
     highlight: '#102341',
     isColorful: false,
     isExpanded: true,
-    position: '75% 50%',
+    position: '75% 0%',
     button: {
       text: 'Learn More',
       link: 'https://www.technyc.org/posts/2018/9/five-cornell-tech-companies-to-watch',
@@ -153,7 +153,7 @@ function IndexPage({ data }) {
           <a href="http://www.lifechanginglabs.com/">Life Changing Labs</a>.
         </p>
         <p>
-          <em>If you’re working on something neat, I'm happy to help however I can.</em>
+          <em>If you’re working on something neat, I&rsquo;m happy to help however I can.</em>
         </p>
       </>
     ),
@@ -161,8 +161,8 @@ function IndexPage({ data }) {
     overlay: '#00384D',
     highlight: '#0F8299',
     isColorful: true,
-    isExpanded: true,
-    position: '20% 50%',
+    isExpanded: false,
+    position: '20% 60%',
     button: { text: 'Let’s Chat', link: '#', isExternal: false },
     // isBorderless: false,
   });
@@ -181,9 +181,9 @@ function IndexPage({ data }) {
         </a>{' '}
         and went on to become President of{' '}
         <a href="http://cornellthetatau.com/">Cornell Theta Tau</a> to promote career leadership for
-        engineers on campus. I've spoken at the{' '}
+        engineers on campus. I&rsquo;ve spoken at the{' '}
         <a href="https://usasciencefestival.org/">USA Science & Engineering Festival</a> and NJ
-        Governor's School.
+        Governor&rsquo;s School.
       </p>
     ),
     fluid: data.imgSpeaking.childImageSharp.fluid,
@@ -211,8 +211,8 @@ function IndexPage({ data }) {
         </p>
         <p>
           <em>
-            For over ten years I've been teaching myself design. It is core to how I build products
-            and lead teams.
+            For over ten years I&rsquo;ve been teaching myself design. It is core to how I build
+            products and lead teams.
           </em>
         </p>
       </>

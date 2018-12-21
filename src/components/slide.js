@@ -18,8 +18,8 @@ const StyledSlide = styled.section`
   position: relative;
   border: ${props => (props.isBorderless ? 'none' : '16px solid white')};
   margin-bottom: ${props => (props.isBorderless ? '0' : '-16px')};
-  ${mediaq.xs_sm`min-height: ${breakp.sm_md}px;`}
-  ${mediaq.sm`min-height: ${breakp.md}px;`}
+  ${mediaq.xs_sm`min-height: ${breakp.xs}px;`}
+  ${mediaq.sm`min-height: ${breakp.sm}px;`}
   ${mediaq.sm_md`min-height: ${breakp.sm}px;`}
 
   ${mediaq.md`border-width: ${props => (props.isBorderless ? null : '24px')};`}
@@ -38,7 +38,16 @@ const Overlay = styled.div`
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: ${props => (props.isColorful ? rgba(props.overlay, 0.6) : rgba(props.overlay, 0.4))};
+  background: ${props =>
+    props.isColorful
+      ? `linear-gradient(175deg, ${rgba(props.overlay, 0.4)} 0%, ${rgba(
+          props.overlay,
+          0.8
+        )} 50%, ${rgba(props.overlay, 0.9)} 100%)`
+      : `linear-gradient(175deg, ${rgba(props.overlay, 0.0)} 0%, ${rgba(
+          props.overlay,
+          0.6
+        )} 50%, ${rgba(props.overlay, 0.9)} 100%)`};
 `;
 
 const Content = styled.div`
@@ -46,69 +55,91 @@ const Content = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 66.667%;
+  /* Test with height: 75% for clipping. */
+  height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   color: white;
-  padding: 0 16px;
+  padding: 16px;
+  ${mediaq.md`padding: 24px`}
+  ${mediaq.lg`padding: 32px`}
+  ${mediaq.xl`padding: 40px`}
 `;
-// ${mediaq.xs`height: ${props => (props.isExpanded ? '70%' : null)};`}
-// ${mediaq.md`padding: 0 24px`}
-// ${mediaq.lg`height: ${props => (props.isExpanded ? '70%' : '60%')};`}
-// ${mediaq.md`padding: 0 32px`}
+
 const Body = styled.div``;
+
 const Title = styled.h1`
   font-weight: normal;
+  font-size: ${theme.typeScale ** 3}em;
+  ${mediaq.xs`font-size: ${theme.typeScale ** 2}em;`}
+  ${mediaq.sm`font-size: ${theme.typeScale ** 3}em;`}
+  ${mediaq.lg`font-size: ${theme.typeScale ** 4}em;`}
+  ${mediaq.xl`font-size: ${theme.typeScale ** 6}em;`}
+  ${mediaq.xxl`font-size: ${theme.typeScale ** 7}em;`}
+  ${mediaq.huge`font-size: ${theme.typeScale ** 8}em;`}
+  width: 100%;
+  ${mediaq.xs`width: ${props => (props.isExpanded ? '100%' : '75%')};`}
+  ${mediaq.sm`width: ${props => (props.isExpanded ? '90%' : '66.667%')};`}
+  ${mediaq.sm`width: ${props => (props.isExpanded ? '90%' : '75%')};`}
+  ${mediaq.lg`width: ${props => (props.isExpanded ? '100%' : '66.667%')};`}
+  ${mediaq.xl`width: ${props => (props.isExpanded ? '100%' : '66.667%')};`}
+  ${mediaq.xxl`width: ${props => (props.isExpanded ? '90%' : '66.667%')};`}
+  ${mediaq.huge`width: ${props => (props.isExpanded ? '90%' : '66.667%')};`}
 `;
-// /* font-size: 1.375rem; */
-// /* ${mediaq.xxs`font-size: 6vw;`} */
-// /* ${mediaq.xs`font-size: 1.5rem;`} Just reflow the text during awkward phase. */
-// /* ${mediaq.lg`font-size: 3.6vw;`} */
-// ${mediaq.xs`width: 75%;`}
 
-// /* ${mediaq.xxs`font-size: 4vw;`} */
-//   /* ${mediaq.xs`font-size: 1rem;`} Just reflow the text during awkward phase. */
-//   /* ${mediaq.lg`font-size: 20px;`} */
-//   ${mediaq.lg`line-height: 1.5;`}
-//   ${mediaq.xs`padding-right: 48px;`}
 const Description = styled.div`
-  line-height: 1.375;
+  line-height: 1.4;
+  font-size: 1.6rem;
+  ${mediaq.xs`font-size: 1.8rem;`}     
+  ${mediaq.sm`font-size: 2.0rem;`}     
+  ${mediaq.md`font-size: 2.0rem;`}     
+  ${mediaq.lg`font-size: 2.2rem;`}  
+  ${mediaq.xl`font-size: 2.4rem;`}  
+  width: 100%;
+  ${mediaq.sm`width: 85%;`}
+  ${mediaq.md`width: ${props => (props.isExpanded ? '90%' : '75%')};`}
+  ${mediaq.lg`width: 66.667%;`}
+  ${mediaq.xl`width: 50%;`}
 
   a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    ${mediaq.md`border-width: 2px;`}  
     transition: background-color 150ms ease;
   }
   a:hover {
-    background: ${props => rgba(props.highlight, 0.6)};
+    background: ${props => rgba(props.highlight, 0.5)};
   }
   em {
     font-style: normal;
-    background: ${props => rgba(props.highlight, 0.6)};
+    background: ${props => rgba(props.highlight, 0.5)};
   }
 `;
+
 const StyledButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: white;
   color: #333333;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.2ch;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 48px;
   padding: 8px 16px;
-  margin: 8px auto 16px auto;
-  font-size: 14px;
+  min-height: 48px;
+  width: 100%;
+  ${mediaq.xs`width: 66.66%;`}
+  ${mediaq.sm`width: 50%;`}
+  ${mediaq.lg`width: 33.333%;`}
+  ${mediaq.xxl`width: 25%;`}
+  margin: 0 auto;
+  ${mediaq.xs`margin-left: 0;`}
+  font-size: 1.4rem;
+  ${mediaq.lg`font-size: 1.6rem;`}
 `;
-// ${mediaq.xs`width: 66.66%;`}
-// ${mediaq.xs`margin: 8px auto 16px 0;`}
-// ${mediaq.md`margin: 8px auto 24px 0;`}
-// ${mediaq.md`margin: 8px auto 32px 0;`}
-// ${mediaq.sm`font-size: 16px;`}
-// ${mediaq.sm`width: 50%;`}
 
 /* ==================================================
  *  Helpers
@@ -141,8 +172,10 @@ function Button({ text, link, isExternal }) {
  * with a background image, title, and body text.
  */
 function Slide(props) {
+  const btn = props.button;
+  const hasBtn = typeof btn === 'undefined' ? false : true;
   return (
-    <StyledSlide {...props}>
+    <StyledSlide isBorderless={props.isBorderless}>
       <Img
         fluid={props.fluid}
         alt=""
@@ -164,16 +197,18 @@ function Slide(props) {
         `}
       />
       <Overlay overlay={props.overlay} isColorful={props.isColorful} />
-      <Content isExpanded={props.isExpanded}>
+      <Content isExpanded={props.isExpanded} hasBtn={hasBtn}>
         <Body>
-          <Title>{props.title}</Title>
-          <Description highlight={props.highlight}>{props.descr}</Description>
+          <Title isExpanded={props.isExpanded}>{props.title}</Title>
+          <Description isExpanded={props.isExpanded} highlight={props.highlight}>
+            {props.descr}
+          </Description>
         </Body>
 
         {/* If this Slide has a button property, render a button */
         /* Pass down the button prop from Slide to Button.
          * Also pass down the className prop so that we can style the component */}
-        {props.button && <Button {...props.button} />}
+        {hasBtn && <Button {...props.button} />}
       </Content>
     </StyledSlide>
   );
@@ -186,6 +221,12 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   isExternal: PropTypes.bool.isRequired,
+};
+
+Button.defaultProps = {
+  text: '',
+  link: '',
+  isExternal: false,
 };
 
 Slide.propTypes = {
