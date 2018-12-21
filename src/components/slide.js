@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { rgba } from "polished";
-import { Link } from "gatsby";
-import Img from "gatsby-image";
-import theme, { mediaq, breakp } from "../utils/theme";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { rgba } from 'polished';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
+import theme, { mediaq, breakp } from '../utils/theme';
 
 console.log(theme.colors.primaryDark);
 /* ==================================================
@@ -16,19 +16,19 @@ const StyledSlide = styled.section`
   width: 100%;
   height: 100vh;
   position: relative;
-  border: ${props => (props.isBorderless ? "none" : "16px solid white")};
-  margin-bottom: ${props => (props.isBorderless ? "0" : "-16px")};
+  border: ${props => (props.isBorderless ? 'none' : '16px solid white')};
+  margin-bottom: ${props => (props.isBorderless ? '0' : '-16px')};
   ${mediaq.xs_sm`min-height: ${breakp.sm_md}px;`}
   ${mediaq.sm`min-height: ${breakp.md}px;`}
   ${mediaq.sm_md`min-height: ${breakp.sm}px;`}
 
-  ${mediaq.md`border-width: ${props => (props.isBorderless ? null : "24px")};`}
-  ${mediaq.lg`border-width: ${props => (props.isBorderless ? null : "32px")};`}
-  ${mediaq.xl`border-width: ${props => (props.isBorderless ? null : "40px")};`}
+  ${mediaq.md`border-width: ${props => (props.isBorderless ? null : '24px')};`}
+  ${mediaq.lg`border-width: ${props => (props.isBorderless ? null : '32px')};`}
+  ${mediaq.xl`border-width: ${props => (props.isBorderless ? null : '40px')};`}
 
-  ${mediaq.md`margin-bottom: ${props => (props.isBorderless ? "0" : "-24px")};`}
-  ${mediaq.lg`margin-bottom: ${props => (props.isBorderless ? "0" : "-32px")};`}
-  ${mediaq.xl`margin-bottom: ${props => (props.isBorderless ? "0" : "-40px")};`}
+  ${mediaq.md`margin-bottom: ${props => (props.isBorderless ? '0' : '-24px')};`}
+  ${mediaq.lg`margin-bottom: ${props => (props.isBorderless ? '0' : '-32px')};`}
+  ${mediaq.xl`margin-bottom: ${props => (props.isBorderless ? '0' : '-40px')};`}
 `;
 
 const Overlay = styled.div`
@@ -38,8 +38,7 @@ const Overlay = styled.div`
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: ${props =>
-    props.isColorful ? rgba(props.overlay, 0.6) : rgba(props.overlay, 0.4)};
+  background: ${props => (props.isColorful ? rgba(props.overlay, 0.6) : rgba(props.overlay, 0.4))};
 `;
 
 const Content = styled.div`
@@ -186,7 +185,7 @@ function Slide(props) {
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-  isExternal: PropTypes.bool.isRequired
+  isExternal: PropTypes.bool.isRequired,
 };
 
 Slide.propTypes = {
@@ -211,16 +210,16 @@ Slide.propTypes = {
   // A Button with text, link location, and indicator if the link is external
   button: PropTypes.shape(Button.propTypes),
   // Displays a slide without a border
-  isBorderless: PropTypes.bool
+  isBorderless: PropTypes.bool,
 };
 
 Slide.defaultProps = {
-  overlay: "#000000",
-  highlight: "#000000",
+  overlay: '#000000',
+  highlight: '#000000',
   isColorful: false,
   isExpanded: false,
-  position: "50% 50%",
-  isBorderless: false
+  position: '50% 50%',
+  isBorderless: false,
 };
 
 /* ==================================================

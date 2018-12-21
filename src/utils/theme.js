@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 
 const theme = {
   // A type scale of 1.148698355 lets us scale from 1x to 2x in 5 steps
@@ -6,19 +6,19 @@ const theme = {
   typeScale: 1.148698355,
   fonts: {
     heading: `'Space Mono', 'Consolas', 'Roboto Mono', 'SFMono-Regular', 'Liberation Mono', 'Courier New', monospace`,
-    body: `'URW DIN', 'Bahnschrift', 'Roboto', 'Segoe UI', 'San Francisco', 'Helvetica Neue', sans-serif`
+    body: `'URW DIN', 'Bahnschrift', 'Roboto', 'Segoe UI', 'San Francisco', 'Helvetica Neue', sans-serif`,
   },
 
   colors: {
-    primary: "#333333",
-    primaryLite: "#777777",
-    primaryDark: "#000000",
-    primaryAlpha: "rgba(0,0,0,0.8)",
-    secondary: "#F8F8F8",
-    secondaryLite: "#FFFFFF",
-    secondaryDark: "#EEEEEE",
-    secondaryAlpha: "rgba(255,255,255,0.8)"
-  }
+    primary: '#333333',
+    primaryLite: '#777777',
+    primaryDark: '#000000',
+    primaryAlpha: 'rgba(0,0,0,0.8)',
+    secondary: '#F8F8F8',
+    secondaryLite: '#FFFFFF',
+    secondaryDark: '#EEEEEE',
+    secondaryAlpha: 'rgba(255,255,255,0.8)',
+  },
 };
 
 // Media Templates: https://www.styled-components.com/docs/advanced/#media-templates
@@ -32,7 +32,7 @@ const sizes = {
   md: 800,
   lg: 1000,
   xl: 1200,
-  xxl: 1600
+  xxl: 1600,
 };
 
 // Iterate through the breakpoints and create a media template

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled, { createGlobalStyle } from "styled-components";
-import theme, { mediaq } from "../utils/theme.js";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { createGlobalStyle } from 'styled-components';
+import theme, { mediaq } from '../utils/theme.js';
 
 /* ==================================================
  *  Styles
@@ -52,13 +52,9 @@ const GlobalResponsiveTypography = createGlobalStyle`
     font-weight: 700;
     line-height: 1.1;
   }
-  ${"" /* Scale up the font-size, but maintain the the same margins.*/}
-  ${
-    "" /* With a typeScale of 1.148698355, the h1 will be double the paragraph font size. */
-  }
-  ${
-    "" /* With a typeScale of 1.148698355, the margins will be equal to the paragraph font size.*/
-  }
+  ${'' /* Scale up the font-size, but maintain the the same margins.*/}
+  ${'' /* With a typeScale of 1.148698355, the h1 will be double the paragraph font size. */}
+  ${'' /* With a typeScale of 1.148698355, the margins will be equal to the paragraph font size.*/}
   h1 {
     font-size: ${theme.typeScale ** 5}em;
     margin: ${theme.typeScale ** -5}em 0;
@@ -114,7 +110,7 @@ function Layout({ children }) {
  *  Component Properties
 ================================================== */
 Layout.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.array,
 };
 
 Layout.defaultProps = {};
