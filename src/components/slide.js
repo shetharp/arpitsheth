@@ -40,14 +40,25 @@ const Overlay = styled.div`
   height: 100%;
   background: ${props =>
     props.isColorful
-      ? `linear-gradient(175deg, ${rgba(props.overlay, 0.4)} 0%, ${rgba(
+      ? `linear-gradient(185deg, ${rgba(props.overlay, 0.4)} 0%, ${rgba(
           props.overlay,
           0.8
         )} 50%, ${rgba(props.overlay, 0.9)} 100%)`
-      : `linear-gradient(175deg, ${rgba(props.overlay, 0.0)} 0%, ${rgba(
+      : `linear-gradient(185deg, ${rgba(props.overlay, 0.0)} 0%, ${rgba(
           props.overlay,
           0.6
         )} 50%, ${rgba(props.overlay, 0.9)} 100%)`};
+  ${mediaq.lg`background: ${props =>
+    props.isColorful
+      ? `linear-gradient(190deg, ${rgba(props.overlay, 0.3)} 0%, ${rgba(
+          props.overlay,
+          0.6
+        )} 50%, ${rgba(props.overlay, 0.9)} 100%)`
+      : `linear-gradient(190deg, ${rgba(props.overlay, 0.0)} 0%, ${rgba(
+          props.overlay,
+          0.4
+        )} 50%, ${rgba(props.overlay, 0.6)} 100%)`};
+  `}
 `;
 
 const Content = styled.div`
@@ -62,10 +73,10 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   color: white;
-  padding: 16px;
-  ${mediaq.md`padding: 24px`}
-  ${mediaq.lg`padding: 32px`}
-  ${mediaq.xl`padding: 40px`}
+  padding: ${props => (props.isBorderless ? '32px' : '16px')};
+  ${mediaq.md`padding: ${props => (props.isBorderless ? '48px' : '24px')};`}
+  ${mediaq.lg`padding: ${props => (props.isBorderless ? '64px' : '32px')};`}
+  ${mediaq.xl`padding: ${props => (props.isBorderless ? '80px' : '40px')};`}
 `;
 
 const Body = styled.div``;
@@ -91,6 +102,7 @@ const Title = styled.h1`
 
 const Description = styled.div`
   line-height: 1.4;
+  ${mediaq.xl`line-height: 1.5;`}  
   font-size: 1.6rem;
   ${mediaq.xs`font-size: 1.8rem;`}     
   ${mediaq.sm`font-size: 2.0rem;`}     
@@ -111,10 +123,12 @@ const Description = styled.div`
   }
   a:hover {
     background: ${props => rgba(props.highlight, 0.5)};
+    ${mediaq.lg`background: ${props => rgba(props.highlight, 0.3)};`} 
   }
   em {
     font-style: normal;
     background: ${props => rgba(props.highlight, 0.5)};
+    ${mediaq.lg`background: ${props => rgba(props.highlight, 0.3)};`} 
   }
 `;
 
@@ -197,7 +211,7 @@ function Slide(props) {
         `}
       />
       <Overlay overlay={props.overlay} isColorful={props.isColorful} />
-      <Content isExpanded={props.isExpanded} hasBtn={hasBtn}>
+      <Content isExpanded={props.isExpanded} isBorderless={props.isBorderless} hasBtn={hasBtn}>
         <Body>
           <Title isExpanded={props.isExpanded}>{props.title}</Title>
           <Description isExpanded={props.isExpanded} highlight={props.highlight}>
