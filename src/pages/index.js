@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { graphql } from 'gatsby';
-
+import styled, { keyframes } from 'styled-components';
+import theme, { mediaq } from '../utils/theme';
 import Layout from '../components/Layout';
 import Slide from '../components/Slide';
 import SEO from '../components/Seo';
@@ -10,7 +11,59 @@ import SEO from '../components/Seo';
 /* ==================================================
  *  Styles
 ================================================== */
-// ...
+const animScroll = keyframes`
+  0% {
+    opacity: 1;
+    transform: translate(100%, 0px) rotate(-90deg);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translate(100%, 40px) rotate(-90deg);
+  }
+`;
+
+// Used to override slide styles
+const SlidesSection = styled.section`
+  #intro {
+    overflow: hidden;
+    ::after {
+      content: '<< SCROLL';
+      font-family: ${theme.fonts.heading};
+      letter-spacing: 0.5ch;
+
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translateX(100%) rotate(-90deg);
+      transform-origin: bottom left;
+
+      color: #1a66ff;
+      font-size: 1.2rem;
+      padding: 0 0 4px 48px;
+      border-bottom: 4px solid #1a66ff;
+      display: flex;
+      align-items: center;
+
+      ${mediaq.sm`color: white;`}
+      ${mediaq.sm`border-width: 8px;`}
+      ${mediaq.md`background: #1a66ff;`}
+      ${mediaq.md`padding: 0 16px 0 48px;`}
+      ${mediaq.md`border: none;`}
+      ${mediaq.md`height: 24px;`}
+      ${mediaq.lg`font-size: 1.4rem;`}
+      ${mediaq.lg`height: 32px;`}
+      ${mediaq.lg`font-size: 1.6rem;`}
+      ${mediaq.xl`height: 40px;`}
+      ${mediaq.md`padding: 0 24px 0 48px;`}
+
+      animation: ${animScroll} 2s ease-in alternate infinite;
+    }
+  }
+`;
+
+/* ==================================================
+ *  Helper
+================================================== */
 
 /* ==================================================
  *  Render
@@ -26,18 +79,19 @@ function IndexPage({ data }) {
   /* --------------------------------------------------
    *  Slide Data / Intro
   -------------------------------------------------- */
-
   slides.push({
     id: 'intro',
     title:
       'I’m an interdisciplinary engineer with creator instincts and a knack for starting things.',
     descr: (
-      <p>
-        I co-founded <Link to="#crater">Crater</Link> and was early at{' '}
-        <Link to="#matter">Matter</Link>. I recently graduated from{' '}
-        <Link to="#cornell">Cornell Tech</Link> with an M.Eng in CS and am looking for exciting new
-        opportunities.
-      </p>
+      <>
+        <p>
+          I co-founded <Link to="#crater">Crater</Link> and was early at{' '}
+          <Link to="#matter">Matter</Link>. I recently graduated from{' '}
+          <Link to="#cornell">Cornell Tech</Link> with an M.Eng in CS and am looking for exciting
+          new opportunities.
+        </p>
+      </>
     ),
     fluid: data.imgIntro.childImageSharp.fluid,
     overlay: '#030A1A',
@@ -45,7 +99,7 @@ function IndexPage({ data }) {
     isColorful: false,
     isExpanded: false,
     position: '54% 0%',
-    // button: { text: 'Learn More', link: '#', isExternal: false },
+    // button: { text: 'Scroll', link: '#crater', isExternal: false },
     isBorderless: true,
   });
 
@@ -269,7 +323,7 @@ function IndexPage({ data }) {
   return (
     <Layout>
       <SEO title="Home" keywords={['arpit', 'sheth', 'shetharp', 'cornell', 'tech']} />
-      {renderSlides}
+      <SlidesSection>{renderSlides}</SlidesSection>
     </Layout>
   );
 }

@@ -6,15 +6,21 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import theme, { mediaq, breakp } from '../utils/theme';
 
-console.log(theme.colors.primaryDark);
 /* ==================================================
  *  Styles
 ================================================== */
+/* To convert the props.overlay color from HEX to RGBA,
+ * we use the rgba() function from polished.js
+ * In order to call it within a sytled component, we do
+ * background: ${props => rgba(props.overlay, 0.8)};
+ * Which sets the background color to 80% opacity of the overlay color
+ */
 const StyledSlide = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
   position: relative;
   border: ${props => (props.isBorderless ? 'none' : '16px solid white')};
   margin-bottom: ${props => (props.isBorderless ? '0' : '-16px')};
@@ -189,7 +195,7 @@ function Slide(props) {
   const btn = props.button;
   const hasBtn = typeof btn === 'undefined' ? false : true;
   return (
-    <StyledSlide isBorderless={props.isBorderless}>
+    <StyledSlide id={props.id} isBorderless={props.isBorderless}>
       <Img
         fluid={props.fluid}
         alt=""
