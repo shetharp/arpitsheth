@@ -6,7 +6,7 @@ const theme = {
   typeScale: 1.148698355,
   fonts: {
     heading: `'Space Mono', 'Consolas', 'Roboto Mono', 'SFMono-Regular', 'Liberation Mono', 'Courier New', monospace`,
-    body: `'URW DIN', 'Bahnschrift', 'Roboto', 'Segoe UI', 'San Francisco', 'Helvetica Neue', sans-serif`,
+    body: `'urw-din', 'Bahnschrift', 'Roboto', 'Segoe UI', 'San Francisco', 'Helvetica Neue', sans-serif`,
   },
 
   colors: {
