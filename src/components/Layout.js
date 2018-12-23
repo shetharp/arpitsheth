@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
 import theme, { mediaq } from '../utils/theme.js';
+import Header from '../components/Header';
 
 /* ==================================================
  *  Styles
@@ -101,6 +102,7 @@ function Layout({ children }) {
   return (
     <StyledLayout>
       <GlobalResponsiveTypography />
+      <Header />
       {children}
     </StyledLayout>
   );

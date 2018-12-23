@@ -11,6 +11,8 @@ import SEO from '../components/Seo';
 /* ==================================================
  *  Styles
 ================================================== */
+const introHighlight = '#1a66ff';
+
 const animScroll = keyframes`
   0% {
     opacity: 1;
@@ -37,33 +39,34 @@ const SlidesSection = styled.section`
       transform: translateX(100%) rotate(-90deg);
       transform-origin: bottom left;
 
-      color: #1a66ff;
+      color: ${introHighlight};
       font-size: 1.2rem;
       padding: 0 0 4px 48px;
-      border-bottom: 4px solid #1a66ff;
+      border-bottom: 4px solid ${introHighlight};
       display: flex;
       align-items: center;
 
       ${mediaq.sm`color: white;`}
       ${mediaq.sm`border-width: 8px;`}
-      ${mediaq.md`background: #1a66ff;`}
-      ${mediaq.md`padding: 0 16px 0 48px;`}
+
+      ${mediaq.md`background: ${introHighlight};`}
+      ${mediaq.md`padding: 0 24px 0 48px;`}
       ${mediaq.md`border: none;`}
       ${mediaq.md`height: 24px;`}
+      ${mediaq.md`right: 24px;`}
+
       ${mediaq.lg`font-size: 1.4rem;`}
       ${mediaq.lg`height: 32px;`}
-      ${mediaq.lg`font-size: 1.6rem;`}
+      ${mediaq.lg`right: 32px;`}
+
+      ${mediaq.xl`font-size: 1.6rem;`}
       ${mediaq.xl`height: 40px;`}
-      ${mediaq.md`padding: 0 24px 0 48px;`}
+      ${mediaq.xl`right: 40px;`}
 
       animation: ${animScroll} 2s ease-in alternate infinite;
     }
   }
 `;
-
-/* ==================================================
- *  Helper
-================================================== */
 
 /* ==================================================
  *  Render
@@ -95,7 +98,7 @@ function IndexPage({ data }) {
     ),
     fluid: data.imgIntro.childImageSharp.fluid,
     overlay: '#030A1A',
-    highlight: '#1A66FF',
+    highlight: introHighlight,
     isColorful: false,
     isExpanded: false,
     position: '54% 0%',

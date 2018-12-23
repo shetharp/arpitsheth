@@ -150,6 +150,8 @@ const StyledButton = styled.a`
   letter-spacing: 0.2ch;
   padding: 8px 16px;
   min-height: 48px;
+  ${mediaq.lg`height: 56px;`}
+  ${mediaq.xl`height: 64px;`}
   width: 100%;
   ${mediaq.xs`width: 66.66%;`}
   ${mediaq.sm`width: 50%;`}
