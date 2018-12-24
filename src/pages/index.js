@@ -324,7 +324,7 @@ function IndexPage({ data }) {
   *  Render Component
   -------------------------------------------------- */
   return (
-    <Layout>
+    <Layout hasTransparentHeader hasStickyHeader>
       <SEO title="Home" keywords={['arpit', 'sheth', 'shetharp', 'cornell', 'tech']} />
       <SlidesSection>{renderSlides}</SlidesSection>
     </Layout>

@@ -33,6 +33,11 @@ const GlobalResponsiveTypography = createGlobalStyle`
     ${mediaq.md`font-size: 2.2rem;`}     
     ${mediaq.lg`font-size: 2.4rem;`}     
   }
+  body.disableScroll {
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
   a {
     color: inherit;
   }
@@ -97,12 +102,12 @@ const StyledLayout = styled.main`
  * Creates a Slide which is a fullscreen section (height: 100vh; width: 100%)
  * with a background image, title, and body text.
  */
-function Layout({ children }) {
+function Layout({ children, hasTransparentHeader, hasStickyHeader }) {
   //   console.log(props)
   return (
     <StyledLayout>
       <GlobalResponsiveTypography />
-      <Header />
+      <Header isTransparent={hasTransparentHeader} hasStickyHeader={hasStickyHeader} />
       {children}
     </StyledLayout>
   );
@@ -113,9 +118,14 @@ function Layout({ children }) {
 ================================================== */
 Layout.propTypes = {
   children: PropTypes.array,
+  hasTransparentHeader: PropTypes.bool,
+  hasStickyHeader: PropTypes.bool,
 };
 
-Layout.defaultProps = {};
+Layout.defaultProps = {
+  hasTransparentHeader: false,
+  hasStickyHeader: false,
+};
 
 /* ==================================================
  *  Queries
