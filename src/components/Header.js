@@ -1,11 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'gatsby';
 import theme, { mediaq } from '../utils/theme';
-import ExpandHeaderIcon from '../images/i-menu.svg';
 import logoBlack from '../images/as-logo-black.svg';
 import logoWhite from '../images/as-logo-white.svg';
+import iMenuDark from '../images/i-menu-dark.svg';
+import iMenuLite from '../images/i-menu-lite.svg';
+import iCloseDark from '../images/i-close-dark.svg';
+import iCloseLite from '../images/i-close-lite.svg';
+import headerBgXS from '../images/header-bg@xs.png';
+import headerBgSM from '../images/header-bg@sm.png';
+import headerBgMD from '../images/header-bg@md.png';
+import headerBgLG from '../images/header-bg@lg.png';
 
 /**
  * Search for "ENTER DATA HERE" to quickly jump to areas where
@@ -31,7 +38,6 @@ import logoWhite from '../images/as-logo-white.svg';
  * Else, give the header a solid white background with a black(ish) logo, menu toggle icon, and text color
  */
 const StyledHeader = styled.header`
-  color: ${props => (props.isTransparent ? 'white' : theme.colors.primary)};
   position: ${props => (props.isTransparent ? 'absolute' : 'relative')};
   background: ${props =>
     props.isTransparent
@@ -42,6 +48,14 @@ const StyledHeader = styled.header`
       ? 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%)'
       : 'white'};`}
 
+  color: ${props => (props.isTransparent ? theme.colors.secondary : theme.colors.primary)};
+  a {
+    color: inherit;
+  }
+  a:hover {
+    color: ${props =>
+      props.isTransparent ? theme.colors.secondaryLite : theme.colors.primaryDark};
+  }
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -71,6 +85,17 @@ const StickyHeader = styled.div`
  * The ExpandedHeader shows a fullscreen navigation menu when the toggle menu icon is clicked.
  * The ExpandedHeader is designed to be used with the corresponding ExpandedNav element (below)
  */
+const animExpandedHeader = keyframes`
+0% {
+  opacity: 0;
+  height: 20vh;
+}
+100% {
+  opacity: 1;
+  height: 100vh;
+}
+`;
+
 const ExpandedHeader = styled.div`
   position: fixed;
   top: 0;
@@ -80,7 +105,16 @@ const ExpandedHeader = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: ${theme.colors.secondaryDark};
+  animation: ${animExpandedHeader} 500ms ease-out;
+  background: white url(${headerBgXS}) center bottom / contain repeat-x;
+  ${mediaq.sm`background-image: url(${headerBgSM});`}
+  ${mediaq.md`background-image: url(${headerBgMD});`}
+  ${mediaq.lg`background-image: url(${headerBgLG});`}
+
+
+  ${StyledHeader} {
+    /* background: transparent; */
+  }
 `;
 
 /* --------------------------------------------------
@@ -197,29 +231,36 @@ const MenuItem = styled.li`
  * but adds a few alterations to the style.
  */
 const ExpandedNavStyles = styled.nav`
-  flex: 1 0 auto;
+  /* flex: 1 0 auto; */
+  height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   overflow: hidden;
 
   ${Menu} {
-    flex: 1 0 auto;
-    min-height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    height: 50%;
+    width: 100%;
     font-size: 1em;
     font-weight: 500;
   }
 
   ${MenuItem} {
-    flex: 1 0 auto;
+    min-height: 2em;
     margin-left: 0;
+    align-items: center;
     a {
+      transform: scale(1);
+      transition: all 300ms ease-out;
     }
     a:hover {
-      background: ${theme.colors.primary};
-      color: white;
+      transform: scale(1.333);
+      ${mediaq.lg`font-weight: bold;`}
     }
   }
 `;
@@ -269,25 +310,32 @@ HeaderLogo.defaultProps = {
  * The onClick handler should also set the '.disableScroll' class in <body> to prevent
  * scrolling when the fullscreen ExpandedHeader is shown.
  */
-function HeaderToggle({ onClick, isWhite }) {
-  if (isWhite) {
+function HeaderToggle({ onClick, isWhite, isExpanded }) {
+  if (isExpanded && isWhite) {
     return (
       <HeaderToggleIcon onClick={onClick}>
-        <img src={ExpandHeaderIcon} alt="Toggle Menu" />
+        <img src={iCloseLite} alt="Toggle Menu" />
+      </HeaderToggleIcon>
+    );
+  } else if (isExpanded && !isWhite) {
+    return (
+      <HeaderToggleIcon onClick={onClick}>
+        <img src={iCloseDark} alt="Toggle Menu" />
+      </HeaderToggleIcon>
+    );
+  } else if (!isExpanded && isWhite) {
+    return (
+      <HeaderToggleIcon onClick={onClick}>
+        <img src={iMenuLite} alt="Toggle Menu" />
+      </HeaderToggleIcon>
+    );
+  } else {
+    return (
+      <HeaderToggleIcon onClick={onClick}>
+        <img src={iMenuDark} alt="Toggle Menu" />
       </HeaderToggleIcon>
     );
   }
-  return (
-    <HeaderToggleIcon onClick={onClick}>
-      <img
-        src={ExpandHeaderIcon}
-        alt="Toggle Menu"
-        css={`
-          filter: invert(100%);
-        `}
-      />
-    </HeaderToggleIcon>
-  );
 }
 
 HeaderToggle.propTypes = {
@@ -295,7 +343,7 @@ HeaderToggle.propTypes = {
   isWhite: PropTypes.bool,
 };
 HeaderToggle.defaultProps = {
-  isWhite: true,
+  isWhite: false,
 };
 
 /* --------------------------------------------------
@@ -464,7 +512,11 @@ class Header extends React.Component {
         <StyledHeader isTransparent={this.props.isTransparent}>
           <HeaderLogo isWhite={this.props.isTransparent} />
           <HeaderNav />
-          <HeaderToggle onClick={this.toggleExpandedHeader} isWhite={this.props.isTransparent} />
+          <HeaderToggle
+            onClick={this.toggleExpandedHeader}
+            isWhite={this.props.isTransparent}
+            isExpanded={this.state.isExpanded}
+          />
         </StyledHeader>
 
         {/* The <StickyHeader> is only rendered if the hasStickyHeader prop in Header is true. */}
@@ -476,7 +528,10 @@ class Header extends React.Component {
             <StyledHeader>
               <HeaderLogo />
               <HeaderNav />
-              <HeaderToggle onClick={this.toggleExpandedHeader} />
+              <HeaderToggle
+                onClick={this.toggleExpandedHeader}
+                isExpanded={this.state.isExpanded}
+              />
             </StyledHeader>
           </StickyHeader>
         )}
@@ -486,10 +541,14 @@ class Header extends React.Component {
         {/* The <ExpandedHeader> DOES NOT use <HeaderNav> from the primary header. */}
         {/* Instead, this renders the <ExpandedNav> links in full screen format. */}
         {this.state.isExpanded && (
-          <ExpandedHeader>
+          <ExpandedHeader isExpanded={this.state.isExpanded}>
             <StyledHeader>
               <HeaderLogo isWhite={false} />
-              <HeaderToggle onClick={this.toggleExpandedHeader} isWhite={false} />
+              <HeaderToggle
+                onClick={this.toggleExpandedHeader}
+                isWhite={false}
+                isExpanded={this.state.isExpanded}
+              />
             </StyledHeader>
             <ExpandedNav />
           </ExpandedHeader>
