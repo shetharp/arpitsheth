@@ -289,7 +289,7 @@ function IndexPage({ data }) {
   -------------------------------------------------- */
   slides.push({
     id: 'creative',
-    title: `AI may come after our creative abilities, but it can't take away our expressive identities.`,
+    title: `AI may come after our creative ability, but it can't take away our expressive identity.`,
     descr: (
       <p>
         I make time for art. Sometimes, I draw{' '}
