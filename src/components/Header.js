@@ -368,6 +368,9 @@ function HeaderNav(props) {
           <a href="https://www.linkedin.com/in/shetharp/">LinkedIn</a>
         </MenuItem>
         <MenuItem>
+          <Link to="/about">About</Link>
+        </MenuItem>
+        <MenuItem>
           <Link to="/contact">Contact</Link>
         </MenuItem>
       </Menu>
