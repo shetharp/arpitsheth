@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import theme, { mediaq } from '../utils/theme';
@@ -47,6 +48,10 @@ function Page({ data }) {
     </Layout>
   );
 }
+
+Page.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 /* ==================================================
  *  Queries
