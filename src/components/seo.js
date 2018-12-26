@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import openGraphImage from '../images/arpit-sheth-og.png';
 
 function SEO({ description, lang, meta, keywords, title }) {
   return (
@@ -28,6 +29,10 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 property: 'og:description',
                 content: metaDescription,
+              },
+              {
+                property: 'og:image',
+                content: openGraphImage,
               },
               {
                 property: 'og:type',
