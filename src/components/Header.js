@@ -126,7 +126,7 @@ const Logo = styled.h1`
   padding: 16px;
   ${mediaq.md`padding: 16px 24px;`}
   ${mediaq.lg`padding: 24px 32px;`}
-  ${mediaq.lg`padding: 24px 40px;`}
+  ${mediaq.xl`padding: 24px 40px;`}
   img {
     height: 24px;
     ${mediaq.md`height: 32px;`}
@@ -442,7 +442,7 @@ class Header extends React.Component {
   };
   static defaultProps = {
     isTransparent: false,
-    hasStickyHeader: false,
+    hasStickyHeader: true,
     stickyOffset: 100,
   };
 

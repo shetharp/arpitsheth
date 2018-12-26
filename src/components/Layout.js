@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import styled, { createGlobalStyle } from 'styled-components';
 import theme, { mediaq } from '../utils/theme.js';
 import Header from '../components/Header';
+import footerBgXS from '../images/footer-bg@xs.png';
+import footerBgMD from '../images/footer-bg@md.png';
+import footerBgXL from '../images/footer-bg@xl.png';
 
 /* ==================================================
  *  Styles
@@ -50,8 +54,8 @@ const GlobalResponsiveTypography = createGlobalStyle`
   }
   hr {
     border: none;
-    height: 0.1rem;
-    background: ${theme.colors.primaryLite};
+    height: 0.2rem;
+    background: ${theme.colors.secondaryDark};
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: ${theme.fonts.heading};
@@ -63,32 +67,69 @@ const GlobalResponsiveTypography = createGlobalStyle`
   ${'' /* With a typeScale of 1.148698355, the margins will be equal to the paragraph font size.*/}
   h1 {
     font-size: ${theme.typeScale ** 5}em;
-    margin: ${theme.typeScale ** -5}em 0;
+    margin: 1em 0 ${theme.typeScale ** -5}em 0;
   }
   h2 {
     font-size: ${theme.typeScale ** 4}em;
-    margin: ${theme.typeScale ** -4}em 0;
+    margin: 1em 0 ${theme.typeScale ** -4}em 0;
   }
   h3 {
     font-size: ${theme.typeScale ** 3}em;
-    margin: ${theme.typeScale ** -3}em 0;
+    margin: 1em 0 ${theme.typeScale ** -3}em 0;
   }
   h4 {
     font-size: ${theme.typeScale ** 2}em;
-    margin: ${theme.typeScale ** -2}em 0;
+    margin: 1em 0 ${theme.typeScale ** -2}em 0;
   }
   h5 {
     font-size: ${theme.typeScale ** 1}em;
-    margin: ${theme.typeScale ** -1}em 0;
+    margin: 1em 0 ${theme.typeScale ** -1}em 0;
   }
   h6 {
     font-size: ${theme.typeScale ** 0}em;
-    margin: ${theme.typeScale ** 0}em 0;
+    margin: 1em 0 ${theme.typeScale ** 0}em 0;
   }
 `;
 
 const StyledLayout = styled.main`
-  /* margin-top: 80px; */
+  /* Allows the footer to always snap to the bottom of the screen */
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Container = styled.div`
+  flex-grow: 1;
+  flex-shrink: 0;
+  max-width: 800px;
+  margin: 0 16px;
+  ${mediaq.md`margin: 0 24px;`}
+  ${mediaq.lg`margin: 0 auto;`}
+`;
+
+const Footer = styled.footer`
+/* outline: 1px dotted mediumaquamarine; */
+  color: ${theme.colors.primaryLite};
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 40px;
+
+  padding: 16px;
+  ${mediaq.md`padding: 24px;`}
+  ${mediaq.lg`padding: 32px;`}
+  ${mediaq.xl`padding: 40px;`}
+
+  background: white url(${footerBgXS}) center top / auto no-repeat;
+  ${mediaq.md`background-image: url(${footerBgMD});`}
+  ${mediaq.xl`background-image: url(${footerBgXL});`}
+
+  height: 160px;
+  ${mediaq.md`height: 240px;`}
+  ${mediaq.xl`height: 360px;`}
+
 `;
 
 /* ==================================================
@@ -102,13 +143,19 @@ const StyledLayout = styled.main`
  * Creates a Slide which is a fullscreen section (height: 100vh; width: 100%)
  * with a background image, title, and body text.
  */
-function Layout({ children, hasTransparentHeader, hasStickyHeader }) {
-  //   console.log(props)
+function Layout({ children, hasTransparentHeader, hasStickyHeader, hasContainer, hasFooter }) {
+  const layoutContent = hasContainer ? <Container>{children}</Container> : children;
   return (
     <StyledLayout>
       <GlobalResponsiveTypography />
       <Header isTransparent={hasTransparentHeader} hasStickyHeader={hasStickyHeader} />
-      {children}
+      {layoutContent}
+      {hasFooter && (
+        <Footer>
+          Thanks for visiting.&nbsp;
+          <Link to="/contact">Say hello!</Link>
+        </Footer>
+      )}
     </StyledLayout>
   );
 }
@@ -117,14 +164,18 @@ function Layout({ children, hasTransparentHeader, hasStickyHeader }) {
  *  Component Properties
 ================================================== */
 Layout.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   hasTransparentHeader: PropTypes.bool,
   hasStickyHeader: PropTypes.bool,
+  hasContainer: PropTypes.bool,
+  hasFooter: PropTypes.bool,
 };
 
 Layout.defaultProps = {
   hasTransparentHeader: false,
-  hasStickyHeader: false,
+  hasStickyHeader: true,
+  hasContainer: true,
+  hasFooter: true,
 };
 
 /* ==================================================
