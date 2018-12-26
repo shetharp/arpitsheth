@@ -58,6 +58,7 @@ const StyledHeader = styled.header`
   }
   display: flex;
   justify-content: space-between;
+  flex-wrap: no-wrap;
   width: 100%;
   z-index: 9999;
 `;
@@ -121,6 +122,7 @@ const ExpandedHeader = styled.div`
  *  Styles / Header / Logo
 -------------------------------------------------- */
 const Logo = styled.h1`
+  flex: 0 0 auto;
   font-size: 0;
   margin: 0;
   padding: 16px;
@@ -138,6 +140,7 @@ const Logo = styled.h1`
 -------------------------------------------------- */
 const HeaderToggleIcon = styled.i`
   cursor: pointer;
+  flex: 0 0 auto;
   display: flex;
   align-items: stretch;
   font-size: 0;
@@ -164,13 +167,14 @@ const HeaderToggleIcon = styled.i`
  */
 const Nav = styled.nav`
   color: inherit;
+  flex: 1 1 auto;
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: flex-end;
   overflow: hidden;
-  flex: 1 0 auto;
+  /* flex: 1 0 auto; */
   height: 56px;
   ${mediaq.md`height: 64px;`}
-  ${mediaq.md`height: 80px;`}
+  ${mediaq.lg`height: 80px;`}
 `;
 
 /**
@@ -189,9 +193,10 @@ const Menu = styled.ul`
   text-transform: uppercase;
   letter-spacing: 0.2ch;
 
+  width: 100%;
   display: flex;
-  flex-wrap: no-wrap;
-  justify-content: flex-end;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
   align-items: stretch;
   display: none;
   ${mediaq.xs_sm`display: flex;`}
@@ -237,31 +242,41 @@ const ExpandedNavStyles = styled.nav`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+`;
+const ExpandedMenu = styled.ul`
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  height: 50%;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 500;
+`;
 
-  ${Menu} {
+const ExpandedMenuItem = styled.li`
+  margin-bottom: 0;
+  height: 100%;
+  min-height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    text-decoration: none;
+    flex: 1 1 auto;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: stretch;
-    align-content: stretch;
-    height: 50%;
-    width: 100%;
-    font-size: 1em;
-    font-weight: 500;
-  }
-
-  ${MenuItem} {
-    min-height: 2em;
-    margin-left: 0;
     align-items: center;
-    a {
-      transform: scale(1);
-      transition: all 300ms ease-out;
-    }
-    a:hover {
-      transform: scale(1.333);
-      ${mediaq.lg`font-weight: bold;`}
-    }
+    height: 100%;
+    transform: scale(1);
+    transition: all 300ms ease-out;
+  }
+  a:hover {
+    transform: scale(1.333);
+    ${mediaq.lg`font-weight: bold;`}
   }
 `;
 
@@ -356,22 +371,25 @@ HeaderToggle.defaultProps = {
  * These links are not copied over to the ExpandedHeader or ExpandedNav
  * Use <Link> for links within the site or <a> for external links.
  * Try to keep the number of links limited to less than 5. Preferably 3.
+ *
+ * NOTE: These will be shown in reverse order, and flexbox may hide the last couple
+ * links on mobile/tablet screens.
  */
 function HeaderNav(props) {
   return (
     <Nav>
       <Menu>
         <MenuItem>
-          <a href="https://www.instagram.com/shetharp/">Photography</a>
-        </MenuItem>
-        <MenuItem>
-          <a href="https://www.linkedin.com/in/shetharp/">LinkedIn</a>
+          <Link to="/contact">Contact</Link>
         </MenuItem>
         <MenuItem>
           <Link to="/about">About</Link>
         </MenuItem>
         <MenuItem>
-          <Link to="/contact">Contact</Link>
+          <a href="https://www.linkedin.com/in/shetharp/">LinkedIn</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="https://www.instagram.com/shetharp/">Photography</a>
         </MenuItem>
       </Menu>
     </Nav>
@@ -398,20 +416,20 @@ function ExpandedNav({ onClick }) {
   const toggleExpandedHeader = onClick;
   return (
     <ExpandedNavStyles>
-      <Menu onClick={toggleExpandedHeader}>
-        <MenuItem>
+      <ExpandedMenu onClick={toggleExpandedHeader}>
+        <ExpandedMenuItem>
           <Link to="/about">About</Link>
-        </MenuItem>
-        <MenuItem>
+        </ExpandedMenuItem>
+        <ExpandedMenuItem>
           <Link to="/contact">Contact</Link>
-        </MenuItem>
-        <MenuItem>
+        </ExpandedMenuItem>
+        <ExpandedMenuItem>
           <a href="https://www.linkedin.com/in/shetharp/">LinkedIn</a>
-        </MenuItem>
-        <MenuItem>
+        </ExpandedMenuItem>
+        <ExpandedMenuItem>
           <a href="https://www.instagram.com/shetharp/">Photography</a>
-        </MenuItem>
-      </Menu>
+        </ExpandedMenuItem>
+      </ExpandedMenu>
     </ExpandedNavStyles>
   );
 }
