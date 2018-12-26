@@ -289,7 +289,7 @@ function IndexPage({ data }) {
   -------------------------------------------------- */
   slides.push({
     id: 'creative',
-    title: `AI may come after our creative ability, but it can't take away our expressive identity.`,
+    title: `AI may come after our creative abilities, but it can't take away our expressive identities.`,
     descr: (
       <p>
         I make time for art. Sometimes, I draw{' '}
@@ -324,7 +324,7 @@ function IndexPage({ data }) {
   *  Render Component
   -------------------------------------------------- */
   return (
-    <Layout hasTransparentHeader hasStickyHeader hasContainer={false}>
+    <Layout hasTransparentHeader hasStickyHeader hasContainer={false} hasFooter={false}>
       <SEO title="Home" keywords={['arpit', 'sheth', 'shetharp', 'cornell', 'tech']} />
       <SlidesSection>{renderSlides}</SlidesSection>
     </Layout>

@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import styled, { createGlobalStyle } from 'styled-components';
 import theme, { mediaq } from '../utils/theme.js';
 import Header from '../components/Header';
+import footerIcon from '../images/as-icon.png';
 import footerBgXS from '../images/footer-bg@xs.png';
 import footerBgMD from '../images/footer-bg@md.png';
 import footerBgXL from '../images/footer-bg@xl.png';
@@ -109,12 +110,12 @@ const Container = styled.div`
 `;
 
 const Footer = styled.footer`
-/* outline: 1px dotted mediumaquamarine; */
   color: ${theme.colors.primaryLite};
   flex-shrink: 0;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   margin-top: 40px;
 
   padding: 16px;
@@ -129,7 +130,14 @@ const Footer = styled.footer`
   height: 160px;
   ${mediaq.md`height: 240px;`}
   ${mediaq.xl`height: 360px;`}
+`;
 
+const FooterIcon = styled.img`
+  display: block;
+  height: 24px;
+  ${mediaq.md`height: 32px;`}
+  margin-bottom: 16px;
+  ${mediaq.md`margin-bottom: 24px;`}
 `;
 
 /* ==================================================
@@ -152,8 +160,13 @@ function Layout({ children, hasTransparentHeader, hasStickyHeader, hasContainer,
       {layoutContent}
       {hasFooter && (
         <Footer>
-          Thanks for visiting.&nbsp;
-          <Link to="/contact">Say hello!</Link>
+          <Link to="/colophon">
+            <FooterIcon src={footerIcon} alt="&copy; Arpit Sheth" />
+          </Link>
+          <span>
+            Thanks for visiting.&nbsp;
+            <Link to="/contact">Say hello!</Link>
+          </span>
         </Footer>
       )}
     </StyledLayout>
