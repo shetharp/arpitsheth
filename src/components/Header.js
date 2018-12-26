@@ -386,26 +386,36 @@ function HeaderNav(props) {
  * If you have ExpandedNav links that are different from HeaderNav, you will want to
  * ensure that ExpandedNavStyles is visible across all responsive screen sizes.
  * Use <Link> for links within the site or <a> for external links.
+ *
+ * NOTE: It is important that <Menu>, <MenuItem>, or <Link> components within
+ * are binded onClick to to a toggleExpandedHeader function. This ensures that the
+ * ExpandedHeader closes and scrolling is enabled again on the body.
  */
-function ExpandedNav(props) {
+function ExpandedNav({ onClick }) {
+  const toggleExpandedHeader = onClick;
   return (
     <ExpandedNavStyles>
-      <Menu>
-        <MenuItem>Menu Item</MenuItem>
+      <Menu onClick={toggleExpandedHeader}>
         <MenuItem>
-          <a href="https://www.instagram.com/shetharp/">Photography</a>
+          <Link to="/about">About</Link>
+        </MenuItem>
+        <MenuItem>
+          <Link to="/contact">Contact</Link>
         </MenuItem>
         <MenuItem>
           <a href="https://www.linkedin.com/in/shetharp/">LinkedIn</a>
         </MenuItem>
         <MenuItem>
-          <Link to="/contact">Contact</Link>
+          <a href="https://www.instagram.com/shetharp/">Photography</a>
         </MenuItem>
       </Menu>
     </ExpandedNavStyles>
   );
 }
 
+ExpandedNav.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 /* ==================================================
  *  Render / Header
 ================================================== */
@@ -550,7 +560,7 @@ class Header extends React.Component {
                 isExpanded={this.state.isExpanded}
               />
             </StyledHeader>
-            <ExpandedNav />
+            <ExpandedNav onClick={this.toggleExpandedHeader} />
           </ExpandedHeader>
         )}
       </>

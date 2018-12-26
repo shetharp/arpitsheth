@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import theme, { mediaq } from '../utils/theme';
 import Layout from '../components/Layout';
+import SEO from '../components/Seo';
 
 /* ==================================================
  *  Styles
@@ -20,11 +21,11 @@ const Title = styled.h1`
 `;
 
 const ArticleBody = styled.section`
-  a {
+  /* a {
     text-decoration: none;
     border-bottom: 1px solid ${theme.colors.primaryLite};
     ${mediaq.md`border-width: 2px;`}
-  }
+  } */
 `;
 
 /* ==================================================
@@ -34,6 +35,10 @@ function Page({ data }) {
   const pageData = data.markdownRemark;
   return (
     <Layout>
+      <SEO
+        title={pageData.frontmatter.title}
+        keywords={['arpit', 'sheth', 'shetharp', 'cornell', 'tech']}
+      />
       <Article>
         <Title>{pageData.frontmatter.title}</Title>
         <hr />

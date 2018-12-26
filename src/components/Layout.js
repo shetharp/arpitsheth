@@ -67,27 +67,27 @@ const GlobalResponsiveTypography = createGlobalStyle`
   ${'' /* With a typeScale of 1.148698355, the margins will be equal to the paragraph font size.*/}
   h1 {
     font-size: ${theme.typeScale ** 5}em;
-    margin: 1em 0 ${theme.typeScale ** -5}em 0;
+    margin: ${theme.typeScale ** -5 * 2}em 0 ${theme.typeScale ** -5}em 0;
   }
   h2 {
     font-size: ${theme.typeScale ** 4}em;
-    margin: 1em 0 ${theme.typeScale ** -4}em 0;
+    margin: ${theme.typeScale ** -4 * 2}em 0 ${theme.typeScale ** -4}em 0;
   }
   h3 {
     font-size: ${theme.typeScale ** 3}em;
-    margin: 1em 0 ${theme.typeScale ** -3}em 0;
+    margin: ${theme.typeScale ** -3 * 2}em 0 ${theme.typeScale ** -3}em 0;
   }
   h4 {
     font-size: ${theme.typeScale ** 2}em;
-    margin: 1em 0 ${theme.typeScale ** -2}em 0;
+    margin: ${theme.typeScale ** -2 * 2}em 0 ${theme.typeScale ** -2}em 0;
   }
   h5 {
     font-size: ${theme.typeScale ** 1}em;
-    margin: 1em 0 ${theme.typeScale ** -1}em 0;
+    margin: ${theme.typeScale ** -1 * 2}em 0 ${theme.typeScale ** -1}em 0;
   }
   h6 {
     font-size: ${theme.typeScale ** 0}em;
-    margin: 1em 0 ${theme.typeScale ** 0}em 0;
+    margin: ${theme.typeScale ** 0 * 2}em 0 ${theme.typeScale ** 0}em 0;
   }
 `;
 
