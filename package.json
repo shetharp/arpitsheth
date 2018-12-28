@@ -34,6 +34,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "precommit": "pretty-quick --staged",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -46,6 +47,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.0",
+    "gh-pages": "^2.0.1",
     "husky": "^1.3.0",
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0"

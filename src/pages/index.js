@@ -11,7 +11,8 @@ import SEO from '../components/Seo';
 /* ==================================================
  *  Styles
 ================================================== */
-const introHighlight = '#1a66ff';
+// const introHighlight = '#1a66ff';
+const introHighlight = '#0079F2';
 
 const animScroll = keyframes`
   0% {
@@ -19,7 +20,7 @@ const animScroll = keyframes`
     transform: translate(100%, 0px) rotate(-90deg);
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.6;
     transform: translate(100%, 40px) rotate(-90deg);
   }
 `;
@@ -40,7 +41,7 @@ const SlidesSection = styled.section`
       transform-origin: bottom left;
 
       color: ${introHighlight};
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       padding: 0 0 4px 48px;
       border-bottom: 4px solid ${introHighlight};
       display: flex;
@@ -80,7 +81,7 @@ function IndexPage({ data }) {
   const slides = [];
 
   /* --------------------------------------------------
-   *  Slide Data / Intro
+   *  Slide Data / #intro
   -------------------------------------------------- */
   slides.push({
     id: 'intro',
@@ -107,7 +108,7 @@ function IndexPage({ data }) {
   });
 
   /* --------------------------------------------------
-   *  Slide Data / Crater
+   *  Slide Data / #crater
   -------------------------------------------------- */
   slides.push({
     id: 'crater',
@@ -127,7 +128,7 @@ function IndexPage({ data }) {
     isExpanded: true,
     position: '75% 0%',
     button: {
-      text: 'Learn More',
+      text: 'Read Press Coverage',
       link: 'https://www.technyc.org/posts/2018/9/five-cornell-tech-companies-to-watch',
       isExternal: true,
     },
@@ -135,7 +136,7 @@ function IndexPage({ data }) {
   });
 
   /* --------------------------------------------------
-   *  Slide Data / Cornell
+   *  Slide Data / #cornell
   -------------------------------------------------- */
   slides.push({
     id: 'cornell',
@@ -143,11 +144,11 @@ function IndexPage({ data }) {
     descr: (
       <>
         <p>
-          In the Studio, I worked with The Bill & Melinda Gates Foundation to provide{' '}
+          In the Studio, I worked with The Bill & Melinda Gates Foundation on a{' '}
           <a href="https://tech.cornell.edu/news/cornell-tech-students-lead-the-way-in-building-technology-with-real-life-im/">
             digital financial services
           </a>{' '}
-          to the next billion people. I also won an award for designing a civic tech solution to{' '}
+          project for low-income markets. I also won an award for designing a solution to{' '}
           <a href="https://tech.cornell.edu/news/remaking-the-city-masters-students-build-products-for-roosevelt-island-comm/">
             promote urban greenspaces.
           </a>
@@ -168,7 +169,7 @@ function IndexPage({ data }) {
   });
 
   /* --------------------------------------------------
-   *  Slide Data / Matter
+   *  Slide Data / #matter
   -------------------------------------------------- */
   slides.push({
     id: 'matter',
@@ -196,7 +197,7 @@ function IndexPage({ data }) {
   });
 
   /* --------------------------------------------------
-   *  Slide Data / Mentoring
+   *  Slide Data / #mentoring
   -------------------------------------------------- */
   slides.push({
     id: 'mentoring',
@@ -225,7 +226,7 @@ function IndexPage({ data }) {
   });
 
   /* --------------------------------------------------
-   *  Slide Data / Speaking
+   *  Slide Data / #speaking
   -------------------------------------------------- */
   slides.push({
     id: 'speaking',
@@ -244,9 +245,10 @@ function IndexPage({ data }) {
       </p>
     ),
     fluid: data.imgSpeaking.childImageSharp.fluid,
-    overlay: '#00121A',
+    // overlay: '#00121A',
+    overlay: '#0A1933',
     highlight: '#b12426',
-    isColorful: true,
+    isColorful: false,
     isExpanded: false,
     position: '60% 50%',
     // button: { text: 'Learn More', link: '#', isExternal: false },
@@ -254,7 +256,7 @@ function IndexPage({ data }) {
   });
 
   /* --------------------------------------------------
-   *  Slide Data / Design
+   *  Slide Data / #design
   -------------------------------------------------- */
   slides.push({
     id: 'design',
@@ -285,11 +287,11 @@ function IndexPage({ data }) {
   });
 
   /* --------------------------------------------------
-   *  Slide Data / Creative
+   *  Slide Data / #creative
   -------------------------------------------------- */
   slides.push({
     id: 'creative',
-    title: `AI may come after our creative abilities, but it can't take away our expressive identities.`,
+    title: `AI may come after our creative abilities, but it can’t take away our expressive identities.`,
     descr: (
       <p>
         I make time for art. Sometimes, I draw{' '}
