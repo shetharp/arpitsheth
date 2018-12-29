@@ -107,6 +107,7 @@ const Container = styled.div`
   margin: 0 16px;
   ${mediaq.md`margin: 0 24px;`}
   ${mediaq.lg`margin: 0 auto;`}
+  ${mediaq.lg`width: 100%;`}
 `;
 
 const Footer = styled.footer`
