@@ -14,4 +14,4 @@ The Arduinio (with its instruments) plugs into the Raspberry Pi. The Raspberry P
 Finally, we used a seperate Arduino to create an **Infinity Mirror Music Vizualizer.**
 The infinity mirror was made with a strip of RGB LEDs glued around a circular rim, which was sandwiched between a mirror and a one-way mirror. We used a graphic equilizer chip to split the audio into six bands. Each band was mapped to a row of LEDs in the infinity mirror.
 
-### [View On GitHub](https://github.com/TheResistanceBand/theResistanceBand/wiki/Music-Visualizer)
+### [View On GitHub](https://github.com/TheResistanceBand/theResistanceBand/wiki)
