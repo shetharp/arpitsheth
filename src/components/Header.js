@@ -389,6 +389,9 @@ function HeaderNav(props) {
           <a href="https://www.linkedin.com/in/shetharp/">LinkedIn</a>
         </MenuItem>
         <MenuItem>
+          <a href="https://calendly.com/shetharp/mock-interview">Mock Interviews</a>
+        </MenuItem>
+        <MenuItem>
           <a href="https://www.instagram.com/shetharp/">Photography</a>
         </MenuItem>
       </Menu>
@@ -425,6 +428,9 @@ function ExpandedNav({ onClick }) {
         </ExpandedMenuItem>
         <ExpandedMenuItem>
           <a href="https://www.linkedin.com/in/shetharp/">LinkedIn</a>
+        </ExpandedMenuItem>
+        <ExpandedMenuItem>
+          <a href="https://calendly.com/shetharp/mock-interview">Mock Interviews</a>
         </ExpandedMenuItem>
         <ExpandedMenuItem>
           <a href="https://www.instagram.com/shetharp/">Photography</a>
