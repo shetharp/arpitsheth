@@ -129,12 +129,12 @@ const Description = styled.div`
   }
   a:hover {
     background: ${props => rgba(props.highlight, 0.5)};
-    ${mediaq.lg`background: ${props => rgba(props.highlight, 0.3)};`} 
+    ${mediaq.lg`background: ${props => rgba(props.highlight, 0.4)};`} 
   }
   em {
     font-style: normal;
     background: ${props => rgba(props.highlight, 0.5)};
-    ${mediaq.lg`background: ${props => rgba(props.highlight, 0.3)};`} 
+    ${mediaq.lg`background: ${props => rgba(props.highlight, 0.4)};`} 
   }
 `;
 

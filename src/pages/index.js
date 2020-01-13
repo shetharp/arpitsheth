@@ -11,8 +11,7 @@ import SEO from '../components/Seo';
 /* ==================================================
  *  Styles
 ================================================== */
-// const introHighlight = '#1a66ff';
-const introHighlight = '#0079F2';
+const introHighlight = '#CC4FCC';
 
 const animScroll = keyframes`
   0% {
@@ -85,26 +84,53 @@ function IndexPage({ data }) {
   -------------------------------------------------- */
   slides.push({
     id: 'intro',
-    title:
-      'I’m an interdisciplinary engineer with creator instincts and a knack for starting things.',
+    title: 'I’m a product-obsessed engineer driven by fierce creator instincts.',
     descr: (
       <>
         <p>
-          I co-founded <Link to="#crater">Crater</Link> and was early at{' '}
-          <Link to="#matter">Matter</Link>. I recently graduated from{' '}
-          <Link to="#cornell">Cornell Tech</Link> with an M.Eng in CS and am looking for exciting
-          new opportunities.
+          I currently support interior designers at <Link to="#wework">WeWork</Link> as a software
+          engineer. I’m a battle-tested starter, having co-founded <Link to="#crater">Crater</Link>{' '}
+          and hustled at <Link to="#matter">Matter</Link>. I recently graduated from{' '}
+          <Link to="#cornell">Cornell Tech</Link> with an M.Eng in CS.
         </p>
       </>
     ),
     fluid: data.imgIntro.childImageSharp.fluid,
-    overlay: '#030A1A',
+    overlay: '#081127',
     highlight: introHighlight,
     isColorful: false,
     isExpanded: false,
-    position: '54% 0%',
+    position: '60% 40%',
     // button: { text: 'Scroll', link: '#crater', isExternal: false },
     isBorderless: true,
+  });
+
+  /* --------------------------------------------------
+   *  Slide Data / #wework
+  -------------------------------------------------- */
+  slides.push({
+    id: 'wework',
+    title: 'I build tools for the most creative people at WeWork.',
+    descr: (
+      <>
+        <p>
+          As a software engineer, I ship features that empower our interior designers and architects
+          to design beautiful buildings at unprecedented scale.
+        </p>
+        <p>
+          <em>If you love interdisciplinary problems as much as I do, we should talk!</em>
+        </p>
+      </>
+    ),
+    fluid: data.imgWeWork.childImageSharp.fluid,
+    overlay: '#16253F',
+    // highlight: '#1043B7',
+    highlight: '#3875CF',
+    isColorful: false,
+    isExpanded: false,
+    position: '50% 50%',
+    button: { text: 'Contact Me', link: '/contact', isExternal: false },
+    // isBorderless: false,
   });
 
   /* --------------------------------------------------
@@ -221,7 +247,7 @@ function IndexPage({ data }) {
     isColorful: false,
     isExpanded: false,
     position: '20% 60%',
-    button: { text: 'Let’s Chat', link: '#', isExternal: false },
+    button: { text: 'Let’s Chat', link: '/contact', isExternal: false },
     // isBorderless: false,
   });
 
@@ -291,14 +317,11 @@ function IndexPage({ data }) {
   -------------------------------------------------- */
   slides.push({
     id: 'creative',
-    title: `AI may come after our creative abilities, but it can’t take away our expressive identities.`,
+    title: `Relentlessly chase exploratory desires.`,
     descr: (
       <p>
-        I make time for art. Sometimes, I draw{' '}
-        <a href="https://drive.google.com/drive/folders/1zr4VldrOsgcPi33BazRQfmpSDjg0ZGp4?usp=sharing">
-          sci-fi illustrations.
-        </a>{' '}
-        But mostly, I savor the subtle splendor of the world with photography.
+        I go where my curiousity leads me. Along the way, I try to savor the splendor of the moment
+        around me. A good photo and a good story is all it takes.
       </p>
     ),
     fluid: data.imgCreative.childImageSharp.fluid,
@@ -308,7 +331,7 @@ function IndexPage({ data }) {
     isExpanded: false,
     position: '52.5% 50%',
     button: {
-      text: 'View Photos',
+      text: 'See Photography',
       link: 'https://www.instagram.com/shetharp/',
       isExternal: true,
     },
@@ -360,6 +383,9 @@ export const slideImage = graphql`
 export const pageQuery = graphql`
   query {
     imgIntro: file(relativePath: { eq: "slides/intro-arpit-sheth.jpg" }) {
+      ...slideImage
+    }
+    imgWeWork: file(relativePath: { eq: "slides/wework.jpg" }) {
       ...slideImage
     }
     imgCrater: file(relativePath: { eq: "slides/crater-land-team.jpg" }) {
