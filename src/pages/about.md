@@ -3,10 +3,12 @@ title: 'About 👨‍🚀'
 date: '01/01/2019'
 ---
 
-Hi, I'm Arpit. I am an interdisciplinary engineer and designer based in New York City. 🗽
-I'm a Cornell University alum and a graduate from the Cornell Tech Master of Engineering program.
+Hi, I'm Arpit. I am a product-obsessed engineer and designer based in New York City. 🗽
+Currently, I work as a software engineer at WeWork.
+
 I've built products and led teams in energetic, creative, and technical environments.
-Recently, I founded my own company, Crater.
+Previously, I founded my own startup, Crater.
+I went to Cornell University for undergrad and am also a graduate from the Cornell Tech Master of Engineering program.
 
 <br />
 <br />
