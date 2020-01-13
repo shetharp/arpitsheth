@@ -11,8 +11,7 @@ import SEO from '../components/Seo';
 /* ==================================================
  *  Styles
 ================================================== */
-// const introHighlight = '#1a66ff';
-const introHighlight = '#0079F2';
+const introHighlight = '#CC4FCC';
 
 const animScroll = keyframes`
   0% {
@@ -86,23 +85,24 @@ function IndexPage({ data }) {
   slides.push({
     id: 'intro',
     title:
-      'I’m an interdisciplinary engineer with creator instincts and a knack for starting things.',
+      // 'I’m a product-obsessed engineer driven by strong crexator instincts.',
+      'I’m a product-obsessed engineer driven by fierce creator instincts.',
     descr: (
       <>
         <p>
-          I co-founded <Link to="#crater">Crater</Link> and was early at{' '}
+          I currently support interior designers at WeWork as a software engineer. I’m a
+          battle-tested starter, having co-founded <Link to="#crater">Crater</Link> and hustled at{' '}
           <Link to="#matter">Matter</Link>. I recently graduated from{' '}
-          <Link to="#cornell">Cornell Tech</Link> with an M.Eng in CS and am looking for exciting
-          new opportunities.
+          <Link to="#cornell">Cornell Tech</Link> with an M.Eng in CS.
         </p>
       </>
     ),
     fluid: data.imgIntro.childImageSharp.fluid,
-    overlay: '#030A1A',
+    overlay: '#081127',
     highlight: introHighlight,
     isColorful: false,
     isExpanded: false,
-    position: '54% 0%',
+    position: '60% 40%',
     // button: { text: 'Scroll', link: '#crater', isExternal: false },
     isBorderless: true,
   });
