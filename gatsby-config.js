@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Arpit Sheth',
     description:
-      'Interdisciplinary engineer with creator instincts and a knack for starting things.',
+      'Product-obsessed engineer driven by fierce creator instincts. Currently a software engineer at WeWork. Previously: Crater, Cornell University, and Cornell Tech.',
     author: '@shetharp',
   },
   plugins: [
