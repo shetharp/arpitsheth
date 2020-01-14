@@ -296,7 +296,7 @@ function IndexPage({ data }) {
         </p>
         <p>
           <em>
-            For over ten years I&rsquo;ve been teaching myself design. It is core to how I build
+            For over ten years, I&rsquo;ve been teaching myself design. It is core to how I build
             products and lead teams.
           </em>
         </p>
@@ -320,8 +320,8 @@ function IndexPage({ data }) {
     title: `Relentlessly chase exploratory desires.`,
     descr: (
       <p>
-        I go where my curiousity leads me. Along the way, I try to savor the splendor of the moment
-        around me. A good photo and a good story is all it takes.
+        I go where my curiousity leads me. Along the way, I make sure to savor the moment around me.
+        A good photo and a good story is usually all it takes.
       </p>
     ),
     fluid: data.imgCreative.childImageSharp.fluid,

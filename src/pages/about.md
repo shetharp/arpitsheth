@@ -8,7 +8,7 @@ Currently, I work as a software engineer at WeWork.
 
 I've built products and led teams in energetic, creative, and technical environments.
 Previously, I founded my own startup, Crater.
-I went to Cornell University for undergrad and am also a graduate from the Cornell Tech Master of Engineering program.
+I went to Cornell University for undergrad and am also a graduate of the Cornell Tech Master of Engineering program.
 
 <br />
 <br />
