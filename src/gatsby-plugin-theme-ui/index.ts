@@ -1,21 +1,21 @@
 import { merge } from "theme-ui";
 import { themePolaroid, ThemePolaroid } from "@shetharp/gatsby-theme-polaroid";
-import "typeface-dm-sans";
+import "typeface-space-mono";
 
 /**
  * The fonts for this site.
  *
- * "DM Sans" is imported as an npm package `typeface-dm-sans`, allowing it to be self-hosted.
- * Learn more about the Typefaces Project: https://github.com/KyleAMathews/typefaces
- *
- * "DM Mono" is imported with `gatsby-plugin-web-font-loader` from Google Fonts.
- * This plugin can also be used for Adobe Fonts (Typekit).
+ * "DM Mono" is self hosted and automatically imported from npm package `@shetharp/gatsby-theme-polaroid`.
+ * "Space Mono" is self hosted and imported from npm package `typeface-space-mono`. *
+ * "urw-din" is imported with `gatsby-plugin-web-font-loader` from Adobe Fonts (Typekit).
  */
 const fonts: ThemePolaroid["fonts"] = {
   body:
-    '"DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-  heading: '"DM Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-  monospace: '"DM Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+    '"urw-din", Bahnschrift, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  heading:
+    '"Space Mono", "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  monospace:
+    '"Space Mono", "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
 };
 
 /**

@@ -58,8 +58,8 @@ module.exports = {
       // Learn more: https://github.com/KyleAMathews/typefaces
       resolve: "gatsby-plugin-web-font-loader",
       options: {
-        google: {
-          families: ["DM+Mono:ital,wght@0,300;0,500;1,300;1,500"],
+        typekit: {
+          id: 'iut6dno',
         },
       },
     },
