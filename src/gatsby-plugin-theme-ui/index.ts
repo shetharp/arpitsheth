@@ -3,6 +3,14 @@ import { themePolaroid, ThemePolaroid } from "@shetharp/gatsby-theme-polaroid";
 import "typeface-space-mono";
 
 /**
+ * The colors for this site.
+ */
+const colors: ThemePolaroid["colors"] = {
+  primary: themePolaroid.colors.azure.base,
+  secondary: themePolaroid.colors.blush.base,
+};
+
+/**
  * The fonts for this site.
  *
  * "DM Mono" is self hosted and automatically imported from npm package `@shetharp/gatsby-theme-polaroid`.
@@ -25,6 +33,7 @@ const fonts: ThemePolaroid["fonts"] = {
  * https://theme-ui.com/guides/merging-themes/
  */
 export const themeSite = merge(themePolaroid, {
+  colors,
   fonts,
   fontWeights: {
     body: 300,
