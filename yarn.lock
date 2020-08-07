@@ -1766,7 +1766,7 @@
   dependencies:
     tslib "^2.0.0"
 
-"@shetharp/gatsby-theme-polaroid@*":
+"@shetharp/gatsby-theme-polaroid@^0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@shetharp/gatsby-theme-polaroid/-/gatsby-theme-polaroid-0.1.2.tgz#70a99c10f3c582c0c6224443af46ace7998ca784"
   integrity sha512-D88DRMtyown3x844q0VLqtD8DbMAh8nB7zYAZdPBWMKcRgGwpoI5qNzrnJoW5tnIb8TzhZOB+jXDVIQXCgphGg==

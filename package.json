@@ -1,10 +1,15 @@
 {
   "private": true,
-  "name": "demo",
+  "name": "arpitsheth",
   "author": "Arpit Sheth <arpit@arpitsheth.com> (@shetharp)",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
+  "homepage": "https://arpitsheth.com/",
+  "description": "👨‍🚀 Personal website and portfolio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shetharp/arpitsheth.git"
+  },
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
@@ -13,7 +18,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
-    "@shetharp/gatsby-theme-polaroid": "*",
+    "@shetharp/gatsby-theme-polaroid": "^0.1.2",
     "gatsby": "^2.23.12",
     "gatsby-plugin-google-analytics": "^2.3.10",
     "gatsby-plugin-manifest": "^2.4.17",

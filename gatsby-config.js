@@ -1,18 +1,18 @@
 module.exports = {
-  pathPrefix: "/gatsby-theme-polaroid",
+  // pathPrefix: "/arpitsheth",
 
   // TODO - Update site metadata to reflect your site's info
   siteMetadata: {
     // Used for the title template on pages other than the index site
-    siteTitle: `Polaroid`,
+    siteTitle: `Arpit Sheth`,
     // Default title of the page
-    siteTitleAlt: `Polaroid @shetharp/gatsby-theme-polaroid`,
+    siteTitleAlt: `Arpit Sheth`,
     // Can be used for e.g. JSONLD
-    siteHeadline: `Polaroid Gatsby Theme by Arpit Sheth`,
+    siteHeadline: `Arpit Sheth`,
     // Will be used to generate absolute URLs for og:image etc.
-    siteUrl: `https://shetharp.github.io/gatsby-theme-polaroid/`,
+    siteUrl: `https://arpitsheth.com/`,
     // Used for SEO
-    siteDescription: `Polaroid is a photography-focused Gatsby theme for building portfolio websites. It supports an MDX blog with tags/categories, syntax-highlighted code blocks, Theme UI for dark mode, and Typescript. Designed & developed by Arpit Sheth.`,
+    siteDescription: `🎈 I am a startup-savvy engineer building technology for a more creative future.`,
     // Will be set on the <html /> tag
     siteLanguage: `en`,
     // Used for og:image and must be placed inside the `static` folder
@@ -36,16 +36,16 @@ module.exports = {
       // TODO - Update manifest options for your site
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Polaroid @shetharp/gatsby-theme-polaroid`,
-        short_name: `polaroid-theme`,
-        description: `Polaroid Gatsby Theme by Arpit Sheth`,
+        name: `Arpit Sheth`,
+        short_name: `arpitsheth`,
+        description: `🎈 I am a startup-savvy engineer building technology for a more creative future.`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#6B46C1`,
+        theme_color: `#333333`,
         display: `standalone`,
         icons: [
           {
-            src: `/favicon.png`,
+            src: `/favicon-192.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
