@@ -1767,9 +1767,9 @@
     tslib "^2.0.0"
 
 "@shetharp/gatsby-theme-polaroid@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@shetharp/gatsby-theme-polaroid/-/gatsby-theme-polaroid-0.1.2.tgz#70a99c10f3c582c0c6224443af46ace7998ca784"
-  integrity sha512-D88DRMtyown3x844q0VLqtD8DbMAh8nB7zYAZdPBWMKcRgGwpoI5qNzrnJoW5tnIb8TzhZOB+jXDVIQXCgphGg==
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@shetharp/gatsby-theme-polaroid/-/gatsby-theme-polaroid-0.1.3.tgz#651db370c47eac1c12762f4a422b01dd9fe86fff"
+  integrity sha512-J26lwE1Iq+ayL/sLylANyGfzy7lhv+5D04pv9LI1rSvQcWiOpw2kmcMiMv6rZc5paO1kElhlfYri0P6Qz6f0PA==
   dependencies:
     "@lekoarts/gatsby-theme-minimal-blog-core" "^2.3.10"
     "@theme-ui/color" "^0.3.1"
@@ -5318,9 +5318,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.523:
-  version "1.3.524"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.524.tgz#dd49646594466192de35956a5369bb20d616aa78"
-  integrity sha512-ZUvklIBkfXQyA6IeiEss1nfKRICcdB5afAGZAaPGaExdfrkpUu/WWVO+X7QpNnphaVMllXnAcvKnVPdyM+DCPQ==
+  version "1.3.525"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.525.tgz#bc74080a3fd651b54627ee1fd94972e7c4d38fa8"
+  integrity sha512-Cni4AhdgdPOH4ZOY0tqgdF+7tF378o4qVRJFq8wxY/asLIVICMAHxfXPfdlivnf6B3Hdg1CI8yuFJ9Wo5kNeSg==
 
 elliptic@^6.5.3:
   version "6.5.3"
