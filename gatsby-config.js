@@ -1,62 +1,67 @@
 module.exports = {
+  pathPrefix: "/gatsby-theme-polaroid",
+
+  // TODO - Update site metadata to reflect your site's info
   siteMetadata: {
-    title: 'Arpit Sheth',
-    description:
-      'Product-obsessed engineer driven by fierce creator instincts. Currently a software engineer at WeWork. Previously: Crater, Cornell University, and Cornell Tech.',
-    author: '@shetharp',
+    // Used for the title template on pages other than the index site
+    siteTitle: `Polaroid`,
+    // Default title of the page
+    siteTitleAlt: `Polaroid @shetharp/gatsby-theme-polaroid`,
+    // Can be used for e.g. JSONLD
+    siteHeadline: `Polaroid Gatsby Theme by Arpit Sheth`,
+    // Will be used to generate absolute URLs for og:image etc.
+    siteUrl: `https://shetharp.github.io/gatsby-theme-polaroid/`,
+    // Used for SEO
+    siteDescription: `Polaroid is a photography-focused Gatsby theme for building portfolio websites. It supports an MDX blog with tags/categories, syntax-highlighted code blocks, Theme UI for dark mode, and Typescript. Designed & developed by Arpit Sheth.`,
+    // Will be set on the <html /> tag
+    siteLanguage: `en`,
+    // Used for og:image and must be placed inside the `static` folder
+    siteImage: `/banner.png`,
+    // Twitter Handle
+    author: `@shetharp`,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-polished',
-    `gatsby-transformer-remark`,
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Space Mono:400,400i,700,700i'],
-        },
-        typekit: {
-          id: 'iut6dno',
-        },
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/pages`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'Arpit Sheth',
-        short_name: 'Arpit Sheth',
-        start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
-        display: 'standalone',
-        icon: 'src/images/favicon.png', // This path is relative to the root of the site.
-      },
+      resolve: `@shetharp/gatsby-theme-polaroid`,
+      options: {},
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-34029885-1',
+        trackingId: process.env.GOOGLE_ANALYTICS_ID, // TODO - Configure Google Analytics for your site
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    `gatsby-plugin-sitemap`,
+    {
+      // TODO - Update manifest options for your site
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Polaroid @shetharp/gatsby-theme-polaroid`,
+        short_name: `polaroid-theme`,
+        description: `Polaroid Gatsby Theme by Arpit Sheth`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#6B46C1`,
+        display: `standalone`,
+        icons: [
+          {
+            src: `/favicon.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+        ],
+      },
+    },
+    {
+      // TODO - Update webfonts for your site.
+      // Alternatively, you can install Google Fonts as npm packages with the Typefaces Project
+      // Learn more: https://github.com/KyleAMathews/typefaces
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["DM+Mono:ital,wght@0,300;0,500;1,300;1,500"],
+        },
+      },
+    },
   ],
 };
