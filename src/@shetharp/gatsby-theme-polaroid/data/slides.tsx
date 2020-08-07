@@ -30,7 +30,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
    */
   const slideImages = useStaticQuery(graphql`
     query {
-      imgIntro: file(relativePath: { eq: "polaroid-bg-textured.jpg" }) {
+      imgIntro: file(relativePath: { eq: "intro-arpit-sheth.jpg" }) {
         ...slideImageFragment
       }
       imgPreview: file(relativePath: { eq: "kite-festival-1.jpg" }) {
@@ -52,23 +52,21 @@ const Slides: React.FC<SlidesProps> = (props) => {
        */}
       <Slide
         id="intro"
-        title="Smile for the camera! And say hello to Polaroid."
+        title="I am a startup-savvy engineer building technology for a more creative future."
         description={
           <React.Fragment>
             <p>
-              Polaroid is a <em>photography-focused</em> Gatsby theme for building portfolio websites. It supports an
-              MDX blog with tags/categories, syntax-highlighted code blocks, Theme UI for dark mode, and Typescript.
-            </p>
-            <p>
-              Designed &amp; developed by <a href="https://arpitsheth.com">Arpit Sheth</a>.
+              I currently develop software at <a href="#wework">WeWork</a> that brings our company&apos;s secret sauce&mdash;beautiful spaces with a global community&mdash;to life.
+              I&apos;m a battle-tested starter, having co-founded <a href="#crater">Crater</a> and hustled at <a href="#matter">Matter</a>.
+              I hold an M.Eng in CS from <a href="#cornell-tech">Cornell Tech</a> and did my undergrad at Cornell University.
             </p>
           </React.Fragment>
         }
         fluid={slideImages.imgIntro.childImageSharp.fluid}
-        overlayColor="veronica.dark"
-        highlightColor="primary"
-        isColorful
+        overlayColor="lavender.dark"
+        highlightColor="blush.base"
         isBorderless
+        isExpanded
         hasScrollIndicator
       />
 
