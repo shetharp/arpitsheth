@@ -206,6 +206,45 @@ const Slides: React.FC<SlidesProps> = (props) => {
       />
 
       {/**
+       * MENTORING
+       */}
+      <Slide
+        id="mentoring"
+        title="I mentor students with entrepreneurial ambitions."
+        description={
+          <React.Fragment>
+            <p>
+              I am especially passionate about <em>NYC-based aspiring entrepreneurs</em>. Currently, I&apos;m plugged
+              into the{" "}
+              <a href="https://www.wework.com/" target="_blank" rel="noreferrer">
+                WeWork
+              </a>{" "}
+              and
+              <a href="https://tech.cornell.edu/studio/" target="_blank" rel="noreferrer">
+                Cornell Tech
+              </a>{" "}
+              startup ecosystems. In the past, I launched{" "}
+              <a href="http://cornell.3daystartup.org/" target="_blank" rel="noreferrer">
+                3 Day Startup at Cornell
+              </a>{" "}
+              and volunteered at{" "}
+              <a href="http://www.lifechanginglabs.com/" target="_blank" rel="noreferrer">
+                Life Changing Labs
+              </a>
+              .
+            </p>
+            <p sx={{ marginBottom: 0 }}>
+              If you&apos;re working on something neat, I&apos;m happy to help however I can.
+            </p>
+          </React.Fragment>
+        }
+        fluid={slideImages.imgMentoring.childImageSharp.fluid}
+        overlayColor="azure.base"
+        highlightColor="crystal.base"
+        button={{ text: "Office Hours", href: "/office-hours" }}
+      />
+
+      {/**
        * BLOG
        */}
       <SlideBlog id="blog" posts={posts} backgroundColor="mediumblue" overlayColor="primary">
