@@ -107,7 +107,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         isColorful
         isExpanded
         imagePosition="90% 50%"
-        button={{ text: "Contact Me", href: "/contact" }}
+        button={{ text: "Contact Me", href: "/contact" }} // TODO -- Add Contact Page
       />
 
       {/**
@@ -137,7 +137,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         imagePosition="75% 0%"
         button={{
           text: "View Case Study",
-          href: "",
+          href: "", // TODO -- Add Crater Case Study
         }}
       />
 
@@ -255,7 +255,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         overlayColor="azure.base"
         highlightColor="crystal.base"
         imagePosition="45% 100%"
-        button={{ text: "Office Hours", href: "/office-hours" }}
+        button={{ text: "Office Hours", href: "/office-hours" }} // TODO -- Add office hours page
       />
 
       {/**
@@ -297,7 +297,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         isColorful
         imagePosition="66% 50%"
         hasDistinctBorder
-        button={{ text: "View Case Study", href: "" }}
+        button={{ text: "View Case Study", href: "" }} // TODO -- Add CMR case study
       />
 
       {/**
