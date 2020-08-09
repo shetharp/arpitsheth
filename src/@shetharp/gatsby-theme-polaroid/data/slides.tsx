@@ -85,8 +85,8 @@ const Slides: React.FC<SlidesProps> = (props) => {
             </p>
             <p sx={{ marginBottom: 0 }}>
               <em>
-                If you&apos;re looking for a product-obsessed engineer to lead your next interdisciplinary
-                project&mdash;I&apos;m your guy.
+                Get in touch if you&apos;re looking for a product-obsessed engineer to lead your next interdisciplinary
+                project.
               </em>
             </p>
           </React.Fragment>
