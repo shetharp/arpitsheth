@@ -59,7 +59,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         typekit: {
-          id: 'iut6dno',
+          id: "iut6dno",
         },
       },
     },

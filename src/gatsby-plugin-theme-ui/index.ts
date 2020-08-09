@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { merge } from "theme-ui";
 import { themePolaroid, ThemePolaroid } from "@shetharp/gatsby-theme-polaroid";
 import "typeface-space-mono";
