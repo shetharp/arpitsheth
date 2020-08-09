@@ -77,6 +77,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         highlightColor="blush.base"
         isBorderless
         isExpanded
+        imagePosition="60% 40%"
         hasScrollIndicator
       />
 
@@ -105,6 +106,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         highlightColor="#035e4c" // WeWork brand green
         isColorful
         isExpanded
+        imagePosition="90% 50%"
         button={{ text: "Contact Me", href: "/contact" }}
       />
 
@@ -132,7 +134,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         overlayColor="veronica.base"
         highlightColor="lavender.base"
         isExpanded
-        imagePosition="50% 0%"
+        imagePosition="75% 0%"
         button={{
           text: "View Case Study",
           href: "",
@@ -252,6 +254,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         fluid={slideImages.imgMentoring.childImageSharp.fluid}
         overlayColor="azure.base"
         highlightColor="crystal.base"
+        imagePosition="45% 100%"
         button={{ text: "Office Hours", href: "/office-hours" }}
       />
 
@@ -292,6 +295,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         overlayColor="#d34247" // Theta Tau brand red
         highlightColor="saffron.dark"
         isColorful
+        imagePosition="66% 50%"
         hasDistinctBorder
         button={{ text: "View Case Study", href: "" }}
       />
