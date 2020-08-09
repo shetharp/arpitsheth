@@ -42,6 +42,12 @@ const Slides: React.FC<SlidesProps> = (props) => {
       imgCornell: file(relativePath: { eq: "cornell-tech.jpg" }) {
         ...slideImageFragment
       }
+      imgMatter: file(relativePath: { eq: "matter.jpg" }) {
+        ...slideImageFragment
+      }
+      imgMentoring: file(relativePath: { eq: "mentoring.jpg" }) {
+        ...slideImageFragment
+      }
     }
   `);
 
@@ -161,7 +167,42 @@ const Slides: React.FC<SlidesProps> = (props) => {
         overlayColor="azure.dark"
         highlightColor="lemon.base"
         isExpanded
-        hasDistinctBorder
+      />
+
+      {/**
+       * MATTER
+       */}
+      <Slide
+        id="matter"
+        title="At Matter, I built products to bring the future of manufacturing to independent designers, artisans, and fabricators."
+        description={
+          <React.Fragment>
+            <p>
+              I was awarded a fully sponsored fellowship by the{" "}
+              <a
+                href="https://www.engineering.cornell.edu/students/undergraduate-students/entrepreneurial-options-undergrad-students/kessler-fellows-program"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Kessler Fellows Program
+              </a>{" "}
+              and chose to work directly with the co-founders of Matter, an early-stage startup backed by Techstars.
+            </p>
+            <p sx={{ marginBottom: 0 }}>
+              I data-mined over 3,000 machine shop pricing models and used those insights to help launch a new product
+              line of design collaboration software. The hard work paid off, and Matter was{" "}
+              <a href="https://medium.com/making-matter/the-next-chapter-b0711d141e8c" target="_blank" rel="noreferrer">
+                successfully acquired
+              </a>{" "}
+              a few months later.
+            </p>
+          </React.Fragment>
+        }
+        fluid={slideImages.imgMatter.childImageSharp.fluid}
+        overlayColor="lavender.base"
+        highlightColor="#09099b"
+        isColorful
+        isExpanded
       />
 
       {/**
