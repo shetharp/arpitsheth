@@ -33,7 +33,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
       imgIntro: file(relativePath: { eq: "intro-arpit-sheth.jpg" }) {
         ...slideImageFragment
       }
-      imgPreview: file(relativePath: { eq: "kite-festival-1.jpg" }) {
+      imgWeWork: file(relativePath: { eq: "wework.jpg" }) {
         ...slideImageFragment
       }
       imgWork: file(relativePath: { eq: "kite-festival-2.jpg" }) {
@@ -71,29 +71,28 @@ const Slides: React.FC<SlidesProps> = (props) => {
       />
 
       {/**
-       * PREVIEW
+       * WEWORK
        */}
       <Slide
-        id="preview"
-        title="A picture is worth  a thousand words. A demo is a million more."
+        id="wework"
+        title="I build new products for the most creative people at WeWork."
         description={
           <React.Fragment>
             <p>
-              You&apos;re looking at Polaroid&apos;s homepage. It&apos;s a great place to put together a{" "}
-              <em>photo-rich portfolio</em>. Take a look at the <Link to="/theme-preview">Theme Preview</Link> page to
-              see the other components that come with the theme.
+              As a Senior Lead Software Engineer, I lead projects that enable our
+              interior designers and architects to design beautiful spaces at unprecedented scale.
             </p>
             <p sx={{ marginBottom: 0 }}>
-              If you like what you see, get started with the <Link to="/readme">Readme</Link>.
+              <em>If you&apos;re looking for a product-obsessed engineer to lead your next interdisciplinary project&mdash;I&apos;m your guy.</em>
             </p>
           </React.Fragment>
         }
-        fluid={slideImages.imgPreview.childImageSharp.fluid}
-        overlayColor="primary"
-        highlightColor="accent"
+        fluid={slideImages.imgWeWork.childImageSharp.fluid}
+        overlayColor="#01a08c" // WeWork brand green
+        highlightColor="#035e4c" // WeWork brand green
+        isColorful
         isExpanded
-        imagePosition="0% 0%"
-        button={{ text: "Theme Preview", href: "/theme-preview" }}
+        button={{ text: "Contact Me", href: "/contact" }}
       />
 
       {/**
