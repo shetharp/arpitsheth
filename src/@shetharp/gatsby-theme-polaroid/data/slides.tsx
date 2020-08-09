@@ -36,7 +36,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
       imgWeWork: file(relativePath: { eq: "wework.jpg" }) {
         ...slideImageFragment
       }
-      imgWork: file(relativePath: { eq: "kite-festival-2.jpg" }) {
+      imgCrater: file(relativePath: { eq: "crater.jpg" }) {
         ...slideImageFragment
       }
       imgProject: file(relativePath: { eq: "kite-festival-3.jpg" }) {
@@ -100,24 +100,26 @@ const Slides: React.FC<SlidesProps> = (props) => {
       />
 
       {/**
-       * WORK
+       * CRATER
        */}
       <Slide
-        id="work"
-        title="Savor the moment slowly, for it may slip away too soon."
+        id="crater"
+        title="I was Co-founder &amp; CEO at Crater, a synthetic media startup building local TV for a new generation of creators."
         description={
           <React.Fragment>
-            I went down yesterday to the <a href="#!">Piraeus with Glaucon</a> the son of Ariston, that I might offer up
-            my prayers to the goddess (Bendis, the <Link to="#">Thracian Artemis.</Link>); and also because{" "}
-            <em>I wanted to see</em> in what manner they would celebrate the festival, which was a new thing.
+            I led a highly creative and deeply technical team of engineers and designers. We built an AI-powered video
+            production app, got funding, and were featured as an NYC startup to watch.
           </React.Fragment>
         }
-        fluid={slideImages.imgWork.childImageSharp.fluid}
-        overlayColor="secondary"
+        fluid={slideImages.imgCrater.childImageSharp.fluid}
+        overlayColor="veronica.base"
         highlightColor="saffron.dark"
         isExpanded
-        imagePosition="0% 0%"
-        button={{ text: "Get started", href: "/readme" }}
+        imagePosition="50% 0%"
+        button={{
+          text: "Read Press Coverage",
+          href: "https://www.technyc.org/posts/2018/9/five-cornell-tech-companies-to-watch",
+        }}
       />
 
       {/**
