@@ -5,8 +5,11 @@ import "typeface-space-mono";
 /**
  * The colors for this site.
  */
+// @ts-ignore
 const colors: ThemePolaroid["colors"] = {
+  // @ts-ignore
   primary: themePolaroid.colors.azure.base,
+  // @ts-ignore
   secondary: themePolaroid.colors.blush.base,
 };
 
