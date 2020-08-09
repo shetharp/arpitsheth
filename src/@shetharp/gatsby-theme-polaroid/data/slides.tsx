@@ -48,6 +48,9 @@ const Slides: React.FC<SlidesProps> = (props) => {
       imgMentoring: file(relativePath: { eq: "mentoring.jpg" }) {
         ...slideImageFragment
       }
+      imgSpeaking: file(relativePath: { eq: "speaking.jpg" }) {
+        ...slideImageFragment
+      }
     }
   `);
 
@@ -65,7 +68,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
               I currently develop software at <a href="#wework">WeWork</a> that brings our company&apos;s secret
               sauce&mdash;beautiful spaces with a global community&mdash;to life. I&apos;m a battle-tested starter,
               having co-founded <a href="#crater">Crater</a> and hustled at <a href="#matter">Matter</a>. I hold an
-              M.Eng in CS from <a href="#cornell-tech">Cornell Tech</a> and did my undergrad at Cornell University.
+              M.Eng in CS from <a href="#cornell">Cornell Tech</a> and did my undergrad at Cornell University.
             </p>
           </React.Fragment>
         }
@@ -123,7 +126,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         isExpanded
         imagePosition="50% 0%"
         button={{
-          text: "Read Press Coverage",
+          text: "View Case Study",
           href: "https://www.technyc.org/posts/2018/9/five-cornell-tech-companies-to-watch",
         }}
       />
@@ -242,6 +245,47 @@ const Slides: React.FC<SlidesProps> = (props) => {
         overlayColor="azure.base"
         highlightColor="crystal.base"
         button={{ text: "Office Hours", href: "/office-hours" }}
+      />
+
+      {/**
+       * CULTURE
+       */}
+      <Slide
+        id="culture"
+        title="I promote a culture of inclusivity, creativity, and courage everywhere I go."
+        description={
+          <React.Fragment>
+            <p>
+              I got my certification at the{" "}
+              <a
+                href="https://www.engineering.cornell.edu/students/undergraduate-students/special-programs/engineering-leadership-programs/engineering"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Cornell Engineering Leadership Program
+              </a>{" "}
+              and went on to become President of
+              <a href="http://cornellthetatau.com/" target="_blank" rel="noreferrer">
+                Cornell Theta Tau
+              </a>
+              . Most recently, I was a Technology Ambassador for{" "}
+              <a
+                href="https://www.linkedin.com/pulse/internship-builds-courage-arpit-sheth/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                WeWork&apos;s internship program
+              </a>
+              .
+            </p>
+          </React.Fragment>
+        }
+        fluid={slideImages.imgSpeaking.childImageSharp.fluid}
+        overlayColor="#d34247" // Theta Tau brand red
+        highlightColor="saffron.base"
+        isColorful
+        hasDistinctBorder
+        button={{ text: "View Case Study", href: "/office-hours" }}
       />
 
       {/**
