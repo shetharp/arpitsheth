@@ -39,7 +39,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
       imgCrater: file(relativePath: { eq: "crater.jpg" }) {
         ...slideImageFragment
       }
-      imgProject: file(relativePath: { eq: "kite-festival-3.jpg" }) {
+      imgCornell: file(relativePath: { eq: "cornell-tech.jpg" }) {
         ...slideImageFragment
       }
     }
@@ -123,23 +123,43 @@ const Slides: React.FC<SlidesProps> = (props) => {
       />
 
       {/**
-       * PROJECT
+       * CORNELL
        */}
       <Slide
-        id="project"
-        title="What if you replaced the noise of becoming with the silence of being?"
+        id="cornell"
+        title="I bring the innovative studio experience with me to help cross-functional teams deliver impactful products."
         description={
           <React.Fragment>
-            Emma Woodhouse, handsome, clever, and rich, with a comfortable home and happy disposition, seemed to unite
-            some of the best <em>blessings of existence</em>; and had lived nearly{" "}
-            <a href="https://www.gutenberg.org/files/158/158-h/158-h.htm#link2HCH0001">twenty-one years</a> in the world
-            with very little to distress or vex her.
+            <p>
+              In the Cornell Tech Studio, I worked with The Bill &amp; Melinda Gates Foundation on a{" "}
+              <a
+                href="https://tech.cornell.edu/news/cornell-tech-students-lead-the-way-in-building-technology-with-real-life-im/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                digital financial services project
+              </a>{" "}
+              for low-income markets. I also won an award for designing a solution to{" "}
+              <a
+                href="https://tech.cornell.edu/news/remaking-the-city-masters-students-build-products-for-roosevelt-island-comm/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                promote urban greenspaces
+              </a>
+              .
+            </p>
+            <p sx={{ marginBottom: 0 }}>
+              <em>
+                I hold an M.Eng in Computer Science from Cornell Tech. I&apos;m a proud first generation graduate and
+                did my undergrad at Cornell University.
+              </em>
+            </p>
           </React.Fragment>
         }
-        fluid={slideImages.imgProject.childImageSharp.fluid}
-        overlayColor="mediumslateblue"
-        highlightColor="mediumorchid"
-        isColorful
+        fluid={slideImages.imgCornell.childImageSharp.fluid}
+        overlayColor="azure.dark"
+        highlightColor="lemon.base"
         isExpanded
         hasDistinctBorder
       />
