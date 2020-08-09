@@ -48,7 +48,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
       imgMentoring: file(relativePath: { eq: "mentoring.jpg" }) {
         ...slideImageFragment
       }
-      imgSpeaking: file(relativePath: { eq: "speaking.jpg" }) {
+      imgCulture: file(relativePath: { eq: "culture.jpg" }) {
         ...slideImageFragment
       }
     }
@@ -117,17 +117,25 @@ const Slides: React.FC<SlidesProps> = (props) => {
         description={
           <React.Fragment>
             I led a highly creative and deeply technical team of engineers and designers. We built an AI-powered video
-            production app, got funding, and were featured as an NYC startup to watch.
+            production app, got funding, and were featured as an{" "}
+            <a
+              href="https://www.technyc.org/posts/2018/9/five-cornell-tech-companies-to-watch"
+              target="_blank"
+              rel="noreferrer"
+            >
+              NYC startup to watch
+            </a>
+            .
           </React.Fragment>
         }
         fluid={slideImages.imgCrater.childImageSharp.fluid}
         overlayColor="veronica.base"
-        highlightColor="saffron.dark"
+        highlightColor="lavender.base"
         isExpanded
         imagePosition="50% 0%"
         button={{
           text: "View Case Study",
-          href: "https://www.technyc.org/posts/2018/9/five-cornell-tech-companies-to-watch",
+          href: "",
         }}
       />
 
@@ -167,7 +175,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
           </React.Fragment>
         }
         fluid={slideImages.imgCornell.childImageSharp.fluid}
-        overlayColor="azure.dark"
+        overlayColor="#003f7f"
         highlightColor="lemon.base"
         isExpanded
       />
@@ -280,12 +288,12 @@ const Slides: React.FC<SlidesProps> = (props) => {
             </p>
           </React.Fragment>
         }
-        fluid={slideImages.imgSpeaking.childImageSharp.fluid}
+        fluid={slideImages.imgCulture.childImageSharp.fluid}
         overlayColor="#d34247" // Theta Tau brand red
-        highlightColor="saffron.base"
+        highlightColor="saffron.dark"
         isColorful
         hasDistinctBorder
-        button={{ text: "View Case Study", href: "/office-hours" }}
+        button={{ text: "View Case Study", href: "" }}
       />
 
       {/**
