@@ -303,7 +303,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
       {/**
        * BLOG
        */}
-      <SlideBlog id="blog" posts={posts} backgroundColor="mediumblue" overlayColor="primary">
+      <SlideBlog id="blog" posts={posts} backgroundColor="primary" overlayColor="secondary">
         <SlideTitle>More</SlideTitle>
         <SlideDescription>
           <p>
