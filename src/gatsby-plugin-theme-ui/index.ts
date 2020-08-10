@@ -12,6 +12,16 @@ const colors: ThemePolaroid["colors"] = {
   primary: themePolaroid.colors.azure.base,
   // @ts-ignore
   secondary: themePolaroid.colors.blush.base,
+
+  modes: {
+    // @ts-ignore
+    dark: {
+      // @ts-ignore
+      primary: themePolaroid.colors.azure.base,
+      // @ts-ignore
+      secondary: themePolaroid.colors.blush.base,
+    },
+  },
 };
 
 /**
