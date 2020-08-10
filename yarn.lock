@@ -1767,9 +1767,9 @@
     tslib "^2.0.0"
 
 "@shetharp/gatsby-theme-polaroid@^0.1.2":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@shetharp/gatsby-theme-polaroid/-/gatsby-theme-polaroid-0.1.5.tgz#92ee5d92bf4b3ede75b9e3201d6587b1b73ddb85"
-  integrity sha512-OcvSoBaKTwpQM47NMBq3e54n6G3qks6Da6LmMZICQ8AkyW7nws2u5j3Ec2GwXT+rpd9TkjLjA+2tascfxVFKhA==
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@shetharp/gatsby-theme-polaroid/-/gatsby-theme-polaroid-0.1.6.tgz#d55f4983a98f74d8aa19da9b7c0f0119237063e6"
+  integrity sha512-aZq516SGyGM11Q4XWhR01WA7IikgUWoCz4Xj3MQYBBj3GsXjnf5pcyftzIQ6dyWeZrjw6/0txArV5r5c4edOxg==
   dependencies:
     "@lekoarts/gatsby-theme-minimal-blog-core" "^2.3.10"
     "@theme-ui/color" "^0.3.1"
