@@ -307,31 +307,34 @@ const Slides: React.FC<SlidesProps> = (props) => {
         <SlideTitle>More</SlideTitle>
         <SlideDescription>
           <p>
-            Yet so vain is man, and so <em>blinded by his vanity</em>, that no writer, up to the very end of the
-            nineteenth century, expressed any idea that <a href="#">intelligent life</a> might have developed there far,
-            or indeed at all, beyond its earthly level. Nor was it generally understood that since Mars is older than
-            our earth... (<a href="https://www.gutenberg.org/files/36/36-h/36-h.htm">The War of Worlds</a>, H.G. Wells).
+            Come say hi to me on{" "}
+            <a href="https://twitter.com/shetharp" target="_blank" rel="noreferrer">
+              Twitter
+            </a>{" "}
+            or check out my creative side on{" "}
+            <a href="https://instagram.com/shetharp" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+            . You can also learn more <Link to="/about">about me</Link> or how I built{" "}
+            <Link to="/colophon">this site</Link>.
           </p>
+          <p>Want to work with me?</p>
         </SlideDescription>
+
         <p>
           <SlideButton
-            href="https://github.com/shetharp/gatsby-theme-polaroid"
+            href="/contact"
             sx={{ "&&&": { width: ["100%", null, "75%", "66.667%", "75%", null, "66.667%", null, "50%"] } }}
           >
-            View on GitHub
+            Contact Me
           </SlideButton>
         </p>
+
         <SlideDescription>
           <p>
             <br />
-            &mdash;
-          </p>
-          <p>
+            <br />
             <FooterLogo />
-            <br />
-            Polaroid Theme
-            <br />
-            By <a href="https://arpitsheth.com/">Arpit Sheth</a>
           </p>
         </SlideDescription>
       </SlideBlog>
