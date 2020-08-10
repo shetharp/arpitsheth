@@ -107,7 +107,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         isColorful
         isExpanded
         imagePosition="90% 50%"
-        button={{ text: "Contact Me", href: "/contact" }} // TODO -- Add Contact Page
+        button={{ text: "Contact Me", href: "/contact" }}
       />
 
       {/**
@@ -255,7 +255,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         overlayColor="azure.base"
         highlightColor="crystal.base"
         imagePosition="45% 100%"
-        button={{ text: "Office Hours", href: "/office-hours" }} // TODO -- Add office hours page
+        button={{ text: "Office Hours", href: "https://calendly.com/shetharp/office-hours" }}
       />
 
       {/**
