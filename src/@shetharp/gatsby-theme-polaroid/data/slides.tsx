@@ -11,6 +11,7 @@ import {
   SlideButton,
 } from "@shetharp/gatsby-theme-polaroid";
 import { useStaticQuery, graphql, Link } from "gatsby";
+import { footerLogoLink } from "../data/footer-logo-link";
 
 export type SlidesProps = {
   posts: Post[];
@@ -303,7 +304,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
       {/**
        * BLOG
        */}
-      <SlideBlog id="blog" posts={posts} backgroundColor="primary" overlayColor="secondary">
+      <SlideBlog id="blog" posts={posts} backgroundColor="blush.dark" overlayColor="azure.base">
         <SlideTitle>More</SlideTitle>
         <SlideDescription>
           <p>
@@ -330,13 +331,11 @@ const Slides: React.FC<SlidesProps> = (props) => {
           </SlideButton>
         </p>
 
-        <SlideDescription>
-          <p>
-            <br />
-            <br />
-            <FooterLogo />
-          </p>
-        </SlideDescription>
+        <p>
+          <br />
+          <br />
+          <FooterLogo slug={footerLogoLink} css={{ a: { border: "none", padding: 0, margin: 0 } }} />
+        </p>
       </SlideBlog>
     </React.Fragment>
   );
