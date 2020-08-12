@@ -54,5 +54,10 @@ export const themeSite = merge(themePolaroid, {
     bold: 500,
     heading: 700,
   },
+  styles: {
+    ul: {
+      marginTop: 0,
+    },
+  },
 });
 export default themeSite;
