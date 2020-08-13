@@ -7,8 +7,12 @@ tags:
 ---
 
 import React from "react";
-import { Text, Box, AspectRatio, Grid } from "theme-ui";
+import { Text, Box, AspectRatio, Grid, Card, Image } from "theme-ui";
 import pdfCraterPitchDeck from "./crater-pitch-deck.pdf";
+import imgCraterAppCollaborate from "./crater-app-collaborate.jpg";
+import imgCraterAppCreate from "./crater-app-create.jpg";
+import imgCraterAppDiscover from "./crater-app-discover.jpg";
+import imgCraterAppRecord from "./crater-app-record.jpg";
 
 ![](./crater.jpg)
 
@@ -18,7 +22,7 @@ import pdfCraterPitchDeck from "./crater-pitch-deck.pdf";
 
 In college, I spent considerable time exploring how to use AI to solve creative problems.
 My curiosity in this space grew as I began to notice the rapid rise of mobile video and
-the spiraling decline of local media&mdash;both caused by social media's the economic incentives.
+the spiraling decline of local media&mdash;both caused by social media's economic incentives.
 I became convinced the booming creator economy needed new cutting-edge tools to fuel a revolution in storytelling.
 
 In November 2017, I recruited a highly creative and deeply technical team
@@ -51,17 +55,13 @@ We built an AI-powered video production app, got funding, and were featured as a
 
 ### Pitch Deck
 As Co-founder and CEO, I recruited the team, crafted the company vision, and fundraised.
-Here is one of the early investor decks I made.
+I fundraised $130,000 from pre-seed investors and angels.
+This is one of the early investor decks I made.
 
 <a href={pdfCraterPitchDeck}>Crater Pitch Deck (.pdf)</a>
 
 <Box sx={{ display: ['none', null, null, null, 'initial'] }}>
-  <AspectRatio
-    ratio={5/3}
-    sx={{
-      color: 'background',
-      bg: 'primary',
-    }}>
+  <AspectRatio ratio={5/3}>
     <iframe src={pdfCraterPitchDeck} width="100%" height="100%" />
   </AspectRatio>
 </Box>
@@ -69,15 +69,46 @@ Here is one of the early investor decks I made.
 ### Product Screenshots
 
 I also managed the product roadmap, tracked sprint OKRs, prototyped features, conducted user interviews, and built our marketing website.
-Here are some product screenshots of what we built:
+We worked with 50 creators in a private beta and garnered 1,700+ people on our waitlist.
+These product screenshots are a culmination of some of that work.
 
-<Grid>
-  TODO
+<Grid
+  gap={6}
+  columns={2}
+  justifyContent="center"
+>
+  <Box sx={{ textAlign: "center" }}>
+    <Image src={imgCraterAppDiscover} />
+    <em><small>Discover stories</small></em>
+  </Box>
+  <Box sx={{ textAlign: "center" }}>
+    <Image src={imgCraterAppCollaborate} />
+    <em><small>Collaborate with a community</small></em>
+  </Box>
+  <Box sx={{ textAlign: "center" }}>
+    <Image src={imgCraterAppRecord} />
+    <em><small>Record content</small></em>
+  </Box>
+  <Box sx={{ textAlign: "center" }}>
+    <Image src={imgCraterAppCreate} />
+    <em><small>Create with a guided experience</small></em>
+  </Box>
 </Grid>
-
-
-Crater on the [App Store](https://apps.apple.com/us/app/craterland/id1411468296)
 
 #### Research
 
-TODO
+In addition the technical and product challenges, our team was motivated by the social impact of making space online for local storytelling.
+We did a deep-dive into internet content culture and the role of technology and media in a democracy.
+This was some of my favorite research to reference early on.
+
+- [Participatory Media](https://en.wikipedia.org/wiki/Participatory_media)
+- [User Generated Content](https://www.iab.com/wp-content/uploads/2015/12/Crowdtap_TheMarketersGuidetoUGC.pdf)
+- [The Creator Economy](https://www.strategyand.pwc.com/gx/en/insights/content-democratization.html)
+- [Twitter Subcultures](https://knightfoundation.org/features/twittermedia/)
+- [Digital Local News](https://www.journalism.org/2019/03/26/for-local-news-americans-embrace-digital-but-still-want-strong-community-connection/)
+
+---
+
+![](./crater-banner-secondary.jpg)
+
+_Crater on the [App Store](https://apps.apple.com/us/app/craterland/id1411468296)._

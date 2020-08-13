@@ -138,7 +138,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         imagePosition="75% 0%"
         button={{
           text: "View Case Study",
-          href: "", // TODO -- Add Crater Case Study
+          href: "/crater",
         }}
       />
 
