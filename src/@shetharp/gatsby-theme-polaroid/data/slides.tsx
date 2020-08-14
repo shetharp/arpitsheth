@@ -299,7 +299,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         isColorful
         imagePosition="66% 50%"
         hasDistinctBorder
-        button={{ text: "View Case Study", href: "" }} // TODO -- Add CMR case study
+        button={{ text: "View Case Study", href: "/cornell-mars-rover" }}
       />
 
       {/**
