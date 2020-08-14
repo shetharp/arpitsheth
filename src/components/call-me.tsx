@@ -5,7 +5,7 @@ export type CallMeProps = {
   // empty;
 };
 
-export const CallMe: React.FC<CallMeProps> = (props) => {
+export const CallMe: React.FC<CallMeProps> = () => {
   return (
     <em>
       <Text variant="mono">Arpit Sheth &nbsp;•&nbsp; UR-pit sh-EHTH &nbsp;•&nbsp; he/him/his</Text>

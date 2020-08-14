@@ -8,7 +8,7 @@ export type FooterBodyProps = {
   // empty
 };
 
-export const FooterBody: React.FC<FooterBodyProps> = (props) => {
+export const FooterBody: React.FC<FooterBodyProps> = () => {
   const { siteTitle } = useSiteMetadata();
 
   return (
