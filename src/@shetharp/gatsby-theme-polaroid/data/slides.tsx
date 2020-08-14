@@ -55,6 +55,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
     }
   `);
 
+  // TODO -- replace quotes with smart quotes (for example, &apos; with &rsquo; or the ’ character)
   return (
     <React.Fragment>
       {/**
