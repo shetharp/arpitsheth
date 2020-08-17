@@ -9,8 +9,6 @@ My personal website & portfolio.
 
 **[🖋 View Colophon →](https://arpitsheth.com/colophon)**
 
-_Steal the look with [gatsby-theme-polaroid](https://github.com/shetharp/gatsby-theme-polaroid)._
-
 ---
 
 # Set Up
@@ -84,6 +82,8 @@ _Steal the look with [gatsby-theme-polaroid](https://github.com/shetharp/gatsby-
 5. Navigate to https://arpitsheth.com to view your deployment! _(It might take a moment)._
 
 
-# Built with gatsby-theme-polaroid
+# Features
+
+_Steal the look with [gatsby-theme-polaroid](https://github.com/shetharp/gatsby-theme-polaroid)._
 
 ### [📖 Read Wiki Documentation →](https://github.com/shetharp/gatsby-theme-polaroid/wiki)
