@@ -56,13 +56,14 @@ _Steal the look with [gatsby-theme-polaroid](https://github.com/shetharp/gatsby-
     <strong>Deployment details</strong>
   </summary>
 
-  This website is deployed using GitHub Pages.
-  The domain provider for `arpitsheth.com` is configured to point to GitHub's domain name servers.
-  The domain `arpitsheth.com` is added to the `CNAME` file in the root directory of the repo,
-  which lets GitHub's DNS know to serve this website for that domain.
+  - This website is deployed using GitHub Pages.
   
-  There is currently no CI/CD process for automatic deployments. 
-  You must follow the steps below to deploy and publish your changes.
+  - The domain provider for `arpitsheth.com` is configured to point to GitHub's domain name servers.
+    The domain `arpitsheth.com` is added to the `CNAME` file in the root directory of the repo,
+    which lets GitHub's DNS know to serve this website for that domain.
+  
+  - There is currently no CI/CD process for automatic deployments.
+    You must follow the steps below to deploy your changes.
 </details>
 
 1. Once you are done making changes, it's a good idea to test them with a production build.
