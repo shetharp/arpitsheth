@@ -8,8 +8,8 @@ export const headerNavItems: HeaderNavItem[] = [
     isVisibleTablet: true,
   },
   {
-    label: "Office Hours",
-    href: "https://calendly.com/shetharp/office-hours",
+    label: "Coaching",
+    href: "https://calendly.com/shetharp/coaching",
   },
   {
     label: "GitHub",

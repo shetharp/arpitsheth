@@ -11,8 +11,8 @@ export const headerMenuItems: HeaderMenuItem[] = [
     slug: "/blog",
   },
   {
-    label: "Office Hours",
-    href: "https://calendly.com/shetharp/office-hours",
+    label: "Coaching",
+    href: "https://calendly.com/shetharp/coaching",
     isVisibleLaptop: false,
   },
   {
