@@ -67,10 +67,10 @@ const Slides: React.FC<SlidesProps> = (props) => {
         description={
           <React.Fragment>
             <p>
-              I currently develop software at <a href="#wework">WeWork</a> that brings our company&apos;s secret
-              sauce&mdash;beautiful spaces with a global community&mdash;to life. I&apos;m a battle-tested starter,
-              having co-founded <a href="#crater">Crater</a> and hustled at <a href="#matter">Matter</a>. I hold an
-              M.Eng in CS from <a href="#cornell">Cornell Tech</a> and did my undergrad at Cornell University.
+              I currently develop software at <a href="#wework">WeWork</a> to design and sell beautiful spaces around
+              the globe. I&apos;m a battle-tested starter, having co-founded <a href="#crater">Crater</a> and hustled at{" "}
+              <a href="#matter">Matter</a>. I hold an M.Eng in CS from <a href="#cornell">Cornell Tech</a> and did my
+              undergrad at Cornell University.
             </p>
           </React.Fragment>
         }
@@ -92,8 +92,8 @@ const Slides: React.FC<SlidesProps> = (props) => {
         description={
           <React.Fragment>
             <p>
-              As a Senior Lead Software Engineer, I lead projects that enable our interior designers and architects to
-              design beautiful spaces at unprecedented scale.
+              As a Senior Software Engineer, I lead projects that enable our interior designers and architects to design
+              beautiful spaces at unprecedented scale.
             </p>
             <p sx={{ marginBottom: 0 }}>
               <em>
