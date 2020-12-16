@@ -16,8 +16,9 @@ export const headerMenuItems: HeaderMenuItem[] = [
     isVisibleLaptop: false,
   },
   {
-    label: "GitHub",
-    href: "https://github.com/shetharp",
+    label: "Readme",
+    slug: "/readme",
+    isVisibleLaptop: false,
   },
   {
     label: "About",
@@ -30,16 +31,16 @@ export const headerMenuItems: HeaderMenuItem[] = [
     isVisibleLaptop: false,
   },
   {
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/shetharp",
-  },
-  {
     label: "Twitter",
     href: "https://twitter.com/shetharp",
   },
   {
     label: "Instagram",
     href: "https://instagram.com/shetharp",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/shetharp",
   },
   {
     label: "Colophon",

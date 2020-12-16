@@ -12,8 +12,8 @@ export const headerNavItems: HeaderNavItem[] = [
     href: "https://calendly.com/shetharp/coaching",
   },
   {
-    label: "GitHub",
-    href: "https://github.com/shetharp",
+    label: "Readme",
+    href: "/readme",
   },
   {
     label: "About",
