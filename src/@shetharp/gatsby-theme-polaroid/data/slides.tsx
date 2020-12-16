@@ -257,7 +257,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         overlayColor="azure.base"
         highlightColor="crystal.base"
         imagePosition="45% 100%"
-        button={{ text: "Office Hours", href: "https://calendly.com/shetharp/office-hours" }}
+        button={{ text: "Get Coaching", href: "https://calendly.com/shetharp/coaching" }}
       />
 
       {/**
@@ -309,17 +309,26 @@ const Slides: React.FC<SlidesProps> = (props) => {
         <SlideTitle>More</SlideTitle>
         <SlideDescription>
           <p>
-            Come say hi to me on{" "}
+            Say hi to me on{" "}
             <a href="https://twitter.com/shetharp" target="_blank" rel="noreferrer">
               Twitter
             </a>{" "}
-            or check out my creative side on{" "}
+            or check out my{" "}
             <a href="https://instagram.com/shetharp" target="_blank" rel="noreferrer">
-              Instagram
+              creative side.
             </a>
-            . You can also learn more <Link to="/about">about me</Link> or how I built{" "}
-            <Link to="/colophon">this site</Link>.
           </p>
+          <ul>
+            <li>
+              <Link to="/about">About Me</Link>
+            </li>
+            <li>
+              <Link to="/readme">Working Together Readme</Link>
+            </li>
+            <li>
+              <Link to="/colophon">How I Built This Site</Link>
+            </li>
+          </ul>
           <p>Want to work with me?</p>
         </SlideDescription>
 
