@@ -305,30 +305,21 @@ const Slides: React.FC<SlidesProps> = (props) => {
       {/**
        * BLOG
        */}
-      <SlideBlog id="blog" posts={posts} backgroundColor="blush.dark" overlayColor="azure.base">
+      <SlideBlog id="blog" posts={posts} backgroundColor="azure.base" overlayColor="azure.base">
         <SlideTitle>More</SlideTitle>
         <SlideDescription>
           <p>
-            Say hi to me on{" "}
+            Come say hi to me on{" "}
             <a href="https://twitter.com/shetharp" target="_blank" rel="noreferrer">
               Twitter
             </a>{" "}
             or check out my{" "}
             <a href="https://instagram.com/shetharp" target="_blank" rel="noreferrer">
-              creative side.
-            </a>
+              creative side!
+            </a>{" "}
+            You can also learn more <Link to="/about">about me</Link>, <Link to="/readme">how I work</Link>, or{" "}
+            <Link to="/colophon">how I built this site</Link>.
           </p>
-          <ul>
-            <li>
-              <Link to="/about">About Me</Link>
-            </li>
-            <li>
-              <Link to="/readme">Working Together Readme</Link>
-            </li>
-            <li>
-              <Link to="/colophon">How I Built This Site</Link>
-            </li>
-          </ul>
           <p>Want to work with me?</p>
         </SlideDescription>
 
