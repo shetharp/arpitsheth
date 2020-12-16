@@ -34,9 +34,9 @@ My personal website & portfolio.
 
 2. Run Gatsby development server
     ```shell
-    gatsby develop
+    yarn develop
     ```
-    _You can also use `yarn develop`, which is defined in the `scripts` section of the `package.json` file._
+    _You can also use `gatsby develop`, if you have the Gatsby CLI installed._
 
 3. Start making changes! You can see your changes get hot-reloaded in your browser.
     - [Add content](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Add-Content) with gatsby-theme-polaroid
@@ -66,11 +66,11 @@ My personal website & portfolio.
 
 1. Once you are done making changes, it's a good idea to test them with a production build.
     ```shell
-    gatsby build
+    yarn build
     ```
 2. Then, serve your build to view the production optimized website locally.
     ```shell
-    gatsby serve
+    yarn serve
     ```
 3. Make sure all of your changes are commited and merged into the **`master`** branch. The deployment step deploys only the latest commit from **`master`**.
 
