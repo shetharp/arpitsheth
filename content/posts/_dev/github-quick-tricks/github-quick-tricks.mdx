@@ -1,0 +1,147 @@
+---
+title: Github Quick Tricks
+date: 2020-10-27
+tags:
+  - Dev
+---
+
+## Remove a file from a pushed commit
+
+Sometimes you may accidentally commit changes to a file and push it to GitHub. Because this file wasn't supposed to be modified and committed, you may be asked to remove the file from your commit or pull request.
+
+1. Go to your git directory and `cd` to the location of the file you want to remove from your commit
+2. `git checkout origin/develop package-lock.json`
+   1. Where `package-lock.json` is the name of the file you want to revert changes to
+   2. Where `origin/develop` is the name of the remote branch on github you want your file to revert back to
+   3. By doing this, your file no longer has any differences with the branch you are looking to merge onto
+3. `git commit -m "Removes package-lock.json"`
+4. `git push`
+
+## Reset to a branch from remote
+
+Sometimes you just want to reset your working branch back to how things were when they were last pushed up to GitHub
+
+```
+git reset --hard origin/NAME-OF-BRANCH
+```
+
+## Rebasing the base branch
+
+Let's say you are working on a new feature `A` in branch `featA`
+
+```
+develop: --1--2--4--6--7
+featA:     \--3--5
+```
+
+But then, you need to begin working on feature `B` which builds on top of feature `A`, before feature `A` has been merged into develop.
+
+So, you create a new branch `featB` based on `featA`
+
+```
+develop: --1--2--4--6--7
+featA:     \--3--5
+featB:           \--8
+```
+
+If `featA` has new commits, you can simply rebase them onto `featB`
+
+While you are on the `featB` branch run
+
+```bash
+git rebase featA
+```
+
+```
+develop: --1--2--4--6--7
+featA:     \--3--5--9
+featB:              \--8
+```
+
+Then, suppose `featA` is complete and gets squashed and merged into `develop`
+
+```
+develop: --1--2--4--6--7--10
+featA:     \--3--5--9----/
+featB:              \--8
+```
+
+After `featA` gets squashed and merged, it is often safely deleted.
+
+```
+develop: --1--2--4--6--7--10
+featA:
+featB:     \--3--5--9--8
+```
+
+Now, you'll want to rebase `featB` and make it based off of `develop` instead of `featA` since all that work has been merged in.
+
+Notice how the commits with hash `3`, `5`, and `9` on `featB` are redundant since they have already been squashed and merged into commit with hash `10`. This means we can safely drop commits `3`, `5`, and `9` as long as `featB` is based off of commit `10` (or later) on the develop branch. The new work is on commit `8` and later.
+
+While in `featB` branch, run the below command. (Replace `3` with the appropriate commit hash for your branch).
+
+```bash
+git rebase -i 3
+```
+
+You'll get something like this:
+
+```
+pick 3 commit message
+pick 5 commit message
+pick 9 commit message
+pick 8 commit message
+```
+
+Edit and save the file to something like this:
+
+```
+d 3 commit message
+d 5 commit message
+d 9 commit message
+b
+pick 8 commit message
+```
+
+The `d` command is short for `drop`. This means we will drop that commit and lose it. Since commits `3`, `5`, and `9` are merged and squashed into commit `10` (on develop), this is fine.
+
+The `b` command is short for `break`. This pauses the interactive rebase at this step.
+
+When the interactive rebase stops at the `break`, we will merge in our work from the develop branch.
+
+```bash
+git merge origin/develop
+```
+
+There shouldn't be any merge conflicts at this point because we haven't applied any new work on top of this detached branch.
+
+Then, continue our rebase with the new work we did on `featB`
+
+```bash
+git rebase --continue
+```
+
+Now our `featB` branch should be rebased off of `develop`
+
+```
+develop: --1--2--4--6--7--10
+featB:                     \--8
+```
+
+Check if everything is working!! Then, force push this up to your remote repository.
+
+```bash
+git push --force
+```
+
+**If you mess up trying to rebase `featB` follow these steps:**
+
+1. Checkout to another branch. Ex `git checkout develop`
+2. Delete your local `featB` branch. `git branch -D featB`
+3. Pull down the remote `featB` branch. `git checkout -b origin/featB`
+
+---
+
+**Resources:**
+
+- [Git Cheat Sheet](https://www.git-tower.com/blog/git-cheat-sheet)
