@@ -12,6 +12,7 @@ import {
 } from "@shetharp/gatsby-theme-polaroid";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import { footerLogoLink } from "../data/footer-logo-link";
+import { slideParagraphSx } from "../components/slide-title";
 
 export type SlidesProps = {
   posts: Post[];
@@ -63,14 +64,18 @@ const Slides: React.FC<SlidesProps> = (props) => {
        */}
       <Slide
         id="intro"
-        title="I am a startup-savvy engineer building technology for a more creative future."
+        title="I am a founder-grown tech leader with rare operating breadth across product, engineering, and design."
         description={
           <React.Fragment>
-            <p>
-              I currently develop software at <a href="#wework">WeWork</a> to design and sell beautiful spaces around
-              the globe. I&apos;m a battle-tested starter, having co-founded <a href="#crater">Crater</a> and hustled at{" "}
-              <a href="#matter">Matter</a>. I hold an M.Eng in CS from <a href="#cornell">Cornell Tech</a> and did my
-              undergrad at Cornell University.
+            <p sx={slideParagraphSx}>
+              I co-founded <a href="#crater">Crater</a>, an AI video startup, taking it from 0-to-1, then spent six years at <a href="#wework">WeWork</a>,
+              leading tech teams through hypergrowth, a public IPO, corporate restructures, and an acquisition. Today, I
+              focus on collapsing the talent stack, building talent-dense teams that execute and strategize across
+              functions.
+            </p>
+
+            <p sx={slideParagraphSx}>
+              I'm a proud double-red Cornellian, having done my undergrad in CS at Cornell University, followed by an MEng in CS from <a href="#cornell">Cornell Tech</a>.
             </p>
           </React.Fragment>
         }
@@ -88,18 +93,11 @@ const Slides: React.FC<SlidesProps> = (props) => {
        */}
       <Slide
         id="wework"
-        title="I build new products for the most creative people at WeWork."
+        title="I built R&D design tools, then led engineering for Member Acquisitions at WeWork."
         description={
           <React.Fragment>
-            <p>
-              As a Senior Software Engineer, I lead projects that enable our interior designers and architects to design
-              beautiful spaces at unprecedented scale.
-            </p>
-            <p sx={{ marginBottom: 0 }}>
-              <em>
-                Get in touch if you&apos;re looking for a product-obsessed engineer to lead your next interdisciplinary
-                project.
-              </em>
+            <p sx={slideParagraphSx}>
+              I started as an engineer in R&D, building tools for interior designers and architects. I later led engineering for Member Acquisitions, including the wework.com website, ecommerce systems, and referrals platform — through hypergrowth, an IPO, corporate restructures, and a merger.
             </p>
           </React.Fragment>
         }
@@ -109,7 +107,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         isColorful
         isExpanded
         imagePosition="90% 50%"
-        button={{ text: "Contact Me", href: "/contact" }}
+        button={{ text: "My Story", href: "https://www.linkedin.com/posts/shetharp_i-recently-crossed-6-years-at-weworka-path-ugcPost-7312666219948494848-Bkfu/" }}
       />
 
       {/**
@@ -120,16 +118,18 @@ const Slides: React.FC<SlidesProps> = (props) => {
         title="I was Co-founder &amp; CEO at Crater, a synthetic media startup building local TV for a new generation of creators."
         description={
           <React.Fragment>
-            I led a highly creative and deeply technical team of engineers and designers. We built an AI-powered video
-            production app, got funding, and were featured as an{" "}
-            <a
-              href="https://www.technyc.org/posts/2018/9/five-cornell-tech-companies-to-watch"
-              target="_blank"
-              rel="noreferrer"
-            >
-              NYC startup to watch
-            </a>
-            .
+            <p sx={{ marginBottom: 0, ...slideParagraphSx }}>
+              I led a highly creative and deeply technical team of engineers and designers. We built an AI-powered video
+              production app, got funding, and were featured as an{" "}
+              <a
+                href="https://www.technyc.org/posts/2018/9/five-cornell-tech-companies-to-watch"
+                target="_blank"
+                rel="noreferrer"
+              >
+                NYC startup to watch
+              </a>
+              .
+            </p>
           </React.Fragment>
         }
         fluid={slideImages.imgCrater.childImageSharp.fluid}
@@ -151,7 +151,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         title="I bring the innovative studio experience with me to help cross-functional teams deliver impactful products."
         description={
           <React.Fragment>
-            <p>
+            <p sx={slideParagraphSx}>
               In the Cornell Tech Studio, I worked with The Bill &amp; Melinda Gates Foundation on a{" "}
               <a
                 href="https://tech.cornell.edu/news/cornell-tech-students-lead-the-way-in-building-technology-with-real-life-im/"
@@ -170,7 +170,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
               </a>
               .
             </p>
-            <p sx={{ marginBottom: 0 }}>
+            <p sx={{ marginBottom: 0, ...slideParagraphSx }}>
               <em>
                 I hold an M.Eng in Computer Science from Cornell Tech. I&apos;m a proud first generation graduate and
                 did my undergrad at Cornell University.
@@ -192,7 +192,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         title="At Matter, I built products to bring the future of manufacturing to independent designers, artisans, and fabricators."
         description={
           <React.Fragment>
-            <p>
+            <p sx={slideParagraphSx}>
               I was awarded a fully sponsored fellowship by the{" "}
               <a
                 href="https://www.engineering.cornell.edu/students/undergraduate-students/entrepreneurial-options-undergrad-students/kessler-fellows-program"
@@ -203,7 +203,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
               </a>{" "}
               and chose to work directly with the co-founders of Matter, an early-stage startup backed by Techstars.
             </p>
-            <p sx={{ marginBottom: 0 }}>
+            <p sx={{ marginBottom: 0, ...slideParagraphSx }}>
               I data-mined over 3,000 machine shop pricing models and used those insights to help launch a new product
               line of design collaboration software. The hard work paid off, and Matter was{" "}
               <a href="https://medium.com/making-matter/the-next-chapter-b0711d141e8c" target="_blank" rel="noreferrer">
@@ -225,31 +225,14 @@ const Slides: React.FC<SlidesProps> = (props) => {
        */}
       <Slide
         id="mentoring"
-        title="I mentor students with entrepreneurial ambitions."
+        title="I advise founders and build community across NYC's startup ecosystem."
         description={
           <React.Fragment>
-            <p>
-              I am especially passionate about <em>NYC-based aspiring entrepreneurs</em>. Currently, I&apos;m plugged
-              into the{" "}
-              <a href="https://www.wework.com/" target="_blank" rel="noreferrer">
-                WeWork
-              </a>{" "}
-              and
-              <a href="https://tech.cornell.edu/studio/" target="_blank" rel="noreferrer">
-                Cornell Tech
-              </a>{" "}
-              startup ecosystems. In the past, I launched{" "}
-              <a href="http://cornell.3daystartup.org/" target="_blank" rel="noreferrer">
-                3 Day Startup at Cornell
-              </a>{" "}
-              and volunteered at{" "}
-              <a href="http://www.lifechanginglabs.com/" target="_blank" rel="noreferrer">
-                Life Changing Labs
-              </a>
-              .
+            <p sx={slideParagraphSx}>
+              I&apos;m passionate about NYC startups and love sharing my founder pattern recognition with founders, aspiring founders, and operators in the early-stage trenches. In addition to my involvement as a Notation VC Fellow, First Round Fast Track Mentor, and On Deck Catalyst Scout, I also serve as President of the Cornell Tech Alumni Council, a community of 2,200+ alumni and 100+ startups.
             </p>
-            <p sx={{ marginBottom: 0 }}>
-              If you&apos;re working on something neat, I&apos;m happy to help however I can.
+            <p sx={{ marginBottom: 0, ...slideParagraphSx }}>
+              If you&apos;re building something, I&apos;m happy to swap notes.
             </p>
           </React.Fragment>
         }
@@ -257,18 +240,19 @@ const Slides: React.FC<SlidesProps> = (props) => {
         overlayColor="azure.base"
         highlightColor="crystal.base"
         imagePosition="45% 100%"
-        button={{ text: "Get Coaching", href: "https://calendly.com/shetharp/coaching" }}
+        button={{ text: "Contact Me", href: "/contact" }}
       />
 
       {/**
        * CULTURE
        */}
+      {false && (
       <Slide
         id="culture"
         title="I promote a culture of inclusivity, creativity, and courage everywhere I go."
         description={
           <React.Fragment>
-            <p>
+            <p sx={{ marginBottom: 0, ...slideParagraphSx }}>
               I got my certification at the{" "}
               <a
                 href="https://www.engineering.cornell.edu/students/undergraduate-students/special-programs/engineering-leadership-programs/engineering"
@@ -301,43 +285,8 @@ const Slides: React.FC<SlidesProps> = (props) => {
         hasDistinctBorder
         button={{ text: "View Case Study", href: "/cornell-mars-rover" }}
       />
+      )}
 
-      {/**
-       * BLOG
-       */}
-      <SlideBlog id="blog" posts={posts} backgroundColor="azure.base" overlayColor="azure.base">
-        <SlideTitle>More</SlideTitle>
-        <SlideDescription>
-          <p>
-            Come say hi to me on{" "}
-            <a href="https://twitter.com/shetharp" target="_blank" rel="noreferrer">
-              Twitter
-            </a>{" "}
-            or check out my{" "}
-            <a href="https://instagram.com/shetharp" target="_blank" rel="noreferrer">
-              creative side!
-            </a>{" "}
-            You can also learn more <Link to="/about">about me</Link>, <Link to="/readme">how I work</Link>, or{" "}
-            <Link to="/colophon">how I built this site</Link>.
-          </p>
-          <p>Want to work with me?</p>
-        </SlideDescription>
-
-        <p>
-          <SlideButton
-            href="/contact"
-            sx={{ "&&&": { width: ["100%", null, "75%", "66.667%", "75%", null, "66.667%", null, "50%"] } }}
-          >
-            Contact Me
-          </SlideButton>
-        </p>
-
-        <p>
-          <br />
-          <br />
-          <FooterLogo slug={footerLogoLink} css={{ a: { border: "none", padding: 0, margin: 0 } }} />
-        </p>
-      </SlideBlog>
     </React.Fragment>
   );
 };

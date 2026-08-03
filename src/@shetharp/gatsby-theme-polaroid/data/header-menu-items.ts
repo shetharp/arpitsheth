@@ -11,11 +11,6 @@ export const headerMenuItems: HeaderMenuItem[] = [
     slug: "/blog",
   },
   {
-    label: "Coaching",
-    href: "https://calendly.com/shetharp/coaching",
-    isVisibleLaptop: false,
-  },
-  {
     label: "Readme",
     slug: "/readme",
     isVisibleLaptop: false,
@@ -31,16 +26,12 @@ export const headerMenuItems: HeaderMenuItem[] = [
     isVisibleLaptop: false,
   },
   {
-    label: "Twitter",
-    href: "https://twitter.com/shetharp",
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/shetharp",
   },
   {
     label: "Instagram",
     href: "https://instagram.com/shetharp",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/shetharp",
   },
   {
     label: "Colophon",

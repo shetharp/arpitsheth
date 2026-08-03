@@ -8,10 +8,6 @@ export const headerNavItems: HeaderNavItem[] = [
     isVisibleTablet: true,
   },
   {
-    label: "Coaching",
-    href: "https://calendly.com/shetharp/coaching",
-  },
-  {
     label: "Readme",
     href: "/readme",
   },
