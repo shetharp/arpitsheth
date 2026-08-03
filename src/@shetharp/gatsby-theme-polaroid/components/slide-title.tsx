@@ -2,6 +2,11 @@ import React from "react";
 import { Text } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 
+// Centralized responsive scale for slide paragraph text.
+// Mirrors the current defaults (theme.fontSizes indexes 0,1 -> 16,18px)
+export const slideParagraphSx = { fontSize: [0, null, 1] };
+
+
 export type SlideTitleProps = {
   className?: string; // Pass down className to allow overriding styles
   isExpanded?: boolean;
@@ -32,7 +37,7 @@ const sxTitle = (isExpanded: boolean, shouldAdjustWidth: boolean): SystemStyleOb
     lineHeight: "heading",
     fontWeight: "normal",
     color: "inherit",
-    fontSize: [3, null, null, 4, 5, 6, 7, null, 8, null, 9],
+    fontSize: [3, null, null, 4, 5, 6, null, 7, null, 8, 9],
     width: width,
     transition: (theme) => theme.transitions.default,
   };

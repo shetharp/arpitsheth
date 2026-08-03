@@ -12,7 +12,7 @@ module.exports = {
     // Will be used to generate absolute URLs for og:image etc.
     siteUrl: `https://arpitsheth.com/`,
     // Used for SEO
-    siteDescription: `🎈 I am a startup-savvy engineer building technology for a more creative future.`,
+    siteDescription: `🎈 I am a founder-grown tech leader with rare operating breadth across product, engineering, and design.`, 
     // Will be set on the <html /> tag
     siteLanguage: `en`,
     // Used for og:image and must be placed inside the `static` folder
@@ -38,7 +38,7 @@ module.exports = {
       options: {
         name: `Arpit Sheth`,
         short_name: `arpitsheth`,
-        description: `🎈 I am a startup-savvy engineer building technology for a more creative future.`,
+        description: `🎈 I am a founder-grown tech leader with rare operating breadth across product, engineering, and design.`, 
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#333333`,

@@ -15,7 +15,7 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
       <p>
         <CallMe />
       </p>
-      I am a startup-savvy engineer building technology for a more creative future.
+      I am a founder-grown tech leader with rare operating breadth across product, engineering, and design.
     </>
   );
 };
