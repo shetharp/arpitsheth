@@ -8,10 +8,6 @@ export const headerNavItems: HeaderNavItem[] = [
     isVisibleTablet: true,
   },
   {
-    label: "Readme",
-    href: "/readme",
-  },
-  {
     label: "About",
     slug: "/about",
     isVisibleTablet: true,

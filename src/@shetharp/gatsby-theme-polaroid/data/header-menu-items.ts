@@ -11,11 +11,6 @@ export const headerMenuItems: HeaderMenuItem[] = [
     slug: "/blog",
   },
   {
-    label: "Readme",
-    slug: "/readme",
-    isVisibleLaptop: false,
-  },
-  {
     label: "About",
     slug: "/about",
     isVisibleLaptop: false,
